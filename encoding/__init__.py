@@ -1,0 +1,2 @@
+from .encoding_strat import EncodingStrategy
+from .skipgram_encode import SkipGramEncoder

@@ -1,0 +1,7 @@
+Package                   Version
+------------------------- ---------------
+dfply                     0.3.3
+jupyter                   1.0.0
+pandas                    2.1.4
+plotnine                  0.12.4
+scipy                     1.11.4
