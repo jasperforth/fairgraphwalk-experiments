@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is based on the paper **"Fairness Through Controlled (Un)Awareness in Node Embeddings"** by Dennis Vetter, Jasper Forth, Gemma Roig, and Holger Dell. The research demonstrates how the parametrization of the CrossWalk algorithm can influence the inference of sensitive attributes from node embeddings, thus offering a tool to improve the fairness of machine learning systems using graph embeddings.
+This project is based on the paper [Fairness Through Controlled (Un)Awareness in Node Embeddings](https://openreview.net/forum?id=owww7i1UBG) by Dennis Vetter, Jasper Forth, Gemma Roig, and Holger Dell. The research demonstrates how the parametrization of the CrossWalk algorithm can influence the inference of sensitive attributes from node embeddings, thus offering a tool to improve the fairness of machine learning systems using graph embeddings.
 
 ## Requirements
 
@@ -48,7 +48,7 @@ Note: The ICML_notebooks section will be updated as soon as we finalize the stru
 
 ## About the Paper
 
-Link to the paper: [Fairness Through Controlled (Un)Awareness in Node Embeddings](https://openreview.net/forum?id=owww7i1UBG)
+You can find the .pdf of the paper [here](paper_fairness_through_controlled_un_awareness.pdf)
 
 ### Abstract
 Graph representation learning is central for applying machine learning (ML) models to complex graphs, such as social networks. Ensuring ‘fair’ representations is essential due to societal implications and the use of sensitive personal data. This paper demonstrates how the parametrization of the CrossWalk algorithm influences the ability to infer sensitive attributes from node embeddings. By fine-tuning hyperparameters, it is possible to either significantly enhance or obscure the detectability of these attributes. This functionality offers a valuable tool for improving the fairness of ML systems utilizing graph embeddings, making them adaptable to different fairness paradigms.
