@@ -13,7 +13,6 @@ from .encoding_strat import EncodingStrategy
 # Configure logging
 logger = logging.getLogger(__name__)
 
-# TODO cite Word2Vec and n2v
 # TODO eventually limit ram in Word2Vec params
 class SkipGramEncoder(EncodingStrategy):
     """
@@ -21,8 +20,23 @@ class SkipGramEncoder(EncodingStrategy):
     """
     def __init__(self, params_signature: str, experiment_graph_dir: Path, embedding_dimension: int = 128, **embedding_params):
         """
-        Initialize the SkipGramEncoder.
-        
+        Skip-gram encoder using gensim's Word2Vec for generating node embeddings.
+
+        This implementation is based on the Word2Vec model described in:
+
+        Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013). 
+        Efficient Estimation of Word Representations in Vector Space. 
+        arXiv preprint arXiv:1301.3781. 
+        https://arxiv.org/abs/1301.3781
+
+        Additionally, this implementation leverages concepts from the node2vec algorithm:
+
+        Grover, A., & Leskovec, J. (2016). 
+        node2vec: Scalable Feature Learning for Networks. 
+        Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD). 
+        https://dl.acm.org/doi/10.1145/2939672.2939754
+        Python implementation available at: https://github.com/eliorc/node2vec
+
         Args:
             params_signature (str): Signature of the parameter set.
             experiment_graph_dir (Path): Directory for the experiment graph.

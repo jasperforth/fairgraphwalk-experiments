@@ -29,11 +29,27 @@ log_dir = DATA_DIR
 setup_worker_logging("crosswalk bias", log_dir)
 logger = logging.getLogger(__name__)
 
-# TODO cite: based on crosswalk from github
-# TODO movedicrected into graph!
 class CrossWalkBias(BiasStrategy):
     """
     CrossWalk biasing strategy for adapting graph edge weights based on node attributes.
+
+    This implementation is based on the CrossWalk algorithm described in:
+
+    Khajehnejad, A., Khajehnejad, M., Babaei, M., Gummadi, K. P., Weller, A., & Mirzasoleiman, B. (2022).
+    CrossWalk: Fairness-Enhanced Node Representation Learning. 
+    Proceedings of the AAAI Conference on Artificial Intelligence, 36(11), 11963–11970.
+    https://doi.org/10.1609/aaai.v36i11.21454
+    Original implementation available at: https://github.com/ahmadkhajehnejad/CrossWalk
+
+    Args:
+        graph (Graph): Input graph.
+        experiment_graph_dir (Path): Directory for the experiment graph.
+        sensitive_attribute_name (str, optional): Name of the sensitive attribute. Defaults to None.
+        alpha (float, optional): Alpha parameter for biasing. Defaults to None.
+        exponent (float, optional): Exponent parameter for biasing. Defaults to None.
+        graph_name (str, optional): Name of the graph. Defaults to None.
+        prewalk_length (int, optional): Length of the prewalk. Defaults to 6.
+        quiet (bool, optional): Flag to control verbosity. Defaults to False.
     """
     def __init__(self, graph: Graph, experiment_graph_dir: Path,
                     sensitive_attribute_name: str = None, 

@@ -32,10 +32,25 @@ log_dir = DATA_DIR
 setup_worker_logging("node2vec_sampling", log_dir)
 logger = logging.getLogger(__name__)
 
-# TODO cite: based on node2vec from github
 class Node2VecSampling(SamplingStrategy):
     """
     Node2Vec sampling strategy for generating random walks on a graph.
+
+    This implementation is based on the node2vec algorithm described in:
+
+    Grover, A., & Leskovec, J. (2016). 
+    node2vec: Scalable Feature Learning for Networks. 
+    Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD). 
+    https://dl.acm.org/doi/10.1145/2939672.2939754
+    Python implementation available at: https://github.com/eliorc/node2vec
+
+    Args:
+        p (float): Return parameter for node2vec.
+        q (float): In-out parameter for node2vec.
+        graph_name (str): Name of the graph being processed.
+        walk_length (int, optional): Length of each random walk. Defaults to 80.
+        num_walks (int, optional): Number of walks per node. Defaults to 10.
+        quiet (bool, optional): Flag to control verbosity. Defaults to False.
     """
     def __init__(self, p: float, q: float, graph_name: str, walk_length: int = 80, 
                     num_walks: int = 10, quiet: bool = False) -> None:
