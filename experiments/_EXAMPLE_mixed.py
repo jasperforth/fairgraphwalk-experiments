@@ -11,8 +11,8 @@ file=Path(__file__).resolve()
 prent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
-from experiment_utils.config import ( RAW_ATTRIBUTES_FILEPATH, EDGELIST_FILEPATH, FORMATTED_DATA_DIR, DATA_DIR, SEED,
-    FILTER_CATEGORY, COLUMN_NAMES, ATTRIBUTES, SPLITPOINTS_BINS, P_VALUES, Q_VALUES,
+from experiment_utils.config import (RAW_ATTRIBUTES_FILEPATH, EDGELIST_FILEPATH, FORMATTED_DATA_DIR, DATA_DIR, SEED,
+    FILTER_CATEGORY, COLUMN_NAMES, ATTRIBUTES, SPLITPOINTS_BINS, P_VALUES, Q_VALUES, 
     ALPHAS, EXPONENTS, WORKERS, N_SPLITS, SENS_ATTR_NAME, OTHER_ATTR_NAME, PREWALK_LENGTH
 )
 from experiment_utils import ExperimentRun
@@ -34,7 +34,7 @@ def create_directory(path):
         logger.error(f"Failed to create directory {path}: {e}")
         raise
 
-def run_experiment_pokec_semi():
+def run_experiment_pokec_EXAMPLE_mixed():
     # Set up directories and seeds for the experiment.
     experiment_name = f"pokec_semi"
     formatted_data_dir = FORMATTED_DATA_DIR
@@ -69,37 +69,34 @@ def run_experiment_pokec_semi():
     # Define subgraph categories. Also the location attribute.
     # For semi-distinc regions.
     region_categories = {
-        'graph_dir_0': ["kosicky kraj, kosice - stare mesto",
-                        "kosicky kraj, kosice - juh",
-                        "trnavsky kraj, holic",
-                        "trnavsky kraj, gbely"],
-        'graph_dir_1': ["banskobystricky kraj, brezno",
-                        "banskobystricky kraj, hrinova",
-                        "banskobystricky kraj, krupina",
+        'graph_dir_0': ["bratislavsky kraj, bratislava - ruzinov",
+                        "bratislavsky kraj, bratislava - stare mesto",
                         "bratislavsky kraj, bratislava - nove mesto",
-                        "bratislavsky kraj, bratislava - vrakuna",
                         "bratislavsky kraj, bratislava - vajnory",
-                        "zilinsky kraj, ruzomberok",
-                        "zilinsky kraj, liptovsky hradok",
-                        "zilinsky kraj, turcianske teplice",
-                        "kosicky kraj, kosice - ostatne",
-                        "kosicky kraj, kosice - krasna nad hornadom",
-                        "kosicky kraj, kosice - barca"],
-        'graph_dir_2': ["presovsky kraj, humenne",
-                        "presovsky kraj, snina",
-                        "trnavsky kraj, velky meder",
-                        "trnavsky kraj, dunajska streda", 
-                        "trnavsky kraj, holic",
-                        "trnavsky kraj, gbely",
-                        "trenciansky kraj, handlova",
-                        "trenciansky kraj, dubnica nad vahom",
-                        "trenciansky kraj, nova dubnica",
-                        "presovsky kraj, spisska bela",
-                        "presovsky kraj, spisske podhradie",
-                        "presovsky kraj, podolinec",
-                        "presovsky kraj, spisska stara ves",
-                        "presovsky kraj, levoca"
+                        "bratislavsky kraj, bratislava - vrakuna"
                         ],
+        'graph_dir_1': ["kosicky kraj, kosice - zapad",
+                        "kosicky kraj, kosice - stare mesto",
+                        "kosicky kraj, kosice - sidlisko tahanovce",
+                        "kosicky kraj, kosice - sever",
+                        "kosicky kraj, kosice - krasna nad hornadom",
+                        "kosicky kraj, kosice - juh",
+                        "kosicky kraj, kosice - dargovskych hrdinov",
+                        "kosicky kraj, kosice - barca"
+                        ],
+        # 'graph_dir_2': ["bratislavsky kraj, bratislava - ruzinov",
+        #                 "bratislavsky kraj, bratislava - stare mesto",
+        #                 "bratislavsky kraj, bratislava - nove mesto",
+        #                 "bratislavsky kraj, bratislava - vajnory",
+        #                 "bratislavsky kraj, bratislava - vrakuna",
+        #                 "bratislavsky kraj, bratislava - petrzalka",
+        #                 "bratislavsky kraj, bratislava - karlova ves",
+        #                 "bratislavsky kraj, bratislava - lamac",
+        #                 "bratislavsky kraj, bratislava - dubravka",
+        #                 "bratislavsky kraj, bratislava - devinska nova ves",
+        #                 "bratislavsky kraj, bratislava - podunaj. biskupice",
+        #                 "bratislavsky kraj, bratislava - raca"
+        #                 ]
     }
 
     # Format the data for each subgraph.

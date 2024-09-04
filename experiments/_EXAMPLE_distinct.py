@@ -4,6 +4,7 @@ from pathlib import Path
 import random
 import numpy as np
 from joblib import Parallel, delayed
+from datetime import datetime
 
 # Add the parent directory of the current file to the system path for module imports.
 file=Path(__file__).resolve()
@@ -75,8 +76,8 @@ def run_experiment_pokec_EXAMPLE_distinct():
                         'banskobystricky kraj, zarnovica',
                         'presovsky kraj, spisska bela'],
         'graph_dir_1': ['banskobystricky kraj, brezno',
-        #                 'bratislavsky kraj, bratislava - nove mesto',
-        #                 'zilinsky kraj, ruzomberok',
+                        'bratislavsky kraj, bratislava - nove mesto',
+                        'zilinsky kraj, ruzomberok',
                         'kosicky kraj, kosice - ostatne'],
         # 'graph_dir_2': ['presovsky kraj, humenne',
         #                 'trnavsky kraj, velky meder', 

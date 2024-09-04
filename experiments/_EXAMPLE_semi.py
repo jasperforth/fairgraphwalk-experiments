@@ -4,6 +4,7 @@ from pathlib import Path
 import random
 import numpy as np
 from joblib import Parallel, delayed
+from datetime import datetime
 
 # Add the parent directory of the current file to the system path for module imports.
 file=Path(__file__).resolve()
@@ -72,18 +73,18 @@ def run_experiment_pokec_EXAMPLE_semi():
                         "kosicky kraj, kosice - juh",
                         "trnavsky kraj, holic",
                         "trnavsky kraj, gbely"],
-        # 'graph_dir_1': ["banskobystricky kraj, brezno",
-        #                 "banskobystricky kraj, hrinova",
-        #                 "banskobystricky kraj, krupina",
-        #                 "bratislavsky kraj, bratislava - nove mesto",
-        #                 "bratislavsky kraj, bratislava - vrakuna",
-        #                 "bratislavsky kraj, bratislava - vajnory",
-        #                 "zilinsky kraj, ruzomberok",
-        #                 "zilinsky kraj, liptovsky hradok",
-        #                 "zilinsky kraj, turcianske teplice",
-        #                 "kosicky kraj, kosice - ostatne",
-        #                 "kosicky kraj, kosice - krasna nad hornadom",
-        #                 "kosicky kraj, kosice - barca"],
+        'graph_dir_1': ["banskobystricky kraj, brezno",
+                        "banskobystricky kraj, hrinova",
+                        "banskobystricky kraj, krupina",
+                        "bratislavsky kraj, bratislava - nove mesto",
+                        "bratislavsky kraj, bratislava - vrakuna",
+                        "bratislavsky kraj, bratislava - vajnory",
+                        "zilinsky kraj, ruzomberok",
+                        "zilinsky kraj, liptovsky hradok",
+                        "zilinsky kraj, turcianske teplice",
+                        "kosicky kraj, kosice - ostatne",
+                        "kosicky kraj, kosice - krasna nad hornadom",
+                        "kosicky kraj, kosice - barca"],
         # 'graph_dir_2': ["presovsky kraj, humenne",
         #                 "presovsky kraj, snina",
         #                 "trnavsky kraj, velky meder",

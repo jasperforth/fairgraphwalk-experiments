@@ -167,8 +167,8 @@ class PokecGraph(Graph):
             for v in graph.vs:
                 node = v['name']
                 if node in df_attr.index:
-                    v['color'] = color_rgba[df_attr.loc[node, 'label_' + attribute]]
-                
+                    v['color'] = color_rgba[df_attr.loc[node, attribute]]
+
 
             visual_style["layout"] = layout
             
@@ -182,33 +182,92 @@ class PokecGraph(Graph):
             ig.plot(graph, plot_path_color, **visual_style)
             logger.info(f"Graph plot saved to {plot_path_color}")
 
-    def count_group_connections(graph: ig.Graph, df_attr: pd.DataFrame, attributes:List[str]) -> pd.DataFrame:
-        """
-        Count the group connections in the graph and generate a DataFrame with the results.
+    # def count_group_connections(graph: ig.Graph, df_attr: pd.DataFrame, attributes:List[str]) -> pd.DataFrame:
+    #     """
+    #     Count the group connections in the graph and generate a DataFrame with the results.
         
-        Args:
-            graph (ig.Graph): igraph Graph object.
-            df_attr (pd.DataFrame): DataFrame containing node attributes.
-            attributes (List[str]): List of attributes for counting group connections.
+    #     Args:
+    #         graph (ig.Graph): igraph Graph object.
+    #         df_attr (pd.DataFrame): DataFrame containing node attributes.
+    #         attributes (List[str]): List of attributes for counting group connections.
         
-        Returns:
-            pd.DataFrame: DataFrame with group connection statistics.
-        """
-        labels = [f'label_{attribute}' for attribute in attributes]
-        max_n_classes = max(len(df_attr[labels[0]].unique()),
-                            len(df_attr[labels[1]].unique()))
+    #     Returns:
+    #         pd.DataFrame: DataFrame with group connection statistics.
+    #     """
+    #     labels = attributes
+    #     max_n_classes = max(len(df_attr[labels[0]].unique()),
+    #                         len(df_attr[labels[1]].unique()))
+    #     density = 2 * graph.ecount() / (graph.vcount() * (graph.vcount() - 1))
+
+    #     cnt_result_dict = {}
+
+
+    #     for col in labels:
+    #         n_classes = len(df_attr[col].unique())
+    #         cnt_list = [[0] for cnt in range(n_classes)]
+    #         for v in graph.vs:
+    #             node = v['name']
+    #             if node not in df_attr.index:
+    #                 #print('node not in df_attr.index:', node)
+    #                 continue
+    #             nei = graph.neighborhood(v)
+    #             neis = np.array([df_attr.loc[u, col] for u in graph.vs[nei]['name'] if u in df_attr.index])
+    #             if neis.size == 0:
+    #                 raise Exception('solitary node:', v)
+    #             if np.all(neis == df_attr.loc[node, col]):
+    #                 cnt_list[0][0] += 1
+    #             else:
+    #                 for c in range(n_classes):
+    #                     if df_attr.loc[node, col] == c:
+    #                         cnt_list[c][0] += 1
+    #                         break
+    #         n_groups = 25# number of possible connections
+    #         desc_dict = {i: f'connected innergroup and to {i} other groups' for i in range(n_groups)}
+    #         cnt_result_dict[f'{col}_group_connections'] = [f'{cnt[0]} ({desc_dict[i]})' for i, cnt in enumerate(cnt_list)]
+    #         cnt_result_dict[f'{col}_abs_connect_to_groups'] = [_[0] for _ in cnt_list]
+    #         cnt_result_dict[f'{col}_rel_connect_to_groups'] = [_[0]/graph.vcount() for _ in cnt_list]
+
+    #     # Some Metrics, add more if needed
+    #     cnt_result_dict['density'] = density
+    #     cnt_result_dict['n_nodes'] = graph.vcount()
+    #     cnt_result_dict['m_edges'] = graph.ecount()
+    #     cnt_result_dict['n_classes_attr'] = len(df_attr[labels[0]].unique())
+    #     cnt_result_dict["nodes per attr abs"] = [len(df_attr[df_attr[labels[0]] == i]) for i in range(max_n_classes)]
+    #     cnt_result_dict["nodes per attr rel"] = [len(df_attr[df_attr[labels[0]] == i])/graph.vcount() for i in range(max_n_classes)]
+    #     cnt_result_dict['n_classes_sens'] = len(df_attr[labels[1]].unique())
+    #     cnt_result_dict["nodes per sens abs"] = [len(df_attr[df_attr[labels[1]] == i]) for i in range(max_n_classes)]
+    #     cnt_result_dict["nodes per sens rel"] = [len(df_attr[df_attr[labels[1]] == i])/graph.vcount() for i in range(max_n_classes)]
+    #     cnt_result_dict['diameter'] = graph.diameter()
+    #     cnt_result_dict['radius'] = graph.radius()
+    #     cnt_result_dict['avg_path_length'] = graph.average_path_length()
+    #     cnt_result_dict['clique_number'] = graph.clique_number()
+
+    #     for key, value in cnt_result_dict.items():
+    #         if type(value) == list and len(value) < max_n_classes:
+    #                 diff = max_n_classes - len(value)
+    #                 if isinstance(value[0], str):
+    #                     cnt_result_dict[key] +=[""] * diff
+    #                 else:  
+    #                     cnt_result_dict[key] +=[np.NaN] * diff
+
+    #     df_cnt = pd.DataFrame.from_dict(cnt_result_dict)
+    
+    #     return df_cnt
+    
+
+    def count_group_connections(graph: ig.Graph, df_attr: pd.DataFrame, attributes: List[str]) -> pd.DataFrame:
+        labels = attributes
+        max_n_classes = max(len(df_attr[labels[0]].unique()), len(df_attr[labels[1]].unique()))
         density = 2 * graph.ecount() / (graph.vcount() * (graph.vcount() - 1))
 
         cnt_result_dict = {}
 
-
         for col in labels:
             n_classes = len(df_attr[col].unique())
-            cnt_list = [[0] for cnt in range(n_classes)]
+            cnt_list = [[0] for _ in range(n_classes)]
             for v in graph.vs:
                 node = v['name']
                 if node not in df_attr.index:
-                    #print('node not in df_attr.index:', node)
                     continue
                 nei = graph.neighborhood(v)
                 neis = np.array([df_attr.loc[u, col] for u in graph.vs[nei]['name'] if u in df_attr.index])
@@ -221,35 +280,41 @@ class PokecGraph(Graph):
                         if df_attr.loc[node, col] == c:
                             cnt_list[c][0] += 1
                             break
-            n_groups = 25# number of possible connections
+
+            n_groups = 25  # number of possible connections
             desc_dict = {i: f'connected innergroup and to {i} other groups' for i in range(n_groups)}
             cnt_result_dict[f'{col}_group_connections'] = [f'{cnt[0]} ({desc_dict[i]})' for i, cnt in enumerate(cnt_list)]
             cnt_result_dict[f'{col}_abs_connect_to_groups'] = [_[0] for _ in cnt_list]
-            cnt_result_dict[f'{col}_rel_connect_to_groups'] = [_[0]/graph.vcount() for _ in cnt_list]
+            cnt_result_dict[f'{col}_rel_connect_to_groups'] = [_[0] / graph.vcount() for _ in cnt_list]
 
-        # Some Metrics, add more if needed
+        # Some Metrics
         cnt_result_dict['density'] = density
         cnt_result_dict['n_nodes'] = graph.vcount()
         cnt_result_dict['m_edges'] = graph.ecount()
         cnt_result_dict['n_classes_attr'] = len(df_attr[labels[0]].unique())
         cnt_result_dict["nodes per attr abs"] = [len(df_attr[df_attr[labels[0]] == i]) for i in range(max_n_classes)]
-        cnt_result_dict["nodes per attr rel"] = [len(df_attr[df_attr[labels[0]] == i])/graph.vcount() for i in range(max_n_classes)]
+        cnt_result_dict["nodes per attr rel"] = [len(df_attr[df_attr[labels[0]] == i]) / graph.vcount() for i in range(max_n_classes)]
         cnt_result_dict['n_classes_sens'] = len(df_attr[labels[1]].unique())
         cnt_result_dict["nodes per sens abs"] = [len(df_attr[df_attr[labels[1]] == i]) for i in range(max_n_classes)]
-        cnt_result_dict["nodes per sens rel"] = [len(df_attr[df_attr[labels[1]] == i])/graph.vcount() for i in range(max_n_classes)]
+        cnt_result_dict["nodes per sens rel"] = [len(df_attr[df_attr[labels[1]] == i]) / graph.vcount() for i in range(max_n_classes)]
         cnt_result_dict['diameter'] = graph.diameter()
         cnt_result_dict['radius'] = graph.radius()
         cnt_result_dict['avg_path_length'] = graph.average_path_length()
         cnt_result_dict['clique_number'] = graph.clique_number()
 
-        for key, value in cnt_result_dict.items():
-            if type(value) == list and len(value) < max_n_classes:
-                    diff = max_n_classes - len(value)
-                    if isinstance(value[0], str):
-                        cnt_result_dict[key] +=[""] * diff
-                    else:  
-                        cnt_result_dict[key] +=[np.NaN] * diff
+        # Find the maximum length of any list in cnt_result_dict
+        max_len = max(len(v) for v in cnt_result_dict.values() if isinstance(v, list))
 
+        # Pad lists to ensure all are of the same length
+        for key, value in cnt_result_dict.items():
+            if isinstance(value, list) and len(value) < max_len:
+                diff = max_len - len(value)
+                if isinstance(value[0], str):
+                    cnt_result_dict[key] += [""] * diff
+                else:
+                    cnt_result_dict[key] += [np.NaN] * diff
+
+        # Create DataFrame from the dictionary
         df_cnt = pd.DataFrame.from_dict(cnt_result_dict)
-    
+
         return df_cnt

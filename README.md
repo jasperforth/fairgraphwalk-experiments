@@ -63,10 +63,10 @@ The configuration file is located in the `experiment_utils` folder. Set the para
 
 ## Examples
 
-To try the code, use the `example_run_experiments.py` script:
+To try the code, use the `DEMO_example_run_experiments.py` script:
 
 ```bash
-python example_run_experiments.py
+python DEMO_example_run_experiments.py
 ```
 
 In the `experiments` folder, you'll find a variety of experimental setups. By default, two example experiments are chosen to run within an acceptable time frame (approximately 3 hours and 30 minutes with 4 workers). These experiments include:

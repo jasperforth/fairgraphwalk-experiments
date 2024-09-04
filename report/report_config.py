@@ -12,7 +12,7 @@ from experiment_utils.config import ATTRIBUTES, DATA_DIR, PROJECT_NAME
 PROJECT_NAME = PROJECT_NAME
 # PROJECT_NAME = "testing_repo"
 
-# DATA_DIR = Path(f"/SET_DIR/{PROJECT_NAME}/data")
+# DATA_DIR = Path(f"/Volumes/tcs_jf_fair_node_sampling/{PROJECT_NAME}/data")
 REPORT_DIR = DATA_DIR / "reports"
 
 # Set the partial experiment name depending of the subset you want to analyze
