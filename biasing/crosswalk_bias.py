@@ -1,21 +1,13 @@
+import csv
 import os
 import logging
 import pandas as pd
+from contextlib import contextmanager
 
 from pathlib import Path
 
 from tqdm.auto import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
-
-# Set the number of CPUs to run on and environment variables for parallel processing, to be set before importing numpy
-# https://rcpedia.stanford.edu/topicGuides/parallelProcessingPython.html
-# Note: parallelization is managed on experiment_run level, to avoid subparallelization set ncore to 1!
-ncore = "1"
-os.environ["OMP_NUM_THREADS"] = ncore
-os.environ["OPENBLAS_NUM_THREADS"] = ncore
-os.environ["MKL_NUM_THREADS"] = ncore
-os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
-os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import numpy as np
 
@@ -29,27 +21,43 @@ log_dir = DATA_DIR
 setup_worker_logging("crosswalk bias", log_dir)
 logger = logging.getLogger(__name__)
 
+
+@contextmanager
+def set_num_threads(threads):
+    # Set the number of CPUs to run on and environment variables for parallel processing, to be set before importing numpy
+    # https://rcpedia.stanford.edu/topicGuides/parallelProcessingPython.html
+    # Note: parallelization is managed on experiment_run level, to avoid subparallelization set ncore to 1!
+    # Store current settings to restore later
+    original_env = {
+        "OMP_NUM_THREADS": os.environ.get("OMP_NUM_THREADS"),
+        "OPENBLAS_NUM_THREADS": os.environ.get("OPENBLAS_NUM_THREADS"),
+        "MKL_NUM_THREADS": os.environ.get("MKL_NUM_THREADS"),
+        "VECLIB_MAXIMUM_THREADS": os.environ.get("VECLIB_MAXIMUM_THREADS"),
+        "NUMEXPR_NUM_THREADS": os.environ.get("NUMEXPR_NUM_THREADS")
+    }
+
+    # Set environment variables for multi-core processing
+    os.environ["OMP_NUM_THREADS"] = threads
+    os.environ["OPENBLAS_NUM_THREADS"] = threads
+    os.environ["MKL_NUM_THREADS"] = threads
+    os.environ["VECLIB_MAXIMUM_THREADS"] = threads
+    os.environ["NUMEXPR_NUM_THREADS"] = threads
+    try:
+        yield
+    finally:
+        # Restore the original environment variables
+        for key, value in original_env.items():
+            if value is None:
+                os.environ.pop(key, None)  # Remove if there was no original setting
+            else:
+                os.environ[key] = value
+
+
+# TODO cite: based on crosswalk from github
+# TODO movedicrected into graph!
 class CrossWalkBias(BiasStrategy):
     """
     CrossWalk biasing strategy for adapting graph edge weights based on node attributes.
-
-    This implementation is based on the CrossWalk algorithm described in:
-
-    Khajehnejad, A., Khajehnejad, M., Babaei, M., Gummadi, K. P., Weller, A., & Mirzasoleiman, B. (2022).
-    CrossWalk: Fairness-Enhanced Node Representation Learning. 
-    Proceedings of the AAAI Conference on Artificial Intelligence, 36(11), 11963–11970.
-    https://doi.org/10.1609/aaai.v36i11.21454
-    Original implementation available at: https://github.com/ahmadkhajehnejad/CrossWalk
-
-    Args:
-        graph (Graph): Input graph.
-        experiment_graph_dir (Path): Directory for the experiment graph.
-        sensitive_attribute_name (str, optional): Name of the sensitive attribute. Defaults to None.
-        alpha (float, optional): Alpha parameter for biasing. Defaults to None.
-        exponent (float, optional): Exponent parameter for biasing. Defaults to None.
-        graph_name (str, optional): Name of the graph. Defaults to None.
-        prewalk_length (int, optional): Length of the prewalk. Defaults to 6.
-        quiet (bool, optional): Flag to control verbosity. Defaults to False.
     """
     def __init__(self, graph: Graph, experiment_graph_dir: Path,
                     sensitive_attribute_name: str = None, 
@@ -89,15 +97,27 @@ class CrossWalkBias(BiasStrategy):
         """
         cfn_path = self.experiment_graph_dir / f'colorfulness_sens_{self.sensitive_attribute_name}_prewalklength_{self.prewalk_length}.csv'
 
-        if not cfn_path.exists():
-            self.pre_compute_biasing_params(self)
-        else:
-            logger.info(f'Loading colorfulness from file for {self.sensitive_attribute_name} \
-                        and {self.graph_name} with prewalk length: {self.prewalk_length}')
-        df_cfn = pd.read_csv(cfn_path).set_index('user_id')['colorfulness']
+        with set_num_threads("1"):  # Enforcing single-core processing for numpy
+            if not cfn_path.exists():
+                self.pre_compute_biasing_params(self)
+            else:
+                logger.info(f'Loading colorfulness from file for {self.sensitive_attribute_name} \
+                            and {self.graph_name} with prewalk length: {self.prewalk_length}')
+            df_cfn = pd.read_csv(cfn_path).set_index('user_id')['colorfulness']
 
-        crosswalk_graph = self.compute_crosswalk_graph(self.g, self.alpha, self.exponent, self.graph_name,
-                                                          self.df_sens, df_cfn, self.quiet)
+            crosswalk_graph = self.compute_crosswalk_graph(self.g, self.alpha, self.exponent, self.graph_name,
+                                                            self.df_sens, df_cfn, self.quiet)
+
+        #save weighted edgelist as csv
+        crosswalk_edgelist: list[tuple[int,int,float]] = []
+        for u, v in crosswalk_graph.edges():
+            w = crosswalk_graph[u][v]['weight']
+            crosswalk_edgelist.append((u, v, w))
+        crosswalk_weights_csv_path = self.experiment_graph_dir / f'crosswalk_weighted_edgelist.csv'
+        with open(crosswalk_weights_csv_path, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for u, v, weight in crosswalk_edgelist:
+                writer.writerow([str(u), str(v), str(weight)])
 
         self.graph = self.graph.graph_from_nxgraph(crosswalk_graph, self.df_attributes)
         #print("ADAPTWEIGHTSCROSSWALK", self.graph.graph, "ADAPTWEIHTSCROSSWALKAttributes", self.graph.attributes)
@@ -112,10 +132,11 @@ class CrossWalkBias(BiasStrategy):
 
         if not cfn_path.exists():
             with logging_redirect_tqdm():
-                colorfulness = self.colorfulness(self.prewalk_length, self.g, self.df_sens, self.graph_name, self.quiet)
-                df_cfn = pd.DataFrame.from_dict(colorfulness, orient='index', columns=['colorfulness'])
-                df_cfn.index.name = 'user_id'
-                df_cfn.to_csv(cfn_path)
+                with set_num_threads("80"): 
+                    colorfulness = self.colorfulness(self.prewalk_length, self.g, self.df_sens, self.graph_name, self.quiet)
+                    df_cfn = pd.DataFrame.from_dict(colorfulness, orient='index', columns=['colorfulness'])
+                    df_cfn.index.name = 'user_id'
+                    df_cfn.to_csv(cfn_path)
 
     @staticmethod
     def colorfulness(l: int, graph: Graph, df_sens: pd.DataFrame, graph_name: str, quiet: bool) -> dict:

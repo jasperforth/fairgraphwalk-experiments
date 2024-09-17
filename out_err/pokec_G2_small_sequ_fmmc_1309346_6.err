@@ -1,0 +1,23 @@
+2024-09-12 01:36:38,856 - INFO - Logging is set up.
+2024-09-12 01:36:38,856 - INFO - Starting experiment with task_id: 6
+2024-09-12 01:36:38,856 - INFO - Running experiment: new_run_experiment_pokec_mixed('large1')
+2024-09-12 01:36:38,858 - INFO - Seed set to 42
+2024-09-12 01:36:38,858 - INFO - Data already pre-formatted
+2024-09-12 01:36:38,859 - INFO - Formatting data for graph_dir_0
+2024-09-12 01:36:38,859 - INFO - Starting formatting
+2024-09-12 01:36:39,908 - INFO - Filtering by category
+2024-09-12 01:36:40,111 - INFO - Labeling values
+2024-09-12 01:36:40,117 - INFO - Filtering edgelist attributes
+2024-09-12 01:36:45,414 - INFO - Formatting done.
+2024-09-12 01:36:45,414 - INFO - Finished formatting data for graph_dir_0
+2024-09-12 01:36:45,415 - INFO - Loading edgelist from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_large1/resources/graph_dir_0/filtered_edgelist.txt
+2024-09-12 01:36:45,415 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_large1/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:45,424 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_large1/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:49,134 - INFO - Graph 0: <data_utils.graph.pokec_graph.PokecGraph object at 0x14915021fd60>
+2024-09-12 01:36:49,134 - INFO - Number of nodes in graph 0: 7740
+2024-09-12 01:36:49,135 - INFO - Number of edges in graph 0: 73376
+2024-09-12 01:36:49,135 - INFO - Number of attributes in graph 0: 7740
+2024-09-12 01:36:49,135 - INFO - Total number of baseline experiments: 1
+2024-09-12 01:36:49,135 - INFO - Total number of crosswalk experiments: 18
+2024-09-12 01:36:49,135 - INFO - Running FMMC experiments for graph 0 with selfloops True
+2024-09-12 01:36:49,137 - INFO - Using label_AGE as sensitive attribute

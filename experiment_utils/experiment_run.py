@@ -55,19 +55,45 @@ class ExperimentRun:
         
         result_dir.mkdir(parents=True, exist_ok=True)
 
-        if len([f for f in result_dir.iterdir() if f.name.startswith("run")]) < n_splits:
+        # Ensure only valid directories are considered for runs
+        valid_run_dirs = [d for d in result_dir.iterdir() if d.is_dir() and not d.name.startswith('.')]
+
+        if len(valid_run_dirs) < n_splits:
             for f in range(n_splits):
                 run_dir = result_dir / f"run_{f}"
                 run_dir.mkdir(parents=True, exist_ok=True)
 
-        filtered_attributes_file = experiment_graph_dir / "filtered_attributes.csv"           
+        # if len([f for f in result_dir.iterdir() if f.name.startswith("run")]) < n_splits:
+        #     for f in range(n_splits):
+        #         run_dir = result_dir / f"run_{f}"
+        #         run_dir.mkdir(parents=True, exist_ok=True)
+
+        filtered_attributes_file = experiment_graph_dir / "filtered_attributes.csv"   
+
         if not filtered_attributes_file.exists():
             logger.error(f"Filtered attributes file {filtered_attributes_file} does not exist.")
             raise FileNotFoundError(f"Filtered attributes file {filtered_attributes_file} does not exist.")
         
-        df_filtered_attributes = pd.read_csv(filtered_attributes_file, usecols=["user_id", "label_region", "label_AGE"])
+        # Load the attribute DataFrame and filter relevant columns
+        attributes_df = pd.read_csv(filtered_attributes_file)
+        
+        # Extract relevant attributes from columns
+        age_attributes = [col for col in attributes_df.columns if '_AGE' in col]
+        location_attributes = [col for col in attributes_df.columns if '_region' in col]
+        
+        # Combine all relevant attributes
+        relevant_columns = ['user_id'] + age_attributes + location_attributes
+        
+        # Filter the DataFrame to only include relevant columns
+        df_filtered_attributes = attributes_df[relevant_columns]
 
-        if params_signature in [f.name.replace(".emb.gz", "", 1) for f in embedding_dir.iterdir()]:
+        existing_embeddings = [
+            f.name.replace(".emb.gz", "", 1) 
+            for f in embedding_dir.iterdir() 
+            if f.is_file() and not f.name.startswith('.') and f.name.endswith(".emb.gz")
+        ]
+
+        if params_signature in existing_embeddings:
             logger.info(f"Embedding {params_signature} for {experiment_graph_dir.name} already exists. Skipping...")
             embedding_file_path = embedding_dir / f"{params_signature}.emb.gz"
             for run_dir in result_dir.iterdir():         
@@ -92,12 +118,12 @@ class ExperimentRun:
 
             # Train the embedding model using the encoding strategy on the sampled walks.
             trained_model = self.encoding_strategy.fit(sampled_walks)
-            logger.info('Model training complete')
+            logger.info('Encoding model training complete')
 
             # Save the trained embedding to a file.
             embedding_file_path = self.encoding_strategy.embedding_to_file(trained_model, embedding_dir)
             logger.info(f'Embedding saved to {embedding_file_path}')
 
             # Evaluate the embedding model using the evaluation strategy.
-            self.evaluation_strategy.evaluate(biased_graph, embedding_file_path)
+            eval_ = self.evaluation_strategy.evaluate(biased_graph, embedding_file_path)
             logger.info('Evaluation complete')

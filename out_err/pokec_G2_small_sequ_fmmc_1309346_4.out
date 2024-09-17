@@ -1,0 +1,85 @@
+2024-09-12 01:36:45,623 - INFO - Starting (re-)run of embeddings
+2024-09-12 01:36:45,634 - INFO - Embedding p_1_q_1_small1_selfloops_True for graph_dir_0 does not exist. Running experiment...
+Forward mapping (node to id):
+Node 20688 -> ID 0
+Node 21117 -> ID 1
+Node 39554 -> ID 2
+Node 39564 -> ID 3
+Node 42663 -> ID 4
+Node 44247 -> ID 5
+Node 44501 -> ID 6
+Node 49298 -> ID 7
+Node 49299 -> ID 8
+Node 49371 -> ID 9
+Node 50562 -> ID 10
+Node 52485 -> ID 11
+Node 54606 -> ID 12
+Node 58877 -> ID 13
+Node 61149 -> ID 14
+Node 62794 -> ID 15
+Node 66400 -> ID 16
+Node 75583 -> ID 17
+Node 75657 -> ID 18
+
+Backward mapping (id to node):
+ID 0 -> Node 20688
+ID 1 -> Node 21117
+ID 2 -> Node 39554
+ID 3 -> Node 39564
+ID 4 -> Node 42663
+ID 5 -> Node 44247
+ID 6 -> Node 44501
+ID 7 -> Node 49298
+ID 8 -> Node 49299
+ID 9 -> Node 49371
+ID 10 -> Node 50562
+ID 11 -> Node 52485
+ID 12 -> Node 54606
+ID 13 -> Node 58877
+ID 14 -> Node 61149
+ID 15 -> Node 62794
+ID 16 -> Node 66400
+ID 17 -> Node 75583
+ID 18 -> Node 75657
+Edge (20688, 223716) -> (0, 77)
+Edge (20688, 328694) -> (0, 138)
+Edge (20688, 328688) -> (0, 137)
+Edge (20688, 328699) -> (0, 139)
+Edge (20688, 328664) -> (0, 136)
+Edge (223716, 20688) -> (77, 0)
+Edge (223716, 21117) -> (77, 1)
+Edge (223716, 58877) -> (77, 13)
+Edge (223716, 75657) -> (77, 18)
+Edge (223716, 76063) -> (77, 20)
+Edge (223716, 83862) -> (77, 22)
+Edge (223716, 114765) -> (77, 31)
+Edge (223716, 151271) -> (77, 41)
+Edge (223716, 167054) -> (77, 46)
+Edge (223716, 185456) -> (77, 55)
+Edge (223716, 188969) -> (77, 58)
+Edge (223716, 193725) -> (77, 60)
+Edge (223716, 223334) -> (77, 76)
+Edge (223716, 75980) -> (77, 19)
+===============================================================================
+                                     CVXPY                                     
+                                     v1.5.2                                    
+===============================================================================
+(CVXPY) Sep 12 01:36:48 AM: Your problem has 506945 variables, 2535432 constraints, and 0 parameters.
+(CVXPY) Sep 12 01:36:48 AM: It is compliant with the following grammars: DCP, DQCP
+(CVXPY) Sep 12 01:36:48 AM: (If you need to solve this problem multiple times, but with different data, consider using parameters.)
+(CVXPY) Sep 12 01:36:48 AM: CVXPY will first compile your problem; then, it will invoke a numerical solver to obtain a solution.
+(CVXPY) Sep 12 01:36:48 AM: Your problem is compiled with the CPP canonicalization backend.
+-------------------------------------------------------------------------------
+                                  Compilation                                  
+-------------------------------------------------------------------------------
+(CVXPY) Sep 12 01:36:48 AM: Compiling problem (target solver=SCS).
+(CVXPY) Sep 12 01:36:48 AM: Reduction chain: Dcp2Cone -> CvxAttr2Constr -> ConeMatrixStuffing -> SCS
+(CVXPY) Sep 12 01:36:48 AM: Applying reduction Dcp2Cone
+(CVXPY) Sep 12 01:36:48 AM: Applying reduction CvxAttr2Constr
+(CVXPY) Sep 12 01:36:49 AM: Applying reduction ConeMatrixStuffing
+(CVXPY) Sep 12 01:36:51 AM: Applying reduction SCS
+(CVXPY) Sep 12 01:36:52 AM: Finished problem compilation (took 3.734e+00 seconds).
+-------------------------------------------------------------------------------
+                                Numerical solver                               
+-------------------------------------------------------------------------------
+(CVXPY) Sep 12 01:36:52 AM: Invoking solver SCS  to obtain a solution.

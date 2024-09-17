@@ -4,6 +4,7 @@ from pathlib import Path
 import random
 import numpy as np
 from joblib import Parallel, delayed
+from datetime import datetime
 
 # Add the parent directory of the current file to the system path for module imports.
 file=Path(__file__).resolve()
@@ -57,6 +58,7 @@ def run_experiment_pokec_EXAMPLE_semi():
         if len(specific_files) < 2:
             logger.info('Pre-formatting data')
             PokecFormatter().pre_formatting(attribute_filepath=RAW_ATTRIBUTES_FILEPATH,
+                                            edgelist_filepath=EDGELIST_FILEPATH,
                                             formatted_data_dir=formatted_data_dir,
                                             filter_category=FILTER_CATEGORY,
                                             column_names=COLUMN_NAMES,
@@ -72,23 +74,23 @@ def run_experiment_pokec_EXAMPLE_semi():
                         "kosicky kraj, kosice - juh",
                         "trnavsky kraj, holic",
                         "trnavsky kraj, gbely"],
-        # 'graph_dir_1': ["banskobystricky kraj, brezno",
-        #                 "banskobystricky kraj, hrinova",
-        #                 "banskobystricky kraj, krupina",
-        #                 "bratislavsky kraj, bratislava - nove mesto",
-        #                 "bratislavsky kraj, bratislava - vrakuna",
-        #                 "bratislavsky kraj, bratislava - vajnory",
-        #                 "zilinsky kraj, ruzomberok",
-        #                 "zilinsky kraj, liptovsky hradok",
-        #                 "zilinsky kraj, turcianske teplice",
-        #                 "kosicky kraj, kosice - ostatne",
-        #                 "kosicky kraj, kosice - krasna nad hornadom",
-        #                 "kosicky kraj, kosice - barca"],
-        # 'graph_dir_2': ["presovsky kraj, humenne",
-        #                 "presovsky kraj, snina",
-        #                 "trnavsky kraj, velky meder",
-        #                 "trnavsky kraj, dunajska streda", 
-        #                 "trnavsky kraj, holic",
+        'graph_dir_1': ["banskobystricky kraj, brezno",
+                        "banskobystricky kraj, hrinova",
+                        "banskobystricky kraj, krupina",
+                        "bratislavsky kraj, bratislava - nove mesto",
+                        "bratislavsky kraj, bratislava - vrakuna",
+                        # "bratislavsky kraj, bratislava - vajnory",
+                        # "zilinsky kraj, ruzomberok",
+                        # "zilinsky kraj, liptovsky hradok",
+                        # "zilinsky kraj, turcianske teplice",
+                        # "kosicky kraj, kosice - ostatne",
+                        "kosicky kraj, kosice - krasna nad hornadom",
+                        "kosicky kraj, kosice - barca"],
+        'graph_dir_2': ["presovsky kraj, humenne",
+                        "presovsky kraj, snina",
+                        "trnavsky kraj, velky meder",
+                        "trnavsky kraj, dunajska streda", 
+                        "trnavsky kraj, holic",
         #                 "trnavsky kraj, gbely",
         #                 "trenciansky kraj, handlova",
         #                 "trenciansky kraj, dubnica nad vahom",
@@ -98,7 +100,7 @@ def run_experiment_pokec_EXAMPLE_semi():
         #                 "presovsky kraj, podolinec",
         #                 "presovsky kraj, spisska stara ves",
         #                 "presovsky kraj, levoca"
-        #                 ],
+                        ],
     }
 
     # Format the data for each subgraph.
@@ -271,66 +273,70 @@ def run_experiment_pokec_EXAMPLE_semi():
                                             n_splits=N_SPLITS
                                             )
 
-    # Compute embeddings for selected graphs
-    for graph_nr, (graph, experiment_graph_dir) in enumerate(generated_pokec_subgraphs_directories):
-        logger.info(f'Running baseline experiments for graph {graph_nr}')
-        # run baseline
-        try:
-            Parallel(n_jobs=WORKERS, verbose=100)(
-                    delayed(run_baseline_experiment)(
-                                graph=graph, experiment_graph_dir=experiment_graph_dir, 
-                                p=p, q=q,
-                                graph_name = f"graph_{graph_nr}",
-                                sensitive_attribute_name=SENS_ATTR_NAME,
-                                other_attribute_name=OTHER_ATTR_NAME,
-                                params_signature=f"p_{p}_q_{q}", 
-                                result_dir=result_dir / f"graph_{graph_nr}" / "baseline",
-                                quiet=False,
-                                )
+    # # Compute embeddings for selected graphs
+    # for graph_nr, (graph, experiment_graph_dir) in enumerate(generated_pokec_subgraphs_directories):
+    #     logger.info(f'Running baseline experiments for graph {graph_nr}')
+    #     # run baseline
+    logger.info(f'Running baseline experiments for all graphs')
+    try:
+        Parallel(n_jobs=WORKERS, verbose=100)(
+                delayed(run_baseline_experiment)(
+                            graph=graph, experiment_graph_dir=experiment_graph_dir, 
+                            p=p, q=q,
+                            graph_name = f"graph_{graph_nr}",
+                            sensitive_attribute_name=SENS_ATTR_NAME,
+                            other_attribute_name=OTHER_ATTR_NAME,
+                            params_signature=f"p_{p}_q_{q}", 
+                            result_dir=result_dir / f"graph_{graph_nr}" / "baseline",
+                            quiet=False,
+                            )
+                    for graph_nr, (graph, experiment_graph_dir) in enumerate(generated_pokec_subgraphs_directories)
                         for p in P_VALUES
                             for q in Q_VALUES)
-            logger.info(f'Finished running baseline experiments for graph {graph_nr}')
-        except Exception as e:
-            logger.error(f"Error running baseline experiments for graph {graph_nr}: {e}")
+        logger.info(f'Finished baseline n2v experiments for all graphs')
+    except Exception as e:
+        logger.error(f"Error running baseline experiments for all graphs: {e}")
 
-        logger.info(f'Running CFN proxy calculation for graph {graph_nr}')
-        # precompute biasing prxy params cfn
-        try: 
-            Parallel(n_jobs=WORKERS, verbose=100)(
-                    delayed(calculate_cfn)(
-                                graph=graph, experiment_graph_dir=experiment_graph_dir, 
-                                sensitive_attribute_name=sens, 
-                                graph_name = f"graph_{graph_nr}",
-                                prewalk_length= PREWALK_LENGTH)
+    logger.info(f'Running CFN proxy calculation for all graphs')
+    # precompute biasing prxy params cfn
+    try: 
+        Parallel(n_jobs=WORKERS, verbose=100)(
+                delayed(calculate_cfn)(
+                            graph=graph, experiment_graph_dir=experiment_graph_dir, 
+                            sensitive_attribute_name=sens, 
+                            graph_name = f"graph_{graph_nr}",
+                            prewalk_length= PREWALK_LENGTH)
+                    for graph_nr, (graph, experiment_graph_dir) in enumerate(generated_pokec_subgraphs_directories)
                         for sens in [SENS_ATTR_NAME, OTHER_ATTR_NAME])
-            logger.info(f'Finished running CFN proxy calculation for graph {graph_nr}')
-        except Exception as e:
-            logger.error(f"Error running CFN proxy calculation for graph {graph_nr}: {e}")
+        logger.info(f'Finished CFN proxy calculation for all graphs')
+    except Exception as e:
+        logger.error(f"Error running CFN proxy calculation for all graphs: {e}")
 
-        # run crosswalk with progression updates on all combinations of parameters 
-        # run for sens, other as sens, other and vice versa
-        for sens, other in [(SENS_ATTR_NAME, OTHER_ATTR_NAME),
-                            (OTHER_ATTR_NAME, SENS_ATTR_NAME)]:
-            logger.info(f'Running CrossWalk for graph {graph_nr} with sensitive attribute {sens} and other attribute {other}')
-            try:
-                Parallel(n_jobs=WORKERS, verbose=100)( 
-                        delayed(run_crosswalk_experiment)(
-                                    graph=graph, experiment_graph_dir=experiment_graph_dir,
-                                    alpha=alpha, exponent=exponent,
-                                    p=p, q=q,
-                                    graph_name = f"graph_{graph_nr}",
-                                    sensitive_attribute_name=sens,
-                                    other_attribute_name=other,
-                                    params_signature=f"prewalk_{PREWALK_LENGTH}_alpha_{alpha}_exponent_{exponent}_p_{p}_q_{q}_sens_{sens}_other_{other}",
-                                    result_dir=result_dir / f"graph_{graph_nr}" / "crosswalk",
-                                    prewalk_length=PREWALK_LENGTH,
-                                    quiet=False,
-                                    )
+    # run crosswalk with progression updates on all combinations of parameters 
+    # run for sens, other as sens, other and vice versa
+    for sens, other in [(SENS_ATTR_NAME, OTHER_ATTR_NAME),
+                        (OTHER_ATTR_NAME, SENS_ATTR_NAME)]:
+        logger.info(f'Running CrossWalk for all graphs with sensitive attribute {sens} and other attribute {other} forth and back')
+        try:
+            Parallel(n_jobs=WORKERS, verbose=100)( 
+                    delayed(run_crosswalk_experiment)(
+                                graph=graph, experiment_graph_dir=experiment_graph_dir,
+                                alpha=alpha, exponent=exponent,
+                                p=p, q=q,
+                                graph_name = f"graph_{graph_nr}",
+                                sensitive_attribute_name=sens,
+                                other_attribute_name=other,
+                                params_signature=f"prewalk_{PREWALK_LENGTH}_alpha_{alpha}_exponent_{exponent}_p_{p}_q_{q}_sens_{sens}_other_{other}",
+                                result_dir=result_dir / f"graph_{graph_nr}" / "crosswalk",
+                                prewalk_length=PREWALK_LENGTH,
+                                quiet=False,
+                                )
+                        for graph_nr, (graph, experiment_graph_dir) in enumerate(generated_pokec_subgraphs_directories)
                             for alpha in ALPHAS
                                 for exponent in EXPONENTS
                                     for p in P_VALUES
                                         for q in Q_VALUES)
-                logger.info(f'Finished running CrossWalk for graph {graph_nr}')
-            except Exception as e:
-                logger.error(f"Error running CrossWalk for graph {graph_nr}: {e}")
+            logger.info(f'Finished CrossWalk for all graphs')
+        except Exception as e:
+            logger.error(f"Error running CrossWalk for all graphs: {e}")
 

@@ -1,0 +1,1157 @@
+error    libmamba Could not set lock (Resource temporarily unavailable)
+warning  libmamba Cannot lock '/home/pyllm/forth/.cache/mamba/proc'
+    Waiting for other mamba process to finish
+2024-09-12 01:36:39,215 - INFO - Logging is set up.
+2024-09-12 01:36:39,215 - INFO - Starting experiment with task_id: 3
+2024-09-12 01:36:39,215 - INFO - Running experiment: new_run_experiment_pokec_mixed('vsmall2')
+2024-09-12 01:36:39,216 - INFO - Seed set to 42
+2024-09-12 01:36:39,217 - INFO - Data already pre-formatted
+2024-09-12 01:36:39,217 - INFO - Formatting data for graph_dir_0
+2024-09-12 01:36:39,217 - INFO - Starting formatting
+2024-09-12 01:36:39,951 - INFO - Filtering by category
+2024-09-12 01:36:40,148 - INFO - Labeling values
+2024-09-12 01:36:40,153 - INFO - Filtering edgelist attributes
+2024-09-12 01:36:45,334 - INFO - Formatting done.
+2024-09-12 01:36:45,334 - INFO - Finished formatting data for graph_dir_0
+2024-09-12 01:36:45,334 - INFO - Loading edgelist from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall2/resources/graph_dir_0/filtered_edgelist.txt
+2024-09-12 01:36:45,335 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall2/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:45,338 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall2/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:45,391 - INFO - Graph 0: <data_utils.graph.pokec_graph.PokecGraph object at 0x14e141dc2a10>
+2024-09-12 01:36:45,391 - INFO - Number of nodes in graph 0: 310
+2024-09-12 01:36:45,392 - INFO - Number of edges in graph 0: 1024
+2024-09-12 01:36:45,392 - INFO - Number of attributes in graph 0: 310
+2024-09-12 01:36:45,392 - INFO - Total number of baseline experiments: 1
+2024-09-12 01:36:45,392 - INFO - Total number of crosswalk experiments: 18
+2024-09-12 01:36:45,392 - INFO - Running FMMC experiments for graph 0 with selfloops True
+2024-09-12 01:36:45,394 - INFO - Using label_AGE as sensitive attribute
+2024-09-12 01:36:45,582 - INFO - md done
+2024-09-12 01:36:45,730 - INFO - mh done
+2024-09-12 01:37:41,037 - INFO - type of P.valaue <class 'numpy.ndarray'>
+2024-09-12 01:37:41,343 - INFO - fmmc_SCS done
+2024-09-12 01:37:41,524 - INFO - Starting subgradient computation for graph_0
+2024-09-12 01:37:41,667 - INFO - Starting subgradient computation step 1
+2024-09-12 01:37:41,826 - INFO - making p feasible (smaller or equal 1) on step 1
+2024-09-12 01:37:41,968 - INFO - making p feasible (smaller or equal 1) on step 1 on rebuilding phase
+2024-09-12 01:37:42,084 - INFO - Finished subgradient computation step 1
+2024-09-12 01:37:42,084 - INFO - Starting subgradient computation step 2
+2024-09-12 01:37:42,461 - INFO - Finished subgradient computation step 2
+2024-09-12 01:37:42,461 - INFO - Starting subgradient computation step 3
+2024-09-12 01:37:42,579 - INFO - making p feasible (smaller or equal 1) on step 3
+2024-09-12 01:37:42,721 - INFO - making p feasible (smaller or equal 1) on step 3 on rebuilding phase
+2024-09-12 01:37:42,830 - INFO - Finished subgradient computation step 3
+2024-09-12 01:37:42,830 - INFO - Starting subgradient computation step 4
+2024-09-12 01:37:43,205 - INFO - Finished subgradient computation step 4
+2024-09-12 01:37:43,205 - INFO - Starting subgradient computation step 5
+2024-09-12 01:37:43,326 - INFO - making p feasible (smaller or equal 1) on step 5
+2024-09-12 01:37:43,578 - INFO - Finished subgradient computation step 5
+2024-09-12 01:37:43,578 - INFO - Starting subgradient computation step 6
+2024-09-12 01:37:43,950 - INFO - Finished subgradient computation step 6
+2024-09-12 01:37:43,950 - INFO - Starting subgradient computation step 7
+2024-09-12 01:37:44,319 - INFO - Finished subgradient computation step 7
+2024-09-12 01:37:44,320 - INFO - Starting subgradient computation step 8
+2024-09-12 01:37:44,441 - INFO - making p feasible (smaller or equal 1) on step 8
+2024-09-12 01:37:44,582 - INFO - making p feasible (smaller or equal 1) on step 8 on rebuilding phase
+2024-09-12 01:37:44,688 - INFO - Finished subgradient computation step 8
+2024-09-12 01:37:44,688 - INFO - Starting subgradient computation step 9
+2024-09-12 01:37:45,059 - INFO - Finished subgradient computation step 9
+2024-09-12 01:37:45,059 - INFO - Starting subgradient computation step 10
+2024-09-12 01:37:45,430 - INFO - Finished subgradient computation step 10
+2024-09-12 01:37:45,430 - INFO - Starting subgradient computation step 11
+2024-09-12 01:37:45,803 - INFO - Finished subgradient computation step 11
+2024-09-12 01:37:45,803 - INFO - Starting subgradient computation step 12
+2024-09-12 01:37:45,923 - INFO - making p feasible (smaller or equal 1) on step 12
+2024-09-12 01:37:46,064 - INFO - making p feasible (smaller or equal 1) on step 12 on rebuilding phase
+2024-09-12 01:37:46,170 - INFO - Finished subgradient computation step 12
+2024-09-12 01:37:46,170 - INFO - Starting subgradient computation step 13
+2024-09-12 01:37:46,535 - INFO - Finished subgradient computation step 13
+2024-09-12 01:37:46,535 - INFO - Starting subgradient computation step 14
+2024-09-12 01:37:46,906 - INFO - Finished subgradient computation step 14
+2024-09-12 01:37:46,906 - INFO - Starting subgradient computation step 15
+2024-09-12 01:37:47,274 - INFO - Finished subgradient computation step 15
+2024-09-12 01:37:47,275 - INFO - Starting subgradient computation step 16
+2024-09-12 01:37:47,398 - INFO - making p feasible (smaller or equal 1) on step 16
+2024-09-12 01:37:47,540 - INFO - making p feasible (smaller or equal 1) on step 16 on rebuilding phase
+2024-09-12 01:37:47,648 - INFO - Finished subgradient computation step 16
+2024-09-12 01:37:47,648 - INFO - Starting subgradient computation step 17
+2024-09-12 01:37:47,773 - INFO - making p feasible (smaller or equal 1) on step 17
+2024-09-12 01:37:47,914 - INFO - making p feasible (smaller or equal 1) on step 17 on rebuilding phase
+2024-09-12 01:37:48,017 - INFO - Finished subgradient computation step 17
+2024-09-12 01:37:48,017 - INFO - Starting subgradient computation step 18
+2024-09-12 01:37:48,386 - INFO - Finished subgradient computation step 18
+2024-09-12 01:37:48,386 - INFO - Starting subgradient computation step 19
+2024-09-12 01:37:48,756 - INFO - Finished subgradient computation step 19
+2024-09-12 01:37:48,756 - INFO - Starting subgradient computation step 20
+2024-09-12 01:37:49,131 - INFO - Finished subgradient computation step 20
+2024-09-12 01:37:49,131 - INFO - Starting subgradient computation step 21
+2024-09-12 01:37:49,509 - INFO - Finished subgradient computation step 21
+2024-09-12 01:37:49,510 - INFO - Starting subgradient computation step 22
+2024-09-12 01:37:49,872 - INFO - Finished subgradient computation step 22
+2024-09-12 01:37:49,872 - INFO - Starting subgradient computation step 23
+2024-09-12 01:37:50,241 - INFO - Finished subgradient computation step 23
+2024-09-12 01:37:50,241 - INFO - Starting subgradient computation step 24
+2024-09-12 01:37:50,614 - INFO - Finished subgradient computation step 24
+2024-09-12 01:37:50,615 - INFO - Starting subgradient computation step 25
+2024-09-12 01:37:50,986 - INFO - Finished subgradient computation step 25
+2024-09-12 01:37:50,986 - INFO - Starting subgradient computation step 26
+2024-09-12 01:37:51,117 - INFO - making p feasible (smaller or equal 1) on step 26
+2024-09-12 01:37:51,258 - INFO - making p feasible (smaller or equal 1) on step 26 on rebuilding phase
+2024-09-12 01:37:51,360 - INFO - Finished subgradient computation step 26
+2024-09-12 01:37:51,361 - INFO - Starting subgradient computation step 27
+2024-09-12 01:37:51,737 - INFO - Finished subgradient computation step 27
+2024-09-12 01:37:51,737 - INFO - Starting subgradient computation step 28
+2024-09-12 01:37:52,112 - INFO - Finished subgradient computation step 28
+2024-09-12 01:37:52,112 - INFO - Starting subgradient computation step 29
+2024-09-12 01:37:52,492 - INFO - Finished subgradient computation step 29
+2024-09-12 01:37:52,492 - INFO - Starting subgradient computation step 30
+2024-09-12 01:37:52,888 - INFO - Finished subgradient computation step 30
+2024-09-12 01:37:52,888 - INFO - Starting subgradient computation step 31
+2024-09-12 01:37:59,351 - INFO - subgradient emergency exit used on step 31
+2024-09-12 01:37:59,597 - INFO - Finished subgradient computation step 31
+2024-09-12 01:37:59,597 - INFO - Starting subgradient computation step 32
+2024-09-12 01:37:59,981 - INFO - Finished subgradient computation step 32
+2024-09-12 01:37:59,981 - INFO - Starting subgradient computation step 33
+2024-09-12 01:38:00,358 - INFO - Finished subgradient computation step 33
+2024-09-12 01:38:00,358 - INFO - Starting subgradient computation step 34
+2024-09-12 01:38:00,495 - INFO - making p feasible (smaller or equal 1) on step 34
+2024-09-12 01:38:00,636 - INFO - making p feasible (smaller or equal 1) on step 34 on rebuilding phase
+2024-09-12 01:38:00,739 - INFO - Finished subgradient computation step 34
+2024-09-12 01:38:00,739 - INFO - Starting subgradient computation step 35
+2024-09-12 01:38:01,118 - INFO - Finished subgradient computation step 35
+2024-09-12 01:38:01,119 - INFO - Starting subgradient computation step 36
+2024-09-12 01:38:01,501 - INFO - Finished subgradient computation step 36
+2024-09-12 01:38:01,501 - INFO - Starting subgradient computation step 37
+2024-09-12 01:38:01,876 - INFO - Finished subgradient computation step 37
+2024-09-12 01:38:01,877 - INFO - Starting subgradient computation step 38
+2024-09-12 01:38:02,253 - INFO - Finished subgradient computation step 38
+2024-09-12 01:38:02,254 - INFO - Starting subgradient computation step 39
+2024-09-12 01:38:02,626 - INFO - Finished subgradient computation step 39
+2024-09-12 01:38:02,626 - INFO - Starting subgradient computation step 40
+2024-09-12 01:38:03,000 - INFO - Finished subgradient computation step 40
+2024-09-12 01:38:03,000 - INFO - Starting subgradient computation step 41
+2024-09-12 01:38:03,376 - INFO - Finished subgradient computation step 41
+2024-09-12 01:38:03,376 - INFO - Starting subgradient computation step 42
+2024-09-12 01:38:03,646 - INFO - making p feasible (smaller or equal 1) on step 42 on rebuilding phase
+2024-09-12 01:38:03,748 - INFO - Finished subgradient computation step 42
+2024-09-12 01:38:03,748 - INFO - Starting subgradient computation step 43
+2024-09-12 01:38:04,129 - INFO - Finished subgradient computation step 43
+2024-09-12 01:38:04,129 - INFO - Starting subgradient computation step 44
+2024-09-12 01:38:04,494 - INFO - Finished subgradient computation step 44
+2024-09-12 01:38:04,494 - INFO - Starting subgradient computation step 45
+2024-09-12 01:38:04,621 - INFO - making p feasible (smaller or equal 1) on step 45
+2024-09-12 01:38:04,762 - INFO - making p feasible (smaller or equal 1) on step 45 on rebuilding phase
+2024-09-12 01:38:04,867 - INFO - Finished subgradient computation step 45
+2024-09-12 01:38:04,868 - INFO - Starting subgradient computation step 46
+2024-09-12 01:38:05,237 - INFO - Finished subgradient computation step 46
+2024-09-12 01:38:05,237 - INFO - Starting subgradient computation step 47
+2024-09-12 01:38:05,597 - INFO - Finished subgradient computation step 47
+2024-09-12 01:38:05,597 - INFO - Starting subgradient computation step 48
+2024-09-12 01:38:05,724 - INFO - making p feasible (smaller or equal 1) on step 48
+2024-09-12 01:38:05,866 - INFO - making p feasible (smaller or equal 1) on step 48 on rebuilding phase
+2024-09-12 01:38:05,969 - INFO - Finished subgradient computation step 48
+2024-09-12 01:38:05,969 - INFO - Starting subgradient computation step 49
+2024-09-12 01:38:06,093 - INFO - making p feasible (smaller or equal 1) on step 49
+2024-09-12 01:38:06,234 - INFO - making p feasible (smaller or equal 1) on step 49 on rebuilding phase
+2024-09-12 01:38:06,342 - INFO - Finished subgradient computation step 49
+2024-09-12 01:38:06,343 - INFO - Starting subgradient computation step 50
+2024-09-12 01:38:06,715 - INFO - Finished subgradient computation step 50
+2024-09-12 01:38:06,716 - INFO - Starting subgradient computation step 51
+2024-09-12 01:38:07,092 - INFO - Finished subgradient computation step 51
+2024-09-12 01:38:07,093 - INFO - Starting subgradient computation step 52
+2024-09-12 01:38:07,464 - INFO - Finished subgradient computation step 52
+2024-09-12 01:38:07,464 - INFO - Starting subgradient computation step 53
+2024-09-12 01:38:07,593 - INFO - making p feasible (smaller or equal 1) on step 53
+2024-09-12 01:38:07,735 - INFO - making p feasible (smaller or equal 1) on step 53 on rebuilding phase
+2024-09-12 01:38:07,837 - INFO - Finished subgradient computation step 53
+2024-09-12 01:38:07,837 - INFO - Starting subgradient computation step 54
+2024-09-12 01:38:08,211 - INFO - Finished subgradient computation step 54
+2024-09-12 01:38:08,211 - INFO - Starting subgradient computation step 55
+2024-09-12 01:38:08,336 - INFO - making p feasible (smaller or equal 1) on step 55
+2024-09-12 01:38:08,477 - INFO - making p feasible (smaller or equal 1) on step 55 on rebuilding phase
+2024-09-12 01:38:08,579 - INFO - Finished subgradient computation step 55
+2024-09-12 01:38:08,579 - INFO - Starting subgradient computation step 56
+2024-09-12 01:38:08,950 - INFO - Finished subgradient computation step 56
+2024-09-12 01:38:08,950 - INFO - Starting subgradient computation step 57
+2024-09-12 01:38:09,316 - INFO - Finished subgradient computation step 57
+2024-09-12 01:38:09,316 - INFO - Starting subgradient computation step 58
+2024-09-12 01:38:09,687 - INFO - Finished subgradient computation step 58
+2024-09-12 01:38:09,687 - INFO - Starting subgradient computation step 59
+2024-09-12 01:38:10,052 - INFO - Finished subgradient computation step 59
+2024-09-12 01:38:10,052 - INFO - Starting subgradient computation step 60
+2024-09-12 01:38:10,427 - INFO - Finished subgradient computation step 60
+2024-09-12 01:38:10,427 - INFO - Starting subgradient computation step 61
+2024-09-12 01:38:10,561 - INFO - making p feasible (smaller or equal 1) on step 61
+2024-09-12 01:38:10,702 - INFO - making p feasible (smaller or equal 1) on step 61 on rebuilding phase
+2024-09-12 01:38:10,811 - INFO - Finished subgradient computation step 61
+2024-09-12 01:38:10,811 - INFO - Starting subgradient computation step 62
+2024-09-12 01:38:10,941 - INFO - making p feasible (smaller or equal 1) on step 62
+2024-09-12 01:38:11,083 - INFO - making p feasible (smaller or equal 1) on step 62 on rebuilding phase
+2024-09-12 01:38:11,185 - INFO - Finished subgradient computation step 62
+2024-09-12 01:38:11,185 - INFO - Starting subgradient computation step 63
+2024-09-12 01:38:11,554 - INFO - Finished subgradient computation step 63
+2024-09-12 01:38:11,554 - INFO - Starting subgradient computation step 64
+2024-09-12 01:38:11,917 - INFO - Finished subgradient computation step 64
+2024-09-12 01:38:11,917 - INFO - Starting subgradient computation step 65
+2024-09-12 01:38:12,047 - INFO - making p feasible (smaller or equal 1) on step 65
+2024-09-12 01:38:12,188 - INFO - making p feasible (smaller or equal 1) on step 65 on rebuilding phase
+2024-09-12 01:38:12,293 - INFO - Finished subgradient computation step 65
+2024-09-12 01:38:12,293 - INFO - Starting subgradient computation step 66
+2024-09-12 01:38:12,422 - INFO - making p feasible (smaller or equal 1) on step 66
+2024-09-12 01:38:12,563 - INFO - making p feasible (smaller or equal 1) on step 66 on rebuilding phase
+2024-09-12 01:38:12,665 - INFO - Finished subgradient computation step 66
+2024-09-12 01:38:12,665 - INFO - Starting subgradient computation step 67
+2024-09-12 01:38:12,793 - INFO - making p feasible (smaller or equal 1) on step 67
+2024-09-12 01:38:12,934 - INFO - making p feasible (smaller or equal 1) on step 67 on rebuilding phase
+2024-09-12 01:38:13,036 - INFO - Finished subgradient computation step 67
+2024-09-12 01:38:13,037 - INFO - Starting subgradient computation step 68
+2024-09-12 01:38:13,531 - INFO - Finished subgradient computation step 68
+2024-09-12 01:38:13,531 - INFO - Starting subgradient computation step 69
+2024-09-12 01:38:13,902 - INFO - Finished subgradient computation step 69
+2024-09-12 01:38:13,902 - INFO - Starting subgradient computation step 70
+2024-09-12 01:38:14,277 - INFO - Finished subgradient computation step 70
+2024-09-12 01:38:14,277 - INFO - Starting subgradient computation step 71
+2024-09-12 01:38:14,669 - INFO - Finished subgradient computation step 71
+2024-09-12 01:38:14,670 - INFO - Starting subgradient computation step 72
+2024-09-12 01:38:14,802 - INFO - making p feasible (smaller or equal 1) on step 72
+2024-09-12 01:38:14,943 - INFO - making p feasible (smaller or equal 1) on step 72 on rebuilding phase
+2024-09-12 01:38:15,049 - INFO - Finished subgradient computation step 72
+2024-09-12 01:38:15,049 - INFO - Starting subgradient computation step 73
+2024-09-12 01:38:15,425 - INFO - Finished subgradient computation step 73
+2024-09-12 01:38:15,425 - INFO - Starting subgradient computation step 74
+2024-09-12 01:38:15,556 - INFO - making p feasible (smaller or equal 1) on step 74
+2024-09-12 01:38:15,697 - INFO - making p feasible (smaller or equal 1) on step 74 on rebuilding phase
+2024-09-12 01:38:15,800 - INFO - Finished subgradient computation step 74
+2024-09-12 01:38:15,800 - INFO - Starting subgradient computation step 75
+2024-09-12 01:38:16,180 - INFO - Finished subgradient computation step 75
+2024-09-12 01:38:16,180 - INFO - Starting subgradient computation step 76
+2024-09-12 01:38:16,315 - INFO - making p feasible (smaller or equal 1) on step 76
+2024-09-12 01:38:16,456 - INFO - making p feasible (smaller or equal 1) on step 76 on rebuilding phase
+2024-09-12 01:38:16,556 - INFO - Finished subgradient computation step 76
+2024-09-12 01:38:16,557 - INFO - Starting subgradient computation step 77
+2024-09-12 01:38:16,955 - INFO - Finished subgradient computation step 77
+2024-09-12 01:38:16,955 - INFO - Starting subgradient computation step 78
+2024-09-12 01:38:17,332 - INFO - Finished subgradient computation step 78
+2024-09-12 01:38:17,332 - INFO - Starting subgradient computation step 79
+2024-09-12 01:38:17,709 - INFO - Finished subgradient computation step 79
+2024-09-12 01:38:17,709 - INFO - Starting subgradient computation step 80
+2024-09-12 01:38:18,089 - INFO - Finished subgradient computation step 80
+2024-09-12 01:38:18,090 - INFO - Starting subgradient computation step 81
+2024-09-12 01:38:18,218 - INFO - making p feasible (smaller or equal 1) on step 81
+2024-09-12 01:38:18,359 - INFO - making p feasible (smaller or equal 1) on step 81 on rebuilding phase
+2024-09-12 01:38:18,465 - INFO - Finished subgradient computation step 81
+2024-09-12 01:38:18,466 - INFO - Starting subgradient computation step 82
+2024-09-12 01:38:18,846 - INFO - Finished subgradient computation step 82
+2024-09-12 01:38:18,847 - INFO - Starting subgradient computation step 83
+2024-09-12 01:38:18,985 - INFO - making p feasible (smaller or equal 1) on step 83
+2024-09-12 01:38:19,126 - INFO - making p feasible (smaller or equal 1) on step 83 on rebuilding phase
+2024-09-12 01:38:19,232 - INFO - Finished subgradient computation step 83
+2024-09-12 01:38:19,233 - INFO - Starting subgradient computation step 84
+2024-09-12 01:38:19,612 - INFO - Finished subgradient computation step 84
+2024-09-12 01:38:19,612 - INFO - Starting subgradient computation step 85
+2024-09-12 01:38:19,985 - INFO - Finished subgradient computation step 85
+2024-09-12 01:38:19,985 - INFO - Starting subgradient computation step 86
+2024-09-12 01:38:20,117 - INFO - making p feasible (smaller or equal 1) on step 86
+2024-09-12 01:38:20,258 - INFO - making p feasible (smaller or equal 1) on step 86 on rebuilding phase
+2024-09-12 01:38:20,361 - INFO - Finished subgradient computation step 86
+2024-09-12 01:38:20,361 - INFO - Starting subgradient computation step 87
+2024-09-12 01:38:20,732 - INFO - Finished subgradient computation step 87
+2024-09-12 01:38:20,732 - INFO - Starting subgradient computation step 88
+2024-09-12 01:38:21,005 - INFO - making p feasible (smaller or equal 1) on step 88 on rebuilding phase
+2024-09-12 01:38:21,109 - INFO - Finished subgradient computation step 88
+2024-09-12 01:38:21,109 - INFO - Starting subgradient computation step 89
+2024-09-12 01:38:21,235 - INFO - making p feasible (smaller or equal 1) on step 89
+2024-09-12 01:38:21,376 - INFO - making p feasible (smaller or equal 1) on step 89 on rebuilding phase
+2024-09-12 01:38:21,482 - INFO - Finished subgradient computation step 89
+2024-09-12 01:38:21,483 - INFO - Starting subgradient computation step 90
+2024-09-12 01:38:21,614 - INFO - making p feasible (smaller or equal 1) on step 90
+2024-09-12 01:38:21,755 - INFO - making p feasible (smaller or equal 1) on step 90 on rebuilding phase
+2024-09-12 01:38:21,856 - INFO - Finished subgradient computation step 90
+2024-09-12 01:38:21,856 - INFO - Starting subgradient computation step 91
+2024-09-12 01:38:22,227 - INFO - Finished subgradient computation step 91
+2024-09-12 01:38:22,227 - INFO - Starting subgradient computation step 92
+2024-09-12 01:38:22,599 - INFO - Finished subgradient computation step 92
+2024-09-12 01:38:22,599 - INFO - Starting subgradient computation step 93
+2024-09-12 01:38:22,976 - INFO - Finished subgradient computation step 93
+2024-09-12 01:38:22,976 - INFO - Starting subgradient computation step 94
+2024-09-12 01:38:23,354 - INFO - Finished subgradient computation step 94
+2024-09-12 01:38:23,354 - INFO - Starting subgradient computation step 95
+2024-09-12 01:38:23,725 - INFO - Finished subgradient computation step 95
+2024-09-12 01:38:23,726 - INFO - Starting subgradient computation step 96
+2024-09-12 01:38:23,854 - INFO - making p feasible (smaller or equal 1) on step 96
+2024-09-12 01:38:23,995 - INFO - making p feasible (smaller or equal 1) on step 96 on rebuilding phase
+2024-09-12 01:38:24,097 - INFO - Finished subgradient computation step 96
+2024-09-12 01:38:24,098 - INFO - Starting subgradient computation step 97
+2024-09-12 01:38:24,471 - INFO - Finished subgradient computation step 97
+2024-09-12 01:38:24,471 - INFO - Starting subgradient computation step 98
+2024-09-12 01:38:24,843 - INFO - Finished subgradient computation step 98
+2024-09-12 01:38:24,843 - INFO - Starting subgradient computation step 99
+2024-09-12 01:38:24,966 - INFO - making p feasible (smaller or equal 1) on step 99
+2024-09-12 01:38:25,107 - INFO - making p feasible (smaller or equal 1) on step 99 on rebuilding phase
+2024-09-12 01:38:25,208 - INFO - Finished subgradient computation step 99
+2024-09-12 01:38:25,209 - INFO - Starting subgradient computation step 100
+2024-09-12 01:38:25,578 - INFO - Finished subgradient computation step 100
+2024-09-12 01:38:25,578 - INFO - Starting subgradient computation step 101
+2024-09-12 01:38:25,950 - INFO - Finished subgradient computation step 101
+2024-09-12 01:38:25,951 - INFO - Starting subgradient computation step 102
+2024-09-12 01:38:26,323 - INFO - Finished subgradient computation step 102
+2024-09-12 01:38:26,324 - INFO - Starting subgradient computation step 103
+2024-09-12 01:38:26,703 - INFO - Finished subgradient computation step 103
+2024-09-12 01:38:26,704 - INFO - Starting subgradient computation step 104
+2024-09-12 01:38:26,830 - INFO - making p feasible (smaller or equal 1) on step 104
+2024-09-12 01:38:26,971 - INFO - making p feasible (smaller or equal 1) on step 104 on rebuilding phase
+2024-09-12 01:38:27,074 - INFO - Finished subgradient computation step 104
+2024-09-12 01:38:27,074 - INFO - Starting subgradient computation step 105
+2024-09-12 01:38:27,203 - INFO - making p feasible (smaller or equal 1) on step 105
+2024-09-12 01:38:27,344 - INFO - making p feasible (smaller or equal 1) on step 105 on rebuilding phase
+2024-09-12 01:38:27,446 - INFO - Finished subgradient computation step 105
+2024-09-12 01:38:27,446 - INFO - Starting subgradient computation step 106
+2024-09-12 01:38:27,817 - INFO - Finished subgradient computation step 106
+2024-09-12 01:38:27,818 - INFO - Starting subgradient computation step 107
+2024-09-12 01:38:27,947 - INFO - making p feasible (smaller or equal 1) on step 107
+2024-09-12 01:38:28,088 - INFO - making p feasible (smaller or equal 1) on step 107 on rebuilding phase
+2024-09-12 01:38:28,191 - INFO - Finished subgradient computation step 107
+2024-09-12 01:38:28,191 - INFO - Starting subgradient computation step 108
+2024-09-12 01:38:28,569 - INFO - Finished subgradient computation step 108
+2024-09-12 01:38:28,569 - INFO - Starting subgradient computation step 109
+2024-09-12 01:38:28,698 - INFO - making p feasible (smaller or equal 1) on step 109
+2024-09-12 01:38:28,839 - INFO - making p feasible (smaller or equal 1) on step 109 on rebuilding phase
+2024-09-12 01:38:28,942 - INFO - Finished subgradient computation step 109
+2024-09-12 01:38:28,942 - INFO - Starting subgradient computation step 110
+2024-09-12 01:38:29,311 - INFO - Finished subgradient computation step 110
+2024-09-12 01:38:29,311 - INFO - Starting subgradient computation step 111
+2024-09-12 01:38:29,700 - INFO - Finished subgradient computation step 111
+2024-09-12 01:38:29,700 - INFO - Starting subgradient computation step 112
+2024-09-12 01:38:29,832 - INFO - making p feasible (smaller or equal 1) on step 112
+2024-09-12 01:38:29,973 - INFO - making p feasible (smaller or equal 1) on step 112 on rebuilding phase
+2024-09-12 01:38:30,080 - INFO - Finished subgradient computation step 112
+2024-09-12 01:38:30,081 - INFO - Starting subgradient computation step 113
+2024-09-12 01:38:30,453 - INFO - Finished subgradient computation step 113
+2024-09-12 01:38:30,453 - INFO - Starting subgradient computation step 114
+2024-09-12 01:38:30,827 - INFO - Finished subgradient computation step 114
+2024-09-12 01:38:30,827 - INFO - Starting subgradient computation step 115
+2024-09-12 01:38:31,195 - INFO - Finished subgradient computation step 115
+2024-09-12 01:38:31,195 - INFO - Starting subgradient computation step 116
+2024-09-12 01:38:31,567 - INFO - Finished subgradient computation step 116
+2024-09-12 01:38:31,567 - INFO - Starting subgradient computation step 117
+2024-09-12 01:38:31,940 - INFO - Finished subgradient computation step 117
+2024-09-12 01:38:31,941 - INFO - Starting subgradient computation step 118
+2024-09-12 01:38:32,321 - INFO - Finished subgradient computation step 118
+2024-09-12 01:38:32,322 - INFO - Starting subgradient computation step 119
+2024-09-12 01:38:32,452 - INFO - making p feasible (smaller or equal 1) on step 119
+2024-09-12 01:38:32,593 - INFO - making p feasible (smaller or equal 1) on step 119 on rebuilding phase
+2024-09-12 01:38:32,694 - INFO - Finished subgradient computation step 119
+2024-09-12 01:38:32,695 - INFO - Starting subgradient computation step 120
+2024-09-12 01:38:32,827 - INFO - making p feasible (smaller or equal 1) on step 120
+2024-09-12 01:38:32,968 - INFO - making p feasible (smaller or equal 1) on step 120 on rebuilding phase
+2024-09-12 01:38:33,073 - INFO - Finished subgradient computation step 120
+2024-09-12 01:38:33,073 - INFO - Starting subgradient computation step 121
+2024-09-12 01:38:33,206 - INFO - making p feasible (smaller or equal 1) on step 121
+2024-09-12 01:38:33,347 - INFO - making p feasible (smaller or equal 1) on step 121 on rebuilding phase
+2024-09-12 01:38:33,450 - INFO - Finished subgradient computation step 121
+2024-09-12 01:38:33,450 - INFO - Starting subgradient computation step 122
+2024-09-12 01:38:33,816 - INFO - Finished subgradient computation step 122
+2024-09-12 01:38:33,816 - INFO - Starting subgradient computation step 123
+2024-09-12 01:38:34,196 - INFO - Finished subgradient computation step 123
+2024-09-12 01:38:34,196 - INFO - Starting subgradient computation step 124
+2024-09-12 01:38:34,569 - INFO - Finished subgradient computation step 124
+2024-09-12 01:38:34,569 - INFO - Starting subgradient computation step 125
+2024-09-12 01:38:34,847 - INFO - making p feasible (smaller or equal 1) on step 125 on rebuilding phase
+2024-09-12 01:38:34,949 - INFO - Finished subgradient computation step 125
+2024-09-12 01:38:34,949 - INFO - Starting subgradient computation step 126
+2024-09-12 01:38:35,073 - INFO - making p feasible (smaller or equal 1) on step 126
+2024-09-12 01:38:35,213 - INFO - making p feasible (smaller or equal 1) on step 126 on rebuilding phase
+2024-09-12 01:38:35,315 - INFO - Finished subgradient computation step 126
+2024-09-12 01:38:35,316 - INFO - Starting subgradient computation step 127
+2024-09-12 01:38:35,451 - INFO - making p feasible (smaller or equal 1) on step 127
+2024-09-12 01:38:35,592 - INFO - making p feasible (smaller or equal 1) on step 127 on rebuilding phase
+2024-09-12 01:38:35,694 - INFO - Finished subgradient computation step 127
+2024-09-12 01:38:35,694 - INFO - Starting subgradient computation step 128
+2024-09-12 01:38:35,828 - INFO - making p feasible (smaller or equal 1) on step 128
+2024-09-12 01:38:35,970 - INFO - making p feasible (smaller or equal 1) on step 128 on rebuilding phase
+2024-09-12 01:38:36,074 - INFO - Finished subgradient computation step 128
+2024-09-12 01:38:36,074 - INFO - Starting subgradient computation step 129
+2024-09-12 01:38:36,203 - INFO - making p feasible (smaller or equal 1) on step 129
+2024-09-12 01:38:36,345 - INFO - making p feasible (smaller or equal 1) on step 129 on rebuilding phase
+2024-09-12 01:38:36,457 - INFO - Finished subgradient computation step 129
+2024-09-12 01:38:36,457 - INFO - Starting subgradient computation step 130
+2024-09-12 01:38:36,588 - INFO - making p feasible (smaller or equal 1) on step 130
+2024-09-12 01:38:36,729 - INFO - making p feasible (smaller or equal 1) on step 130 on rebuilding phase
+2024-09-12 01:38:36,832 - INFO - Finished subgradient computation step 130
+2024-09-12 01:38:36,832 - INFO - Starting subgradient computation step 131
+2024-09-12 01:38:36,958 - INFO - making p feasible (smaller or equal 1) on step 131
+2024-09-12 01:38:37,098 - INFO - making p feasible (smaller or equal 1) on step 131 on rebuilding phase
+2024-09-12 01:38:37,202 - INFO - Finished subgradient computation step 131
+2024-09-12 01:38:37,203 - INFO - Starting subgradient computation step 132
+2024-09-12 01:38:37,571 - INFO - Finished subgradient computation step 132
+2024-09-12 01:38:37,572 - INFO - Starting subgradient computation step 133
+2024-09-12 01:38:37,947 - INFO - Finished subgradient computation step 133
+2024-09-12 01:38:37,947 - INFO - Starting subgradient computation step 134
+2024-09-12 01:38:38,314 - INFO - Finished subgradient computation step 134
+2024-09-12 01:38:38,314 - INFO - Starting subgradient computation step 135
+2024-09-12 01:38:38,450 - INFO - making p feasible (smaller or equal 1) on step 135
+2024-09-12 01:38:38,590 - INFO - making p feasible (smaller or equal 1) on step 135 on rebuilding phase
+2024-09-12 01:38:38,690 - INFO - Finished subgradient computation step 135
+2024-09-12 01:38:38,690 - INFO - Starting subgradient computation step 136
+2024-09-12 01:38:38,825 - INFO - making p feasible (smaller or equal 1) on step 136
+2024-09-12 01:38:38,964 - INFO - making p feasible (smaller or equal 1) on step 136 on rebuilding phase
+2024-09-12 01:38:39,061 - INFO - Finished subgradient computation step 136
+2024-09-12 01:38:39,061 - INFO - Starting subgradient computation step 137
+2024-09-12 01:38:39,432 - INFO - Finished subgradient computation step 137
+2024-09-12 01:38:39,432 - INFO - Starting subgradient computation step 138
+2024-09-12 01:38:39,567 - INFO - making p feasible (smaller or equal 1) on step 138
+2024-09-12 01:38:39,706 - INFO - making p feasible (smaller or equal 1) on step 138 on rebuilding phase
+2024-09-12 01:38:39,801 - INFO - Finished subgradient computation step 138
+2024-09-12 01:38:39,801 - INFO - Starting subgradient computation step 139
+2024-09-12 01:38:40,170 - INFO - Finished subgradient computation step 139
+2024-09-12 01:38:40,170 - INFO - Starting subgradient computation step 140
+2024-09-12 01:38:40,539 - INFO - Finished subgradient computation step 140
+2024-09-12 01:38:40,539 - INFO - Starting subgradient computation step 141
+2024-09-12 01:38:40,675 - INFO - making p feasible (smaller or equal 1) on step 141
+2024-09-12 01:38:40,816 - INFO - making p feasible (smaller or equal 1) on step 141 on rebuilding phase
+2024-09-12 01:38:40,911 - INFO - Finished subgradient computation step 141
+2024-09-12 01:38:40,911 - INFO - Starting subgradient computation step 142
+2024-09-12 01:38:41,285 - INFO - Finished subgradient computation step 142
+2024-09-12 01:38:41,285 - INFO - Starting subgradient computation step 143
+2024-09-12 01:38:41,419 - INFO - making p feasible (smaller or equal 1) on step 143
+2024-09-12 01:38:41,567 - INFO - making p feasible (smaller or equal 1) on step 143 on rebuilding phase
+2024-09-12 01:38:41,665 - INFO - Finished subgradient computation step 143
+2024-09-12 01:38:41,665 - INFO - Starting subgradient computation step 144
+2024-09-12 01:38:41,803 - INFO - making p feasible (smaller or equal 1) on step 144
+2024-09-12 01:38:41,949 - INFO - making p feasible (smaller or equal 1) on step 144 on rebuilding phase
+2024-09-12 01:38:42,052 - INFO - Finished subgradient computation step 144
+2024-09-12 01:38:42,052 - INFO - Starting subgradient computation step 145
+2024-09-12 01:38:42,182 - INFO - making p feasible (smaller or equal 1) on step 145
+2024-09-12 01:38:42,323 - INFO - making p feasible (smaller or equal 1) on step 145 on rebuilding phase
+2024-09-12 01:38:42,424 - INFO - Finished subgradient computation step 145
+2024-09-12 01:38:42,424 - INFO - Starting subgradient computation step 146
+2024-09-12 01:38:42,558 - INFO - making p feasible (smaller or equal 1) on step 146
+2024-09-12 01:38:42,699 - INFO - making p feasible (smaller or equal 1) on step 146 on rebuilding phase
+2024-09-12 01:38:43,064 - INFO - Finished subgradient computation step 146
+2024-09-12 01:38:43,064 - INFO - Starting subgradient computation step 147
+2024-09-12 01:38:43,458 - INFO - Finished subgradient computation step 147
+2024-09-12 01:38:43,458 - INFO - Starting subgradient computation step 148
+2024-09-12 01:38:43,591 - INFO - making p feasible (smaller or equal 1) on step 148
+2024-09-12 01:38:43,731 - INFO - making p feasible (smaller or equal 1) on step 148 on rebuilding phase
+2024-09-12 01:38:43,837 - INFO - Finished subgradient computation step 148
+2024-09-12 01:38:43,837 - INFO - Starting subgradient computation step 149
+2024-09-12 01:38:44,210 - INFO - Finished subgradient computation step 149
+2024-09-12 01:38:44,210 - INFO - Starting subgradient computation step 150
+2024-09-12 01:38:44,582 - INFO - Finished subgradient computation step 150
+2024-09-12 01:38:44,582 - INFO - Starting subgradient computation step 151
+2024-09-12 01:38:44,714 - INFO - making p feasible (smaller or equal 1) on step 151
+2024-09-12 01:38:44,855 - INFO - making p feasible (smaller or equal 1) on step 151 on rebuilding phase
+2024-09-12 01:38:44,958 - INFO - Finished subgradient computation step 151
+2024-09-12 01:38:44,959 - INFO - Starting subgradient computation step 152
+2024-09-12 01:38:45,330 - INFO - Finished subgradient computation step 152
+2024-09-12 01:38:45,331 - INFO - Starting subgradient computation step 153
+2024-09-12 01:38:45,461 - INFO - making p feasible (smaller or equal 1) on step 153
+2024-09-12 01:38:45,602 - INFO - making p feasible (smaller or equal 1) on step 153 on rebuilding phase
+2024-09-12 01:38:45,705 - INFO - Finished subgradient computation step 153
+2024-09-12 01:38:45,705 - INFO - Starting subgradient computation step 154
+2024-09-12 01:38:46,079 - INFO - Finished subgradient computation step 154
+2024-09-12 01:38:46,080 - INFO - Starting subgradient computation step 155
+2024-09-12 01:38:46,207 - INFO - making p feasible (smaller or equal 1) on step 155
+2024-09-12 01:38:46,348 - INFO - making p feasible (smaller or equal 1) on step 155 on rebuilding phase
+2024-09-12 01:38:46,452 - INFO - Finished subgradient computation step 155
+2024-09-12 01:38:46,452 - INFO - Starting subgradient computation step 156
+2024-09-12 01:38:46,824 - INFO - Finished subgradient computation step 156
+2024-09-12 01:38:46,824 - INFO - Starting subgradient computation step 157
+2024-09-12 01:38:47,195 - INFO - Finished subgradient computation step 157
+2024-09-12 01:38:47,196 - INFO - Starting subgradient computation step 158
+2024-09-12 01:38:47,570 - INFO - Finished subgradient computation step 158
+2024-09-12 01:38:47,570 - INFO - Starting subgradient computation step 159
+2024-09-12 01:38:47,691 - INFO - making p feasible (smaller or equal 1) on step 159
+2024-09-12 01:38:47,832 - INFO - making p feasible (smaller or equal 1) on step 159 on rebuilding phase
+2024-09-12 01:38:47,935 - INFO - Finished subgradient computation step 159
+2024-09-12 01:38:47,936 - INFO - Starting subgradient computation step 160
+2024-09-12 01:38:48,066 - INFO - making p feasible (smaller or equal 1) on step 160
+2024-09-12 01:38:48,207 - INFO - making p feasible (smaller or equal 1) on step 160 on rebuilding phase
+2024-09-12 01:38:48,309 - INFO - Finished subgradient computation step 160
+2024-09-12 01:38:48,309 - INFO - Starting subgradient computation step 161
+2024-09-12 01:38:48,679 - INFO - Finished subgradient computation step 161
+2024-09-12 01:38:48,679 - INFO - Starting subgradient computation step 162
+2024-09-12 01:38:48,811 - INFO - making p feasible (smaller or equal 1) on step 162
+2024-09-12 01:38:48,952 - INFO - making p feasible (smaller or equal 1) on step 162 on rebuilding phase
+2024-09-12 01:38:49,055 - INFO - Finished subgradient computation step 162
+2024-09-12 01:38:49,055 - INFO - Starting subgradient computation step 163
+2024-09-12 01:38:49,431 - INFO - Finished subgradient computation step 163
+2024-09-12 01:38:49,431 - INFO - Starting subgradient computation step 164
+2024-09-12 01:38:49,804 - INFO - Finished subgradient computation step 164
+2024-09-12 01:38:49,804 - INFO - Starting subgradient computation step 165
+2024-09-12 01:38:49,928 - INFO - making p feasible (smaller or equal 1) on step 165
+2024-09-12 01:38:50,070 - INFO - making p feasible (smaller or equal 1) on step 165 on rebuilding phase
+2024-09-12 01:38:50,173 - INFO - Finished subgradient computation step 165
+2024-09-12 01:38:50,173 - INFO - Starting subgradient computation step 166
+2024-09-12 01:38:50,547 - INFO - Finished subgradient computation step 166
+2024-09-12 01:38:50,547 - INFO - Starting subgradient computation step 167
+2024-09-12 01:38:50,675 - INFO - making p feasible (smaller or equal 1) on step 167
+2024-09-12 01:38:50,816 - INFO - making p feasible (smaller or equal 1) on step 167 on rebuilding phase
+2024-09-12 01:38:50,923 - INFO - Finished subgradient computation step 167
+2024-09-12 01:38:50,924 - INFO - Starting subgradient computation step 168
+2024-09-12 01:38:51,288 - INFO - Finished subgradient computation step 168
+2024-09-12 01:38:51,289 - INFO - Starting subgradient computation step 169
+2024-09-12 01:38:51,419 - INFO - making p feasible (smaller or equal 1) on step 169
+2024-09-12 01:38:51,560 - INFO - making p feasible (smaller or equal 1) on step 169 on rebuilding phase
+2024-09-12 01:38:51,663 - INFO - Finished subgradient computation step 169
+2024-09-12 01:38:51,664 - INFO - Starting subgradient computation step 170
+2024-09-12 01:38:52,038 - INFO - Finished subgradient computation step 170
+2024-09-12 01:38:52,039 - INFO - Starting subgradient computation step 171
+2024-09-12 01:38:52,418 - INFO - Finished subgradient computation step 171
+2024-09-12 01:38:52,418 - INFO - Starting subgradient computation step 172
+2024-09-12 01:38:52,787 - INFO - Finished subgradient computation step 172
+2024-09-12 01:38:52,787 - INFO - Starting subgradient computation step 173
+2024-09-12 01:38:53,157 - INFO - Finished subgradient computation step 173
+2024-09-12 01:38:53,157 - INFO - Starting subgradient computation step 174
+2024-09-12 01:38:53,533 - INFO - Finished subgradient computation step 174
+2024-09-12 01:38:53,534 - INFO - Starting subgradient computation step 175
+2024-09-12 01:38:53,899 - INFO - Finished subgradient computation step 175
+2024-09-12 01:38:53,900 - INFO - Starting subgradient computation step 176
+2024-09-12 01:38:54,026 - INFO - making p feasible (smaller or equal 1) on step 176
+2024-09-12 01:38:54,167 - INFO - making p feasible (smaller or equal 1) on step 176 on rebuilding phase
+2024-09-12 01:38:54,273 - INFO - Finished subgradient computation step 176
+2024-09-12 01:38:54,274 - INFO - Starting subgradient computation step 177
+2024-09-12 01:38:54,652 - INFO - Finished subgradient computation step 177
+2024-09-12 01:38:54,652 - INFO - Starting subgradient computation step 178
+2024-09-12 01:38:54,783 - INFO - making p feasible (smaller or equal 1) on step 178
+2024-09-12 01:38:54,924 - INFO - making p feasible (smaller or equal 1) on step 178 on rebuilding phase
+2024-09-12 01:38:55,026 - INFO - Finished subgradient computation step 178
+2024-09-12 01:38:55,026 - INFO - Starting subgradient computation step 179
+2024-09-12 01:38:55,395 - INFO - Finished subgradient computation step 179
+2024-09-12 01:38:55,395 - INFO - Starting subgradient computation step 180
+2024-09-12 01:38:55,528 - INFO - making p feasible (smaller or equal 1) on step 180
+2024-09-12 01:38:55,669 - INFO - making p feasible (smaller or equal 1) on step 180 on rebuilding phase
+2024-09-12 01:38:55,774 - INFO - Finished subgradient computation step 180
+2024-09-12 01:38:55,775 - INFO - Starting subgradient computation step 181
+2024-09-12 01:38:56,147 - INFO - Finished subgradient computation step 181
+2024-09-12 01:38:56,148 - INFO - Starting subgradient computation step 182
+2024-09-12 01:38:56,277 - INFO - making p feasible (smaller or equal 1) on step 182
+2024-09-12 01:38:56,418 - INFO - making p feasible (smaller or equal 1) on step 182 on rebuilding phase
+2024-09-12 01:38:56,520 - INFO - Finished subgradient computation step 182
+2024-09-12 01:38:56,521 - INFO - Starting subgradient computation step 183
+2024-09-12 01:38:56,653 - INFO - making p feasible (smaller or equal 1) on step 183
+2024-09-12 01:38:56,794 - INFO - making p feasible (smaller or equal 1) on step 183 on rebuilding phase
+2024-09-12 01:38:56,908 - INFO - Finished subgradient computation step 183
+2024-09-12 01:38:56,908 - INFO - Starting subgradient computation step 184
+2024-09-12 01:38:57,286 - INFO - Finished subgradient computation step 184
+2024-09-12 01:38:57,286 - INFO - Starting subgradient computation step 185
+2024-09-12 01:38:57,654 - INFO - Finished subgradient computation step 185
+2024-09-12 01:38:57,655 - INFO - Starting subgradient computation step 186
+2024-09-12 01:38:58,030 - INFO - Finished subgradient computation step 186
+2024-09-12 01:38:58,030 - INFO - Starting subgradient computation step 187
+2024-09-12 01:38:58,160 - INFO - making p feasible (smaller or equal 1) on step 187
+2024-09-12 01:38:58,301 - INFO - making p feasible (smaller or equal 1) on step 187 on rebuilding phase
+2024-09-12 01:38:58,403 - INFO - Finished subgradient computation step 187
+2024-09-12 01:38:58,403 - INFO - Starting subgradient computation step 188
+2024-09-12 01:38:58,535 - INFO - making p feasible (smaller or equal 1) on step 188
+2024-09-12 01:38:58,676 - INFO - making p feasible (smaller or equal 1) on step 188 on rebuilding phase
+2024-09-12 01:38:58,777 - INFO - Finished subgradient computation step 188
+2024-09-12 01:38:58,777 - INFO - Starting subgradient computation step 189
+2024-09-12 01:38:58,909 - INFO - making p feasible (smaller or equal 1) on step 189
+2024-09-12 01:38:59,050 - INFO - making p feasible (smaller or equal 1) on step 189 on rebuilding phase
+2024-09-12 01:38:59,154 - INFO - Finished subgradient computation step 189
+2024-09-12 01:38:59,154 - INFO - Starting subgradient computation step 190
+2024-09-12 01:38:59,280 - INFO - making p feasible (smaller or equal 1) on step 190
+2024-09-12 01:38:59,420 - INFO - making p feasible (smaller or equal 1) on step 190 on rebuilding phase
+2024-09-12 01:38:59,522 - INFO - Finished subgradient computation step 190
+2024-09-12 01:38:59,522 - INFO - Starting subgradient computation step 191
+2024-09-12 01:38:59,899 - INFO - Finished subgradient computation step 191
+2024-09-12 01:38:59,899 - INFO - Starting subgradient computation step 192
+2024-09-12 01:39:00,031 - INFO - making p feasible (smaller or equal 1) on step 192
+2024-09-12 01:39:00,172 - INFO - making p feasible (smaller or equal 1) on step 192 on rebuilding phase
+2024-09-12 01:39:00,297 - INFO - Finished subgradient computation step 192
+2024-09-12 01:39:00,297 - INFO - Starting subgradient computation step 193
+2024-09-12 01:39:00,428 - INFO - making p feasible (smaller or equal 1) on step 193
+2024-09-12 01:39:00,569 - INFO - making p feasible (smaller or equal 1) on step 193 on rebuilding phase
+2024-09-12 01:39:00,671 - INFO - Finished subgradient computation step 193
+2024-09-12 01:39:00,671 - INFO - Starting subgradient computation step 194
+2024-09-12 01:39:01,053 - INFO - Finished subgradient computation step 194
+2024-09-12 01:39:01,053 - INFO - Starting subgradient computation step 195
+2024-09-12 01:39:01,184 - INFO - making p feasible (smaller or equal 1) on step 195
+2024-09-12 01:39:01,324 - INFO - making p feasible (smaller or equal 1) on step 195 on rebuilding phase
+2024-09-12 01:39:01,429 - INFO - Finished subgradient computation step 195
+2024-09-12 01:39:01,429 - INFO - Starting subgradient computation step 196
+2024-09-12 01:39:01,564 - INFO - making p feasible (smaller or equal 1) on step 196
+2024-09-12 01:39:01,705 - INFO - making p feasible (smaller or equal 1) on step 196 on rebuilding phase
+2024-09-12 01:39:01,806 - INFO - Finished subgradient computation step 196
+2024-09-12 01:39:01,807 - INFO - Starting subgradient computation step 197
+2024-09-12 01:39:02,177 - INFO - Finished subgradient computation step 197
+2024-09-12 01:39:02,178 - INFO - Starting subgradient computation step 198
+2024-09-12 01:39:02,551 - INFO - Finished subgradient computation step 198
+2024-09-12 01:39:02,552 - INFO - Starting subgradient computation step 199
+2024-09-12 01:39:02,680 - INFO - making p feasible (smaller or equal 1) on step 199
+2024-09-12 01:39:02,821 - INFO - making p feasible (smaller or equal 1) on step 199 on rebuilding phase
+2024-09-12 01:39:02,926 - INFO - Finished subgradient computation step 199
+2024-09-12 01:39:02,927 - INFO - Starting subgradient computation step 200
+2024-09-12 01:39:03,301 - INFO - Finished subgradient computation step 200
+2024-09-12 01:39:03,302 - INFO - Finished subgradient computation for graph_0
+2024-09-12 01:39:03,303 - ERROR - Error running FMMC experiments for graph 0 with selfloops True: 'subgradient'
+2024-09-12 01:39:03,305 - INFO - Running FMMC experiments for graph 0 with selfloops False
+2024-09-12 01:39:03,306 - INFO - Using label_AGE as sensitive attribute
+2024-09-12 01:39:03,493 - INFO - md done
+2024-09-12 01:39:03,639 - INFO - mh done
+2024-09-12 01:39:59,291 - INFO - type of P.valaue <class 'numpy.ndarray'>
+2024-09-12 01:39:59,584 - INFO - fmmc_SCS done
+2024-09-12 01:39:59,762 - INFO - Starting subgradient computation for graph_0
+2024-09-12 01:39:59,904 - INFO - Starting subgradient computation step 1
+2024-09-12 01:40:00,047 - INFO - making p feasible (smaller or equal 1) on step 1
+2024-09-12 01:40:00,188 - INFO - making p feasible (smaller or equal 1) on step 1 on rebuilding phase
+2024-09-12 01:40:00,297 - INFO - Finished subgradient computation step 1
+2024-09-12 01:40:00,299 - INFO - Starting subgradient computation step 2
+2024-09-12 01:40:00,655 - INFO - Finished subgradient computation step 2
+2024-09-12 01:40:00,656 - INFO - Starting subgradient computation step 3
+2024-09-12 01:40:00,763 - INFO - making p feasible (smaller or equal 1) on step 3
+2024-09-12 01:40:01,002 - INFO - Finished subgradient computation step 3
+2024-09-12 01:40:01,002 - INFO - Starting subgradient computation step 4
+2024-09-12 01:40:01,354 - INFO - Finished subgradient computation step 4
+2024-09-12 01:40:01,354 - INFO - Starting subgradient computation step 5
+2024-09-12 01:40:01,702 - INFO - Finished subgradient computation step 5
+2024-09-12 01:40:01,703 - INFO - Starting subgradient computation step 6
+2024-09-12 01:40:02,053 - INFO - Finished subgradient computation step 6
+2024-09-12 01:40:02,053 - INFO - Starting subgradient computation step 7
+2024-09-12 01:40:02,411 - INFO - Finished subgradient computation step 7
+2024-09-12 01:40:02,412 - INFO - Starting subgradient computation step 8
+2024-09-12 01:40:02,765 - INFO - Finished subgradient computation step 8
+2024-09-12 01:40:02,765 - INFO - Starting subgradient computation step 9
+2024-09-12 01:40:03,121 - INFO - Finished subgradient computation step 9
+2024-09-12 01:40:03,121 - INFO - Starting subgradient computation step 10
+2024-09-12 01:40:03,469 - INFO - Finished subgradient computation step 10
+2024-09-12 01:40:03,470 - INFO - Starting subgradient computation step 11
+2024-09-12 01:40:03,836 - INFO - Finished subgradient computation step 11
+2024-09-12 01:40:03,837 - INFO - Starting subgradient computation step 12
+2024-09-12 01:40:04,188 - INFO - Finished subgradient computation step 12
+2024-09-12 01:40:04,189 - INFO - Starting subgradient computation step 13
+2024-09-12 01:40:04,541 - INFO - Finished subgradient computation step 13
+2024-09-12 01:40:04,541 - INFO - Starting subgradient computation step 14
+2024-09-12 01:40:04,896 - INFO - Finished subgradient computation step 14
+2024-09-12 01:40:04,896 - INFO - Starting subgradient computation step 15
+2024-09-12 01:40:05,011 - INFO - making p feasible (smaller or equal 1) on step 15
+2024-09-12 01:40:05,152 - INFO - making p feasible (smaller or equal 1) on step 15 on rebuilding phase
+2024-09-12 01:40:05,248 - INFO - Finished subgradient computation step 15
+2024-09-12 01:40:05,248 - INFO - Starting subgradient computation step 16
+2024-09-12 01:40:05,506 - INFO - making p feasible (smaller or equal 1) on step 16 on rebuilding phase
+2024-09-12 01:40:05,602 - INFO - Finished subgradient computation step 16
+2024-09-12 01:40:05,603 - INFO - Starting subgradient computation step 17
+2024-09-12 01:40:05,958 - INFO - Finished subgradient computation step 17
+2024-09-12 01:40:05,959 - INFO - Starting subgradient computation step 18
+2024-09-12 01:40:06,076 - INFO - making p feasible (smaller or equal 1) on step 18
+2024-09-12 01:40:06,216 - INFO - making p feasible (smaller or equal 1) on step 18 on rebuilding phase
+2024-09-12 01:40:06,312 - INFO - Finished subgradient computation step 18
+2024-09-12 01:40:06,313 - INFO - Starting subgradient computation step 19
+2024-09-12 01:40:06,434 - INFO - making p feasible (smaller or equal 1) on step 19
+2024-09-12 01:40:06,574 - INFO - making p feasible (smaller or equal 1) on step 19 on rebuilding phase
+2024-09-12 01:40:06,670 - INFO - Finished subgradient computation step 19
+2024-09-12 01:40:06,670 - INFO - Starting subgradient computation step 20
+2024-09-12 01:40:07,027 - INFO - Finished subgradient computation step 20
+2024-09-12 01:40:07,028 - INFO - Starting subgradient computation step 21
+2024-09-12 01:40:07,381 - INFO - Finished subgradient computation step 21
+2024-09-12 01:40:07,381 - INFO - Starting subgradient computation step 22
+2024-09-12 01:40:07,740 - INFO - Finished subgradient computation step 22
+2024-09-12 01:40:07,741 - INFO - Starting subgradient computation step 23
+2024-09-12 01:40:08,094 - INFO - Finished subgradient computation step 23
+2024-09-12 01:40:08,094 - INFO - Starting subgradient computation step 24
+2024-09-12 01:40:08,451 - INFO - Finished subgradient computation step 24
+2024-09-12 01:40:08,451 - INFO - Starting subgradient computation step 25
+2024-09-12 01:40:08,805 - INFO - Finished subgradient computation step 25
+2024-09-12 01:40:08,806 - INFO - Starting subgradient computation step 26
+2024-09-12 01:40:08,923 - INFO - making p feasible (smaller or equal 1) on step 26
+2024-09-12 01:40:09,063 - INFO - making p feasible (smaller or equal 1) on step 26 on rebuilding phase
+2024-09-12 01:40:09,161 - INFO - Finished subgradient computation step 26
+2024-09-12 01:40:09,161 - INFO - Starting subgradient computation step 27
+2024-09-12 01:40:09,517 - INFO - Finished subgradient computation step 27
+2024-09-12 01:40:09,518 - INFO - Starting subgradient computation step 28
+2024-09-12 01:40:09,880 - INFO - Finished subgradient computation step 28
+2024-09-12 01:40:09,881 - INFO - Starting subgradient computation step 29
+2024-09-12 01:40:10,234 - INFO - Finished subgradient computation step 29
+2024-09-12 01:40:10,234 - INFO - Starting subgradient computation step 30
+2024-09-12 01:40:10,355 - INFO - making p feasible (smaller or equal 1) on step 30
+2024-09-12 01:40:10,495 - INFO - making p feasible (smaller or equal 1) on step 30 on rebuilding phase
+2024-09-12 01:40:10,590 - INFO - Finished subgradient computation step 30
+2024-09-12 01:40:10,590 - INFO - Starting subgradient computation step 31
+2024-09-12 01:40:10,711 - INFO - making p feasible (smaller or equal 1) on step 31
+2024-09-12 01:40:10,851 - INFO - making p feasible (smaller or equal 1) on step 31 on rebuilding phase
+2024-09-12 01:40:10,946 - INFO - Finished subgradient computation step 31
+2024-09-12 01:40:10,946 - INFO - Starting subgradient computation step 32
+2024-09-12 01:40:11,305 - INFO - Finished subgradient computation step 32
+2024-09-12 01:40:11,305 - INFO - Starting subgradient computation step 33
+2024-09-12 01:40:11,658 - INFO - Finished subgradient computation step 33
+2024-09-12 01:40:11,658 - INFO - Starting subgradient computation step 34
+2024-09-12 01:40:12,015 - INFO - Finished subgradient computation step 34
+2024-09-12 01:40:12,015 - INFO - Starting subgradient computation step 35
+2024-09-12 01:40:12,374 - INFO - Finished subgradient computation step 35
+2024-09-12 01:40:12,374 - INFO - Starting subgradient computation step 36
+2024-09-12 01:40:12,497 - INFO - making p feasible (smaller or equal 1) on step 36
+2024-09-12 01:40:12,637 - INFO - making p feasible (smaller or equal 1) on step 36 on rebuilding phase
+2024-09-12 01:40:12,741 - INFO - Finished subgradient computation step 36
+2024-09-12 01:40:12,741 - INFO - Starting subgradient computation step 37
+2024-09-12 01:40:12,865 - INFO - making p feasible (smaller or equal 1) on step 37
+2024-09-12 01:40:13,005 - INFO - making p feasible (smaller or equal 1) on step 37 on rebuilding phase
+2024-09-12 01:40:13,100 - INFO - Finished subgradient computation step 37
+2024-09-12 01:40:13,100 - INFO - Starting subgradient computation step 38
+2024-09-12 01:40:13,467 - INFO - Finished subgradient computation step 38
+2024-09-12 01:40:13,467 - INFO - Starting subgradient computation step 39
+2024-09-12 01:40:13,825 - INFO - Finished subgradient computation step 39
+2024-09-12 01:40:13,826 - INFO - Starting subgradient computation step 40
+2024-09-12 01:40:14,186 - INFO - Finished subgradient computation step 40
+2024-09-12 01:40:14,186 - INFO - Starting subgradient computation step 41
+2024-09-12 01:40:14,545 - INFO - Finished subgradient computation step 41
+2024-09-12 01:40:14,545 - INFO - Starting subgradient computation step 42
+2024-09-12 01:40:14,912 - INFO - Finished subgradient computation step 42
+2024-09-12 01:40:14,912 - INFO - Starting subgradient computation step 43
+2024-09-12 01:40:15,036 - INFO - making p feasible (smaller or equal 1) on step 43
+2024-09-12 01:40:15,176 - INFO - making p feasible (smaller or equal 1) on step 43 on rebuilding phase
+2024-09-12 01:40:15,274 - INFO - Finished subgradient computation step 43
+2024-09-12 01:40:15,274 - INFO - Starting subgradient computation step 44
+2024-09-12 01:40:15,630 - INFO - Finished subgradient computation step 44
+2024-09-12 01:40:15,630 - INFO - Starting subgradient computation step 45
+2024-09-12 01:40:15,767 - INFO - making p feasible (smaller or equal 1) on step 45
+2024-09-12 01:40:15,907 - INFO - making p feasible (smaller or equal 1) on step 45 on rebuilding phase
+2024-09-12 01:40:16,003 - INFO - Finished subgradient computation step 45
+2024-09-12 01:40:16,003 - INFO - Starting subgradient computation step 46
+2024-09-12 01:40:16,127 - INFO - making p feasible (smaller or equal 1) on step 46
+2024-09-12 01:40:16,267 - INFO - making p feasible (smaller or equal 1) on step 46 on rebuilding phase
+2024-09-12 01:40:16,369 - INFO - Finished subgradient computation step 46
+2024-09-12 01:40:16,369 - INFO - Starting subgradient computation step 47
+2024-09-12 01:40:16,735 - INFO - Finished subgradient computation step 47
+2024-09-12 01:40:16,735 - INFO - Starting subgradient computation step 48
+2024-09-12 01:40:17,098 - INFO - Finished subgradient computation step 48
+2024-09-12 01:40:17,098 - INFO - Starting subgradient computation step 49
+2024-09-12 01:40:17,473 - INFO - Finished subgradient computation step 49
+2024-09-12 01:40:17,473 - INFO - Starting subgradient computation step 50
+2024-09-12 01:40:17,834 - INFO - Finished subgradient computation step 50
+2024-09-12 01:40:17,834 - INFO - Starting subgradient computation step 51
+2024-09-12 01:40:17,961 - INFO - making p feasible (smaller or equal 1) on step 51
+2024-09-12 01:40:18,101 - INFO - making p feasible (smaller or equal 1) on step 51 on rebuilding phase
+2024-09-12 01:40:18,195 - INFO - Finished subgradient computation step 51
+2024-09-12 01:40:18,195 - INFO - Starting subgradient computation step 52
+2024-09-12 01:40:18,325 - INFO - making p feasible (smaller or equal 1) on step 52
+2024-09-12 01:40:18,466 - INFO - making p feasible (smaller or equal 1) on step 52 on rebuilding phase
+2024-09-12 01:40:18,562 - INFO - Finished subgradient computation step 52
+2024-09-12 01:40:18,562 - INFO - Starting subgradient computation step 53
+2024-09-12 01:40:18,680 - INFO - making p feasible (smaller or equal 1) on step 53
+2024-09-12 01:40:18,819 - INFO - making p feasible (smaller or equal 1) on step 53 on rebuilding phase
+2024-09-12 01:40:18,914 - INFO - Finished subgradient computation step 53
+2024-09-12 01:40:18,914 - INFO - Starting subgradient computation step 54
+2024-09-12 01:40:19,282 - INFO - Finished subgradient computation step 54
+2024-09-12 01:40:19,283 - INFO - Starting subgradient computation step 55
+2024-09-12 01:40:19,406 - INFO - making p feasible (smaller or equal 1) on step 55
+2024-09-12 01:40:19,546 - INFO - making p feasible (smaller or equal 1) on step 55 on rebuilding phase
+2024-09-12 01:40:19,640 - INFO - Finished subgradient computation step 55
+2024-09-12 01:40:19,640 - INFO - Starting subgradient computation step 56
+2024-09-12 01:40:20,005 - INFO - Finished subgradient computation step 56
+2024-09-12 01:40:20,005 - INFO - Starting subgradient computation step 57
+2024-09-12 01:40:20,358 - INFO - Finished subgradient computation step 57
+2024-09-12 01:40:20,358 - INFO - Starting subgradient computation step 58
+2024-09-12 01:40:20,720 - INFO - Finished subgradient computation step 58
+2024-09-12 01:40:20,721 - INFO - Starting subgradient computation step 59
+2024-09-12 01:40:21,079 - INFO - Finished subgradient computation step 59
+2024-09-12 01:40:21,080 - INFO - Starting subgradient computation step 60
+2024-09-12 01:40:21,207 - INFO - making p feasible (smaller or equal 1) on step 60
+2024-09-12 01:40:21,348 - INFO - making p feasible (smaller or equal 1) on step 60 on rebuilding phase
+2024-09-12 01:40:21,443 - INFO - Finished subgradient computation step 60
+2024-09-12 01:40:21,443 - INFO - Starting subgradient computation step 61
+2024-09-12 01:40:21,574 - INFO - making p feasible (smaller or equal 1) on step 61
+2024-09-12 01:40:21,714 - INFO - making p feasible (smaller or equal 1) on step 61 on rebuilding phase
+2024-09-12 01:40:21,810 - INFO - Finished subgradient computation step 61
+2024-09-12 01:40:21,810 - INFO - Starting subgradient computation step 62
+2024-09-12 01:40:21,930 - INFO - making p feasible (smaller or equal 1) on step 62
+2024-09-12 01:40:22,071 - INFO - making p feasible (smaller or equal 1) on step 62 on rebuilding phase
+2024-09-12 01:40:22,168 - INFO - Finished subgradient computation step 62
+2024-09-12 01:40:22,168 - INFO - Starting subgradient computation step 63
+2024-09-12 01:40:22,530 - INFO - Finished subgradient computation step 63
+2024-09-12 01:40:22,530 - INFO - Starting subgradient computation step 64
+2024-09-12 01:40:22,886 - INFO - Finished subgradient computation step 64
+2024-09-12 01:40:22,887 - INFO - Starting subgradient computation step 65
+2024-09-12 01:40:23,251 - INFO - Finished subgradient computation step 65
+2024-09-12 01:40:23,251 - INFO - Starting subgradient computation step 66
+2024-09-12 01:40:23,610 - INFO - Finished subgradient computation step 66
+2024-09-12 01:40:23,610 - INFO - Starting subgradient computation step 67
+2024-09-12 01:40:23,739 - INFO - making p feasible (smaller or equal 1) on step 67
+2024-09-12 01:40:23,879 - INFO - making p feasible (smaller or equal 1) on step 67 on rebuilding phase
+2024-09-12 01:40:23,974 - INFO - Finished subgradient computation step 67
+2024-09-12 01:40:23,975 - INFO - Starting subgradient computation step 68
+2024-09-12 01:40:24,335 - INFO - Finished subgradient computation step 68
+2024-09-12 01:40:24,335 - INFO - Starting subgradient computation step 69
+2024-09-12 01:40:24,694 - INFO - Finished subgradient computation step 69
+2024-09-12 01:40:24,694 - INFO - Starting subgradient computation step 70
+2024-09-12 01:40:25,067 - INFO - Finished subgradient computation step 70
+2024-09-12 01:40:25,067 - INFO - Starting subgradient computation step 71
+2024-09-12 01:40:25,191 - INFO - making p feasible (smaller or equal 1) on step 71
+2024-09-12 01:40:25,331 - INFO - making p feasible (smaller or equal 1) on step 71 on rebuilding phase
+2024-09-12 01:40:25,425 - INFO - Finished subgradient computation step 71
+2024-09-12 01:40:25,425 - INFO - Starting subgradient computation step 72
+2024-09-12 01:40:25,551 - INFO - making p feasible (smaller or equal 1) on step 72
+2024-09-12 01:40:25,691 - INFO - making p feasible (smaller or equal 1) on step 72 on rebuilding phase
+2024-09-12 01:40:25,787 - INFO - Finished subgradient computation step 72
+2024-09-12 01:40:25,787 - INFO - Starting subgradient computation step 73
+2024-09-12 01:40:26,155 - INFO - Finished subgradient computation step 73
+2024-09-12 01:40:26,155 - INFO - Starting subgradient computation step 74
+2024-09-12 01:40:26,436 - INFO - making p feasible (smaller or equal 1) on step 74 on rebuilding phase
+2024-09-12 01:40:26,668 - INFO - Finished subgradient computation step 74
+2024-09-12 01:40:26,668 - INFO - Starting subgradient computation step 75
+2024-09-12 01:40:27,043 - INFO - Finished subgradient computation step 75
+2024-09-12 01:40:27,043 - INFO - Starting subgradient computation step 76
+2024-09-12 01:40:27,173 - INFO - making p feasible (smaller or equal 1) on step 76
+2024-09-12 01:40:27,408 - INFO - Finished subgradient computation step 76
+2024-09-12 01:40:27,408 - INFO - Starting subgradient computation step 77
+2024-09-12 01:40:27,536 - INFO - making p feasible (smaller or equal 1) on step 77
+2024-09-12 01:40:27,675 - INFO - making p feasible (smaller or equal 1) on step 77 on rebuilding phase
+2024-09-12 01:40:27,778 - INFO - Finished subgradient computation step 77
+2024-09-12 01:40:27,778 - INFO - Starting subgradient computation step 78
+2024-09-12 01:40:28,137 - INFO - Finished subgradient computation step 78
+2024-09-12 01:40:28,138 - INFO - Starting subgradient computation step 79
+2024-09-12 01:40:28,494 - INFO - Finished subgradient computation step 79
+2024-09-12 01:40:28,495 - INFO - Starting subgradient computation step 80
+2024-09-12 01:40:28,855 - INFO - Finished subgradient computation step 80
+2024-09-12 01:40:28,855 - INFO - Starting subgradient computation step 81
+2024-09-12 01:40:28,984 - INFO - making p feasible (smaller or equal 1) on step 81
+2024-09-12 01:40:29,124 - INFO - making p feasible (smaller or equal 1) on step 81 on rebuilding phase
+2024-09-12 01:40:29,219 - INFO - Finished subgradient computation step 81
+2024-09-12 01:40:29,219 - INFO - Starting subgradient computation step 82
+2024-09-12 01:40:29,348 - INFO - making p feasible (smaller or equal 1) on step 82
+2024-09-12 01:40:29,488 - INFO - making p feasible (smaller or equal 1) on step 82 on rebuilding phase
+2024-09-12 01:40:29,583 - INFO - Finished subgradient computation step 82
+2024-09-12 01:40:29,583 - INFO - Starting subgradient computation step 83
+2024-09-12 01:40:29,952 - INFO - Finished subgradient computation step 83
+2024-09-12 01:40:29,952 - INFO - Starting subgradient computation step 84
+2024-09-12 01:40:30,315 - INFO - Finished subgradient computation step 84
+2024-09-12 01:40:30,315 - INFO - Starting subgradient computation step 85
+2024-09-12 01:40:30,688 - INFO - Finished subgradient computation step 85
+2024-09-12 01:40:30,688 - INFO - Starting subgradient computation step 86
+2024-09-12 01:40:30,834 - INFO - making p feasible (smaller or equal 1) on step 86
+2024-09-12 01:40:30,973 - INFO - making p feasible (smaller or equal 1) on step 86 on rebuilding phase
+2024-09-12 01:40:31,068 - INFO - Finished subgradient computation step 86
+2024-09-12 01:40:31,068 - INFO - Starting subgradient computation step 87
+2024-09-12 01:40:31,192 - INFO - making p feasible (smaller or equal 1) on step 87
+2024-09-12 01:40:31,331 - INFO - making p feasible (smaller or equal 1) on step 87 on rebuilding phase
+2024-09-12 01:40:31,445 - INFO - Finished subgradient computation step 87
+2024-09-12 01:40:31,445 - INFO - Starting subgradient computation step 88
+2024-09-12 01:40:31,808 - INFO - Finished subgradient computation step 88
+2024-09-12 01:40:31,809 - INFO - Starting subgradient computation step 89
+2024-09-12 01:40:32,170 - INFO - Finished subgradient computation step 89
+2024-09-12 01:40:32,170 - INFO - Starting subgradient computation step 90
+2024-09-12 01:40:32,541 - INFO - Finished subgradient computation step 90
+2024-09-12 01:40:32,541 - INFO - Starting subgradient computation step 91
+2024-09-12 01:40:32,904 - INFO - Finished subgradient computation step 91
+2024-09-12 01:40:32,904 - INFO - Starting subgradient computation step 92
+2024-09-12 01:40:33,023 - INFO - making p feasible (smaller or equal 1) on step 92
+2024-09-12 01:40:33,162 - INFO - making p feasible (smaller or equal 1) on step 92 on rebuilding phase
+2024-09-12 01:40:33,257 - INFO - Finished subgradient computation step 92
+2024-09-12 01:40:33,257 - INFO - Starting subgradient computation step 93
+2024-09-12 01:40:33,387 - INFO - making p feasible (smaller or equal 1) on step 93
+2024-09-12 01:40:33,526 - INFO - making p feasible (smaller or equal 1) on step 93 on rebuilding phase
+2024-09-12 01:40:33,621 - INFO - Finished subgradient computation step 93
+2024-09-12 01:40:33,621 - INFO - Starting subgradient computation step 94
+2024-09-12 01:40:33,750 - INFO - making p feasible (smaller or equal 1) on step 94
+2024-09-12 01:40:33,889 - INFO - making p feasible (smaller or equal 1) on step 94 on rebuilding phase
+2024-09-12 01:40:33,984 - INFO - Finished subgradient computation step 94
+2024-09-12 01:40:33,984 - INFO - Starting subgradient computation step 95
+2024-09-12 01:40:34,348 - INFO - Finished subgradient computation step 95
+2024-09-12 01:40:34,349 - INFO - Starting subgradient computation step 96
+2024-09-12 01:40:34,710 - INFO - Finished subgradient computation step 96
+2024-09-12 01:40:34,710 - INFO - Starting subgradient computation step 97
+2024-09-12 01:40:35,074 - INFO - Finished subgradient computation step 97
+2024-09-12 01:40:35,074 - INFO - Starting subgradient computation step 98
+2024-09-12 01:40:35,205 - INFO - making p feasible (smaller or equal 1) on step 98
+2024-09-12 01:40:35,344 - INFO - making p feasible (smaller or equal 1) on step 98 on rebuilding phase
+2024-09-12 01:40:35,440 - INFO - Finished subgradient computation step 98
+2024-09-12 01:40:35,441 - INFO - Starting subgradient computation step 99
+2024-09-12 01:40:35,807 - INFO - Finished subgradient computation step 99
+2024-09-12 01:40:35,808 - INFO - Starting subgradient computation step 100
+2024-09-12 01:40:36,173 - INFO - Finished subgradient computation step 100
+2024-09-12 01:40:36,174 - INFO - Starting subgradient computation step 101
+2024-09-12 01:40:36,535 - INFO - Finished subgradient computation step 101
+2024-09-12 01:40:36,535 - INFO - Starting subgradient computation step 102
+2024-09-12 01:40:36,897 - INFO - Finished subgradient computation step 102
+2024-09-12 01:40:36,897 - INFO - Starting subgradient computation step 103
+2024-09-12 01:40:37,257 - INFO - Finished subgradient computation step 103
+2024-09-12 01:40:37,258 - INFO - Starting subgradient computation step 104
+2024-09-12 01:40:37,387 - INFO - making p feasible (smaller or equal 1) on step 104
+2024-09-12 01:40:37,527 - INFO - making p feasible (smaller or equal 1) on step 104 on rebuilding phase
+2024-09-12 01:40:37,623 - INFO - Finished subgradient computation step 104
+2024-09-12 01:40:37,624 - INFO - Starting subgradient computation step 105
+2024-09-12 01:40:37,752 - INFO - making p feasible (smaller or equal 1) on step 105
+2024-09-12 01:40:37,892 - INFO - making p feasible (smaller or equal 1) on step 105 on rebuilding phase
+2024-09-12 01:40:37,986 - INFO - Finished subgradient computation step 105
+2024-09-12 01:40:37,987 - INFO - Starting subgradient computation step 106
+2024-09-12 01:40:38,115 - INFO - making p feasible (smaller or equal 1) on step 106
+2024-09-12 01:40:38,255 - INFO - making p feasible (smaller or equal 1) on step 106 on rebuilding phase
+2024-09-12 01:40:38,360 - INFO - Finished subgradient computation step 106
+2024-09-12 01:40:38,360 - INFO - Starting subgradient computation step 107
+2024-09-12 01:40:38,503 - INFO - making p feasible (smaller or equal 1) on step 107
+2024-09-12 01:40:38,643 - INFO - making p feasible (smaller or equal 1) on step 107 on rebuilding phase
+2024-09-12 01:40:38,740 - INFO - Finished subgradient computation step 107
+2024-09-12 01:40:38,740 - INFO - Starting subgradient computation step 108
+2024-09-12 01:40:38,865 - INFO - making p feasible (smaller or equal 1) on step 108
+2024-09-12 01:40:39,005 - INFO - making p feasible (smaller or equal 1) on step 108 on rebuilding phase
+2024-09-12 01:40:39,099 - INFO - Finished subgradient computation step 108
+2024-09-12 01:40:39,100 - INFO - Starting subgradient computation step 109
+2024-09-12 01:40:39,458 - INFO - Finished subgradient computation step 109
+2024-09-12 01:40:39,458 - INFO - Starting subgradient computation step 110
+2024-09-12 01:40:39,586 - INFO - making p feasible (smaller or equal 1) on step 110
+2024-09-12 01:40:39,726 - INFO - making p feasible (smaller or equal 1) on step 110 on rebuilding phase
+2024-09-12 01:40:39,822 - INFO - Finished subgradient computation step 110
+2024-09-12 01:40:39,822 - INFO - Starting subgradient computation step 111
+2024-09-12 01:40:39,959 - INFO - making p feasible (smaller or equal 1) on step 111
+2024-09-12 01:40:40,099 - INFO - making p feasible (smaller or equal 1) on step 111 on rebuilding phase
+2024-09-12 01:40:40,194 - INFO - Finished subgradient computation step 111
+2024-09-12 01:40:40,195 - INFO - Starting subgradient computation step 112
+2024-09-12 01:40:40,325 - INFO - making p feasible (smaller or equal 1) on step 112
+2024-09-12 01:40:40,465 - INFO - making p feasible (smaller or equal 1) on step 112 on rebuilding phase
+2024-09-12 01:40:40,558 - INFO - Finished subgradient computation step 112
+2024-09-12 01:40:40,558 - INFO - Starting subgradient computation step 113
+2024-09-12 01:40:40,686 - INFO - making p feasible (smaller or equal 1) on step 113
+2024-09-12 01:40:40,826 - INFO - making p feasible (smaller or equal 1) on step 113 on rebuilding phase
+2024-09-12 01:40:40,927 - INFO - Finished subgradient computation step 113
+2024-09-12 01:40:40,927 - INFO - Starting subgradient computation step 114
+2024-09-12 01:40:41,059 - INFO - making p feasible (smaller or equal 1) on step 114
+2024-09-12 01:40:41,199 - INFO - making p feasible (smaller or equal 1) on step 114 on rebuilding phase
+2024-09-12 01:40:41,295 - INFO - Finished subgradient computation step 114
+2024-09-12 01:40:41,295 - INFO - Starting subgradient computation step 115
+2024-09-12 01:40:41,664 - INFO - Finished subgradient computation step 115
+2024-09-12 01:40:41,664 - INFO - Starting subgradient computation step 116
+2024-09-12 01:40:42,030 - INFO - Finished subgradient computation step 116
+2024-09-12 01:40:42,030 - INFO - Starting subgradient computation step 117
+2024-09-12 01:40:42,391 - INFO - Finished subgradient computation step 117
+2024-09-12 01:40:42,391 - INFO - Starting subgradient computation step 118
+2024-09-12 01:40:42,755 - INFO - Finished subgradient computation step 118
+2024-09-12 01:40:42,755 - INFO - Starting subgradient computation step 119
+2024-09-12 01:40:43,136 - INFO - Finished subgradient computation step 119
+2024-09-12 01:40:43,137 - INFO - Starting subgradient computation step 120
+2024-09-12 01:40:43,264 - INFO - making p feasible (smaller or equal 1) on step 120
+2024-09-12 01:40:43,404 - INFO - making p feasible (smaller or equal 1) on step 120 on rebuilding phase
+2024-09-12 01:40:43,504 - INFO - Finished subgradient computation step 120
+2024-09-12 01:40:43,504 - INFO - Starting subgradient computation step 121
+2024-09-12 01:40:43,864 - INFO - Finished subgradient computation step 121
+2024-09-12 01:40:43,865 - INFO - Starting subgradient computation step 122
+2024-09-12 01:40:43,994 - INFO - making p feasible (smaller or equal 1) on step 122
+2024-09-12 01:40:44,134 - INFO - making p feasible (smaller or equal 1) on step 122 on rebuilding phase
+2024-09-12 01:40:44,239 - INFO - Finished subgradient computation step 122
+2024-09-12 01:40:44,239 - INFO - Starting subgradient computation step 123
+2024-09-12 01:40:44,601 - INFO - Finished subgradient computation step 123
+2024-09-12 01:40:44,601 - INFO - Starting subgradient computation step 124
+2024-09-12 01:40:44,728 - INFO - making p feasible (smaller or equal 1) on step 124
+2024-09-12 01:40:44,868 - INFO - making p feasible (smaller or equal 1) on step 124 on rebuilding phase
+2024-09-12 01:40:44,962 - INFO - Finished subgradient computation step 124
+2024-09-12 01:40:44,963 - INFO - Starting subgradient computation step 125
+2024-09-12 01:40:45,086 - INFO - making p feasible (smaller or equal 1) on step 125
+2024-09-12 01:40:45,226 - INFO - making p feasible (smaller or equal 1) on step 125 on rebuilding phase
+2024-09-12 01:40:45,323 - INFO - Finished subgradient computation step 125
+2024-09-12 01:40:45,323 - INFO - Starting subgradient computation step 126
+2024-09-12 01:40:45,687 - INFO - Finished subgradient computation step 126
+2024-09-12 01:40:45,687 - INFO - Starting subgradient computation step 127
+2024-09-12 01:40:45,815 - INFO - making p feasible (smaller or equal 1) on step 127
+2024-09-12 01:40:45,955 - INFO - making p feasible (smaller or equal 1) on step 127 on rebuilding phase
+2024-09-12 01:40:46,052 - INFO - Finished subgradient computation step 127
+2024-09-12 01:40:46,052 - INFO - Starting subgradient computation step 128
+2024-09-12 01:40:46,420 - INFO - Finished subgradient computation step 128
+2024-09-12 01:40:46,420 - INFO - Starting subgradient computation step 129
+2024-09-12 01:40:46,557 - INFO - making p feasible (smaller or equal 1) on step 129
+2024-09-12 01:40:46,697 - INFO - making p feasible (smaller or equal 1) on step 129 on rebuilding phase
+2024-09-12 01:40:46,791 - INFO - Finished subgradient computation step 129
+2024-09-12 01:40:46,792 - INFO - Starting subgradient computation step 130
+2024-09-12 01:40:46,922 - INFO - making p feasible (smaller or equal 1) on step 130
+2024-09-12 01:40:47,062 - INFO - making p feasible (smaller or equal 1) on step 130 on rebuilding phase
+2024-09-12 01:40:47,157 - INFO - Finished subgradient computation step 130
+2024-09-12 01:40:47,157 - INFO - Starting subgradient computation step 131
+2024-09-12 01:40:47,538 - INFO - Finished subgradient computation step 131
+2024-09-12 01:40:47,539 - INFO - Starting subgradient computation step 132
+2024-09-12 01:40:47,909 - INFO - Finished subgradient computation step 132
+2024-09-12 01:40:47,909 - INFO - Starting subgradient computation step 133
+2024-09-12 01:40:48,280 - INFO - Finished subgradient computation step 133
+2024-09-12 01:40:48,281 - INFO - Starting subgradient computation step 134
+2024-09-12 01:40:48,647 - INFO - Finished subgradient computation step 134
+2024-09-12 01:40:48,647 - INFO - Starting subgradient computation step 135
+2024-09-12 01:40:49,017 - INFO - Finished subgradient computation step 135
+2024-09-12 01:40:49,018 - INFO - Starting subgradient computation step 136
+2024-09-12 01:40:49,388 - INFO - Finished subgradient computation step 136
+2024-09-12 01:40:49,389 - INFO - Starting subgradient computation step 137
+2024-09-12 01:40:49,519 - INFO - making p feasible (smaller or equal 1) on step 137
+2024-09-12 01:40:49,659 - INFO - making p feasible (smaller or equal 1) on step 137 on rebuilding phase
+2024-09-12 01:40:49,753 - INFO - Finished subgradient computation step 137
+2024-09-12 01:40:49,753 - INFO - Starting subgradient computation step 138
+2024-09-12 01:40:50,132 - INFO - Finished subgradient computation step 138
+2024-09-12 01:40:50,132 - INFO - Starting subgradient computation step 139
+2024-09-12 01:40:50,502 - INFO - Finished subgradient computation step 139
+2024-09-12 01:40:50,502 - INFO - Starting subgradient computation step 140
+2024-09-12 01:40:50,890 - INFO - Finished subgradient computation step 140
+2024-09-12 01:40:50,891 - INFO - Starting subgradient computation step 141
+2024-09-12 01:40:51,257 - INFO - Finished subgradient computation step 141
+2024-09-12 01:40:51,257 - INFO - Starting subgradient computation step 142
+2024-09-12 01:40:51,394 - INFO - making p feasible (smaller or equal 1) on step 142
+2024-09-12 01:40:51,534 - INFO - making p feasible (smaller or equal 1) on step 142 on rebuilding phase
+2024-09-12 01:40:51,629 - INFO - Finished subgradient computation step 142
+2024-09-12 01:40:51,630 - INFO - Starting subgradient computation step 143
+2024-09-12 01:40:51,765 - INFO - making p feasible (smaller or equal 1) on step 143
+2024-09-12 01:40:51,905 - INFO - making p feasible (smaller or equal 1) on step 143 on rebuilding phase
+2024-09-12 01:40:52,002 - INFO - Finished subgradient computation step 143
+2024-09-12 01:40:52,002 - INFO - Starting subgradient computation step 144
+2024-09-12 01:40:52,131 - INFO - making p feasible (smaller or equal 1) on step 144
+2024-09-12 01:40:52,271 - INFO - making p feasible (smaller or equal 1) on step 144 on rebuilding phase
+2024-09-12 01:40:52,365 - INFO - Finished subgradient computation step 144
+2024-09-12 01:40:52,366 - INFO - Starting subgradient computation step 145
+2024-09-12 01:40:52,502 - INFO - making p feasible (smaller or equal 1) on step 145
+2024-09-12 01:40:52,642 - INFO - making p feasible (smaller or equal 1) on step 145 on rebuilding phase
+2024-09-12 01:40:52,748 - INFO - Finished subgradient computation step 145
+2024-09-12 01:40:52,749 - INFO - Starting subgradient computation step 146
+2024-09-12 01:40:52,884 - INFO - making p feasible (smaller or equal 1) on step 146
+2024-09-12 01:40:53,023 - INFO - making p feasible (smaller or equal 1) on step 146 on rebuilding phase
+2024-09-12 01:40:53,121 - INFO - Finished subgradient computation step 146
+2024-09-12 01:40:53,122 - INFO - Starting subgradient computation step 147
+2024-09-12 01:40:53,257 - INFO - making p feasible (smaller or equal 1) on step 147
+2024-09-12 01:40:53,397 - INFO - making p feasible (smaller or equal 1) on step 147 on rebuilding phase
+2024-09-12 01:40:53,492 - INFO - Finished subgradient computation step 147
+2024-09-12 01:40:53,492 - INFO - Starting subgradient computation step 148
+2024-09-12 01:40:53,875 - INFO - Finished subgradient computation step 148
+2024-09-12 01:40:53,875 - INFO - Starting subgradient computation step 149
+2024-09-12 01:40:54,151 - INFO - making p feasible (smaller or equal 1) on step 149 on rebuilding phase
+2024-09-12 01:40:54,376 - INFO - Finished subgradient computation step 149
+2024-09-12 01:40:54,376 - INFO - Starting subgradient computation step 150
+2024-09-12 01:40:54,740 - INFO - Finished subgradient computation step 150
+2024-09-12 01:40:54,741 - INFO - Starting subgradient computation step 151
+2024-09-12 01:40:55,129 - INFO - Finished subgradient computation step 151
+2024-09-12 01:40:55,129 - INFO - Starting subgradient computation step 152
+2024-09-12 01:40:55,504 - INFO - Finished subgradient computation step 152
+2024-09-12 01:40:55,504 - INFO - Starting subgradient computation step 153
+2024-09-12 01:40:55,643 - INFO - making p feasible (smaller or equal 1) on step 153
+2024-09-12 01:40:55,783 - INFO - making p feasible (smaller or equal 1) on step 153 on rebuilding phase
+2024-09-12 01:40:55,877 - INFO - Finished subgradient computation step 153
+2024-09-12 01:40:55,878 - INFO - Starting subgradient computation step 154
+2024-09-12 01:40:56,250 - INFO - Finished subgradient computation step 154
+2024-09-12 01:40:56,250 - INFO - Starting subgradient computation step 155
+2024-09-12 01:40:56,381 - INFO - making p feasible (smaller or equal 1) on step 155
+2024-09-12 01:40:56,522 - INFO - making p feasible (smaller or equal 1) on step 155 on rebuilding phase
+2024-09-12 01:40:56,616 - INFO - Finished subgradient computation step 155
+2024-09-12 01:40:56,618 - INFO - Starting subgradient computation step 156
+2024-09-12 01:40:56,985 - INFO - Finished subgradient computation step 156
+2024-09-12 01:40:56,985 - INFO - Starting subgradient computation step 157
+2024-09-12 01:40:57,121 - INFO - making p feasible (smaller or equal 1) on step 157
+2024-09-12 01:40:57,261 - INFO - making p feasible (smaller or equal 1) on step 157 on rebuilding phase
+2024-09-12 01:40:57,359 - INFO - Finished subgradient computation step 157
+2024-09-12 01:40:57,360 - INFO - Starting subgradient computation step 158
+2024-09-12 01:40:57,726 - INFO - Finished subgradient computation step 158
+2024-09-12 01:40:57,727 - INFO - Starting subgradient computation step 159
+2024-09-12 01:40:58,105 - INFO - Finished subgradient computation step 159
+2024-09-12 01:40:58,106 - INFO - Starting subgradient computation step 160
+2024-09-12 01:40:58,237 - INFO - making p feasible (smaller or equal 1) on step 160
+2024-09-12 01:40:58,377 - INFO - making p feasible (smaller or equal 1) on step 160 on rebuilding phase
+2024-09-12 01:40:58,473 - INFO - Finished subgradient computation step 160
+2024-09-12 01:40:58,474 - INFO - Starting subgradient computation step 161
+2024-09-12 01:40:58,753 - INFO - making p feasible (smaller or equal 1) on step 161 on rebuilding phase
+2024-09-12 01:40:58,848 - INFO - Finished subgradient computation step 161
+2024-09-12 01:40:58,848 - INFO - Starting subgradient computation step 162
+2024-09-12 01:40:58,981 - INFO - making p feasible (smaller or equal 1) on step 162
+2024-09-12 01:40:59,120 - INFO - making p feasible (smaller or equal 1) on step 162 on rebuilding phase
+2024-09-12 01:40:59,214 - INFO - Finished subgradient computation step 162
+2024-09-12 01:40:59,214 - INFO - Starting subgradient computation step 163
+2024-09-12 01:40:59,346 - INFO - making p feasible (smaller or equal 1) on step 163
+2024-09-12 01:40:59,487 - INFO - making p feasible (smaller or equal 1) on step 163 on rebuilding phase
+2024-09-12 01:40:59,584 - INFO - Finished subgradient computation step 163
+2024-09-12 01:40:59,584 - INFO - Starting subgradient computation step 164
+2024-09-12 01:40:59,956 - INFO - Finished subgradient computation step 164
+2024-09-12 01:40:59,957 - INFO - Starting subgradient computation step 165
+2024-09-12 01:41:00,322 - INFO - Finished subgradient computation step 165
+2024-09-12 01:41:00,323 - INFO - Starting subgradient computation step 166
+2024-09-12 01:41:00,692 - INFO - Finished subgradient computation step 166
+2024-09-12 01:41:00,692 - INFO - Starting subgradient computation step 167
+2024-09-12 01:41:01,063 - INFO - Finished subgradient computation step 167
+2024-09-12 01:41:01,063 - INFO - Starting subgradient computation step 168
+2024-09-12 01:41:01,426 - INFO - Finished subgradient computation step 168
+2024-09-12 01:41:01,426 - INFO - Starting subgradient computation step 169
+2024-09-12 01:41:01,789 - INFO - Finished subgradient computation step 169
+2024-09-12 01:41:01,789 - INFO - Starting subgradient computation step 170
+2024-09-12 01:41:01,922 - INFO - making p feasible (smaller or equal 1) on step 170
+2024-09-12 01:41:02,061 - INFO - making p feasible (smaller or equal 1) on step 170 on rebuilding phase
+2024-09-12 01:41:02,156 - INFO - Finished subgradient computation step 170
+2024-09-12 01:41:02,157 - INFO - Starting subgradient computation step 171
+2024-09-12 01:41:02,521 - INFO - Finished subgradient computation step 171
+2024-09-12 01:41:02,521 - INFO - Starting subgradient computation step 172
+2024-09-12 01:41:02,904 - INFO - Finished subgradient computation step 172
+2024-09-12 01:41:02,904 - INFO - Starting subgradient computation step 173
+2024-09-12 01:41:03,270 - INFO - Finished subgradient computation step 173
+2024-09-12 01:41:03,270 - INFO - Starting subgradient computation step 174
+2024-09-12 01:41:03,399 - INFO - making p feasible (smaller or equal 1) on step 174
+2024-09-12 01:41:03,539 - INFO - making p feasible (smaller or equal 1) on step 174 on rebuilding phase
+2024-09-12 01:41:03,634 - INFO - Finished subgradient computation step 174
+2024-09-12 01:41:03,634 - INFO - Starting subgradient computation step 175
+2024-09-12 01:41:04,001 - INFO - Finished subgradient computation step 175
+2024-09-12 01:41:04,001 - INFO - Starting subgradient computation step 176
+2024-09-12 01:41:04,380 - INFO - Finished subgradient computation step 176
+2024-09-12 01:41:04,380 - INFO - Starting subgradient computation step 177
+2024-09-12 01:41:04,799 - INFO - Finished subgradient computation step 177
+2024-09-12 01:41:04,799 - INFO - Starting subgradient computation step 178
+2024-09-12 01:41:05,313 - INFO - Finished subgradient computation step 178
+2024-09-12 01:41:05,314 - INFO - Starting subgradient computation step 179
+2024-09-12 01:41:05,695 - INFO - Finished subgradient computation step 179
+2024-09-12 01:41:05,695 - INFO - Starting subgradient computation step 180
+2024-09-12 01:41:05,821 - INFO - making p feasible (smaller or equal 1) on step 180
+2024-09-12 01:41:05,960 - INFO - making p feasible (smaller or equal 1) on step 180 on rebuilding phase
+2024-09-12 01:41:06,059 - INFO - Finished subgradient computation step 180
+2024-09-12 01:41:06,059 - INFO - Starting subgradient computation step 181
+2024-09-12 01:41:06,411 - INFO - Finished subgradient computation step 181
+2024-09-12 01:41:06,412 - INFO - Starting subgradient computation step 182
+2024-09-12 01:41:06,793 - INFO - Finished subgradient computation step 182
+2024-09-12 01:41:06,793 - INFO - Starting subgradient computation step 183
+2024-09-12 01:41:06,918 - INFO - making p feasible (smaller or equal 1) on step 183
+2024-09-12 01:41:07,058 - INFO - making p feasible (smaller or equal 1) on step 183 on rebuilding phase
+2024-09-12 01:41:07,153 - INFO - Finished subgradient computation step 183
+2024-09-12 01:41:07,154 - INFO - Starting subgradient computation step 184
+2024-09-12 01:41:07,280 - INFO - making p feasible (smaller or equal 1) on step 184
+2024-09-12 01:41:07,420 - INFO - making p feasible (smaller or equal 1) on step 184 on rebuilding phase
+2024-09-12 01:41:07,518 - INFO - Finished subgradient computation step 184
+2024-09-12 01:41:07,518 - INFO - Starting subgradient computation step 185
+2024-09-12 01:41:07,884 - INFO - Finished subgradient computation step 185
+2024-09-12 01:41:07,884 - INFO - Starting subgradient computation step 186
+2024-09-12 01:41:08,009 - INFO - making p feasible (smaller or equal 1) on step 186
+2024-09-12 01:41:08,149 - INFO - making p feasible (smaller or equal 1) on step 186 on rebuilding phase
+2024-09-12 01:41:08,266 - INFO - Finished subgradient computation step 186
+2024-09-12 01:41:08,266 - INFO - Starting subgradient computation step 187
+2024-09-12 01:41:08,418 - INFO - making p feasible (smaller or equal 1) on step 187
+2024-09-12 01:41:08,573 - INFO - making p feasible (smaller or equal 1) on step 187 on rebuilding phase
+2024-09-12 01:41:08,672 - INFO - Finished subgradient computation step 187
+2024-09-12 01:41:08,673 - INFO - Starting subgradient computation step 188
+2024-09-12 01:41:09,037 - INFO - Finished subgradient computation step 188
+2024-09-12 01:41:09,038 - INFO - Starting subgradient computation step 189
+2024-09-12 01:41:09,164 - INFO - making p feasible (smaller or equal 1) on step 189
+2024-09-12 01:41:09,303 - INFO - making p feasible (smaller or equal 1) on step 189 on rebuilding phase
+2024-09-12 01:41:09,399 - INFO - Finished subgradient computation step 189
+2024-09-12 01:41:09,399 - INFO - Starting subgradient computation step 190
+2024-09-12 01:41:09,527 - INFO - making p feasible (smaller or equal 1) on step 190
+2024-09-12 01:41:09,666 - INFO - making p feasible (smaller or equal 1) on step 190 on rebuilding phase
+2024-09-12 01:41:09,767 - INFO - Finished subgradient computation step 190
+2024-09-12 01:41:09,767 - INFO - Starting subgradient computation step 191
+2024-09-12 01:41:09,899 - INFO - making p feasible (smaller or equal 1) on step 191
+2024-09-12 01:41:10,038 - INFO - making p feasible (smaller or equal 1) on step 191 on rebuilding phase
+2024-09-12 01:41:10,133 - INFO - Finished subgradient computation step 191
+2024-09-12 01:41:10,133 - INFO - Starting subgradient computation step 192
+2024-09-12 01:41:10,278 - INFO - making p feasible (smaller or equal 1) on step 192
+2024-09-12 01:41:10,418 - INFO - making p feasible (smaller or equal 1) on step 192 on rebuilding phase
+2024-09-12 01:41:10,513 - INFO - Finished subgradient computation step 192
+2024-09-12 01:41:10,513 - INFO - Starting subgradient computation step 193
+2024-09-12 01:41:10,880 - INFO - Finished subgradient computation step 193
+2024-09-12 01:41:10,880 - INFO - Starting subgradient computation step 194
+2024-09-12 01:41:11,241 - INFO - Finished subgradient computation step 194
+2024-09-12 01:41:11,242 - INFO - Starting subgradient computation step 195
+2024-09-12 01:41:11,618 - INFO - Finished subgradient computation step 195
+2024-09-12 01:41:11,620 - INFO - Starting subgradient computation step 196
+2024-09-12 01:41:12,082 - INFO - Finished subgradient computation step 196
+2024-09-12 01:41:12,082 - INFO - Starting subgradient computation step 197
+2024-09-12 01:41:12,205 - INFO - making p feasible (smaller or equal 1) on step 197
+2024-09-12 01:41:12,345 - INFO - making p feasible (smaller or equal 1) on step 197 on rebuilding phase
+2024-09-12 01:41:12,439 - INFO - Finished subgradient computation step 197
+2024-09-12 01:41:12,439 - INFO - Starting subgradient computation step 198
+2024-09-12 01:41:12,805 - INFO - Finished subgradient computation step 198
+2024-09-12 01:41:12,805 - INFO - Starting subgradient computation step 199
+2024-09-12 01:41:12,932 - INFO - making p feasible (smaller or equal 1) on step 199
+2024-09-12 01:41:13,072 - INFO - making p feasible (smaller or equal 1) on step 199 on rebuilding phase
+2024-09-12 01:41:13,168 - INFO - Finished subgradient computation step 199
+2024-09-12 01:41:13,168 - INFO - Starting subgradient computation step 200
+2024-09-12 01:41:13,547 - INFO - Finished subgradient computation step 200
+2024-09-12 01:41:13,549 - INFO - Finished subgradient computation for graph_0
+2024-09-12 01:41:13,551 - ERROR - Error running FMMC experiments for graph 0 with selfloops False: 'subgradient'
+2024-09-12 01:41:13,554 - INFO - Running baseline experiments for all graphs
+Computing node2vec graph:   0%|          | 0/310 [00:00<?, ?it/s]Computing node2vec graph: 100%|██████████| 310/310 [00:00<00:00, 17041.52it/s]
+Generating walks for graph_0 params p=1, q=1:   0%|          | 0/10 [00:00<?, ?it/s]Generating walks for graph_0 params p=1, q=1:  30%|███       | 3/10 [00:00<00:00, 17.50it/s]Generating walks for graph_0 params p=1, q=1:  50%|█████     | 5/10 [00:00<00:00, 14.06it/s]Generating walks for graph_0 params p=1, q=1:  70%|███████   | 7/10 [00:00<00:00, 12.91it/s]Generating walks for graph_0 params p=1, q=1:  90%|█████████ | 9/10 [00:00<00:00, 12.39it/s]Generating walks for graph_0 params p=1, q=1: 100%|██████████| 10/10 [00:00<00:00, 11.62it/s]
+0it [00:00, ?it/s]1it [00:00,  8.38it/s]6it [00:00, 29.21it/s]11it [00:00, 35.29it/s]15it [00:00, 36.53it/s]19it [00:00, 37.35it/s]24it [00:00, 40.10it/s]25it [00:00, 36.40it/s]
+0it [00:00, ?it/s]5it [00:00, 42.81it/s]10it [00:00, 42.82it/s]15it [00:00, 43.66it/s]20it [00:00, 42.72it/s]25it [00:00, 43.01it/s]25it [00:00, 43.00it/s]
+2024-09-12 01:41:30,210 - INFO - Finished baseline n2v experiments for all graphs
+2024-09-12 01:41:30,210 - INFO - Running CFN proxy calculation for all graphs
+Computing boundary proximites for graph graph_0 prewalk_len 6:   0%|          | 0/310 [00:00<?, ?it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   0%|          | 0/310 [00:00<?, ?it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   0%|          | 1/310 [00:00<00:36,  8.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   0%|          | 1/310 [00:00<00:47,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|          | 2/310 [00:00<00:35,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|          | 2/310 [00:00<00:46,  6.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|          | 3/310 [00:00<00:34,  8.80it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|          | 3/310 [00:00<00:46,  6.62it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|▏         | 4/310 [00:00<00:34,  8.82it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 5/310 [00:00<00:34,  8.84it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   1%|▏         | 4/310 [00:00<00:46,  6.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 6/310 [00:00<00:34,  8.84it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 5/310 [00:00<00:46,  6.60it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 7/310 [00:00<00:34,  8.82it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 8/310 [00:00<00:34,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 6/310 [00:00<00:46,  6.55it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 9/310 [00:01<00:34,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   2%|▏         | 7/310 [00:01<00:46,  6.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 10/310 [00:01<00:34,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 8/310 [00:01<00:46,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▎         | 11/310 [00:01<00:34,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▍         | 12/310 [00:01<00:34,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 9/310 [00:01<00:46,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▍         | 13/310 [00:01<00:33,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   3%|▎         | 10/310 [00:01<00:46,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▍         | 14/310 [00:01<00:33,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▎         | 11/310 [00:01<00:46,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▍         | 15/310 [00:01<00:33,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▌         | 16/310 [00:01<00:33,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▍         | 12/310 [00:01<00:46,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▌         | 17/310 [00:01<00:33,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   4%|▍         | 13/310 [00:01<00:45,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▌         | 18/310 [00:02<00:33,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▍         | 14/310 [00:02<00:45,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▌         | 19/310 [00:02<00:33,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▋         | 20/310 [00:02<00:33,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▍         | 15/310 [00:02<00:45,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 21/310 [00:02<00:33,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▌         | 16/310 [00:02<00:45,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 22/310 [00:02<00:32,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   5%|▌         | 17/310 [00:02<00:45,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 23/310 [00:02<00:32,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 24/310 [00:02<00:32,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▌         | 18/310 [00:02<00:44,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 25/310 [00:02<00:32,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▌         | 19/310 [00:02<00:44,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 26/310 [00:02<00:32,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   6%|▋         | 20/310 [00:03<00:44,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▊         | 27/310 [00:03<00:32,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▉         | 28/310 [00:03<00:32,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 21/310 [00:03<00:44,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▉         | 29/310 [00:03<00:32,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 22/310 [00:03<00:44,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|▉         | 30/310 [00:03<00:32,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   7%|▋         | 23/310 [00:03<00:43,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|█         | 31/310 [00:03<00:31,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|█         | 32/310 [00:03<00:31,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 24/310 [00:03<00:43,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█         | 33/310 [00:03<00:31,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 25/310 [00:03<00:43,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█         | 34/310 [00:03<00:31,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   8%|▊         | 26/310 [00:03<00:43,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█▏        | 35/310 [00:03<00:31,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 36/310 [00:04<00:31,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▊         | 27/310 [00:04<00:43,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 37/310 [00:04<00:31,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▉         | 28/310 [00:04<00:43,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 38/310 [00:04<00:31,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:   9%|▉         | 29/310 [00:04<00:43,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 39/310 [00:04<00:31,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 40/310 [00:04<00:31,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|▉         | 30/310 [00:04<00:42,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 41/310 [00:04<00:31,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|█         | 31/310 [00:04<00:42,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▎        | 42/310 [00:04<00:30,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  10%|█         | 32/310 [00:04<00:42,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▍        | 43/310 [00:04<00:30,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▍        | 44/310 [00:05<00:30,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█         | 33/310 [00:05<00:42,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▍        | 45/310 [00:05<00:30,  8.60it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█         | 34/310 [00:05<00:42,  6.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▍        | 46/310 [00:05<00:30,  8.64it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  11%|█▏        | 35/310 [00:05<00:41,  6.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▌        | 47/310 [00:05<00:30,  8.63it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▌        | 48/310 [00:05<00:30,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 36/310 [00:05<00:41,  6.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▌        | 49/310 [00:05<00:30,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 37/310 [00:05<00:41,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▌        | 50/310 [00:05<00:29,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  12%|█▏        | 38/310 [00:05<00:41,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▋        | 51/310 [00:05<00:29,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 52/310 [00:05<00:29,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 39/310 [00:05<00:41,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 53/310 [00:06<00:29,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 40/310 [00:06<00:41,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 54/310 [00:06<00:29,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  13%|█▎        | 41/310 [00:06<00:41,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 55/310 [00:06<00:29,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 56/310 [00:06<00:29,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▎        | 42/310 [00:06<00:41,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 57/310 [00:06<00:29,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▍        | 43/310 [00:06<00:41,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▊        | 58/310 [00:06<00:29,  8.61it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  14%|█▍        | 44/310 [00:06<00:41,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▉        | 59/310 [00:06<00:29,  8.64it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▉        | 60/310 [00:06<00:28,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▍        | 45/310 [00:06<00:41,  6.41it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|█▉        | 61/310 [00:07<00:28,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▍        | 46/310 [00:07<00:41,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|██        | 62/310 [00:07<00:28,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|██        | 63/310 [00:07<00:28,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▌        | 47/310 [00:07<00:40,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██        | 64/310 [00:07<00:28,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  15%|█▌        | 48/310 [00:07<00:40,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██        | 65/310 [00:07<00:27,  8.80it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▌        | 49/310 [00:07<00:40,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██▏       | 66/310 [00:07<00:27,  8.86it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 67/310 [00:07<00:27,  8.80it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▌        | 50/310 [00:07<00:40,  6.41it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 68/310 [00:07<00:27,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  16%|█▋        | 51/310 [00:07<00:40,  6.40it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 69/310 [00:07<00:27,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 52/310 [00:08<00:40,  6.40it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 70/310 [00:08<00:27,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 71/310 [00:08<00:27,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 53/310 [00:08<00:40,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 72/310 [00:08<00:27,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  17%|█▋        | 54/310 [00:08<00:39,  6.42it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▎       | 73/310 [00:08<00:27,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 55/310 [00:08<00:39,  6.43it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▍       | 74/310 [00:08<00:27,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▍       | 75/310 [00:08<00:27,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 56/310 [00:08<00:39,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▍       | 76/310 [00:08<00:26,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  18%|█▊        | 57/310 [00:08<00:39,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▍       | 77/310 [00:08<00:26,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▊        | 58/310 [00:08<00:39,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▌       | 78/310 [00:08<00:26,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▌       | 79/310 [00:09<00:26,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▉        | 59/310 [00:09<00:38,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▌       | 80/310 [00:09<00:26,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  19%|█▉        | 60/310 [00:09<00:38,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▌       | 81/310 [00:09<00:26,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|█▉        | 61/310 [00:09<00:38,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▋       | 82/310 [00:09<00:26,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 83/310 [00:09<00:26,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|██        | 62/310 [00:09<00:38,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 84/310 [00:09<00:26,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  20%|██        | 63/310 [00:09<00:38,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 85/310 [00:09<00:25,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██        | 64/310 [00:09<00:37,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 86/310 [00:09<00:25,  8.63it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 87/310 [00:09<00:25,  8.62it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██        | 65/310 [00:10<00:37,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 88/310 [00:10<00:26,  8.35it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  21%|██▏       | 66/310 [00:10<00:37,  6.43it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▊       | 89/310 [00:10<00:26,  8.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 67/310 [00:10<00:37,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▉       | 90/310 [00:10<00:25,  8.58it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▉       | 91/310 [00:10<00:25,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 68/310 [00:10<00:37,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|██▉       | 92/310 [00:10<00:25,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  22%|██▏       | 69/310 [00:10<00:37,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|███       | 93/310 [00:10<00:25,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 70/310 [00:10<00:37,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|███       | 94/310 [00:10<00:25,  8.63it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███       | 95/310 [00:10<00:24,  8.61it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 71/310 [00:10<00:36,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███       | 96/310 [00:11<00:24,  8.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  23%|██▎       | 72/310 [00:11<00:36,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███▏      | 97/310 [00:11<00:24,  8.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▎       | 73/310 [00:11<00:36,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 98/310 [00:11<00:24,  8.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 99/310 [00:11<00:24,  8.58it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▍       | 74/310 [00:11<00:36,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 100/310 [00:11<00:24,  8.60it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  24%|██▍       | 75/310 [00:11<00:36,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 101/310 [00:11<00:24,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▍       | 76/310 [00:11<00:36,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 102/310 [00:11<00:23,  8.77it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 103/310 [00:11<00:23,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▍       | 77/310 [00:11<00:36,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▎      | 104/310 [00:11<00:23,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▌       | 78/310 [00:12<00:35,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▍      | 105/310 [00:12<00:23,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▍      | 106/310 [00:12<00:23,  8.79it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  25%|██▌       | 79/310 [00:12<00:35,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▍      | 107/310 [00:12<00:23,  8.80it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▌       | 80/310 [00:12<00:35,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▍      | 108/310 [00:12<00:23,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▌       | 81/310 [00:12<00:35,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▌      | 109/310 [00:12<00:23,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▌      | 110/310 [00:12<00:22,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  26%|██▋       | 82/310 [00:12<00:35,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▌      | 111/310 [00:12<00:22,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 83/310 [00:12<00:35,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▌      | 112/310 [00:12<00:22,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 84/310 [00:12<00:34,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▋      | 113/310 [00:12<00:22,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 114/310 [00:13<00:22,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  27%|██▋       | 85/310 [00:13<00:34,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 115/310 [00:13<00:22,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 86/310 [00:13<00:34,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 116/310 [00:13<00:22,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 87/310 [00:13<00:34,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 117/310 [00:13<00:22,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 118/310 [00:13<00:21,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  28%|██▊       | 88/310 [00:13<00:34,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 119/310 [00:13<00:21,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▊       | 89/310 [00:13<00:34,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▊      | 120/310 [00:13<00:21,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▉       | 90/310 [00:13<00:33,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▉      | 121/310 [00:13<00:21,  8.77it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▉      | 122/310 [00:14<00:21,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  29%|██▉       | 91/310 [00:14<00:33,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|███▉      | 123/310 [00:14<00:21,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|██▉       | 92/310 [00:14<00:33,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|████      | 124/310 [00:14<00:21,  8.63it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|███       | 93/310 [00:14<00:33,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|████      | 125/310 [00:14<00:21,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████      | 126/310 [00:14<00:21,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  30%|███       | 94/310 [00:14<00:33,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████      | 127/310 [00:14<00:20,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███       | 95/310 [00:14<00:33,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████▏     | 128/310 [00:14<00:20,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 129/310 [00:14<00:20,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███       | 96/310 [00:14<00:33,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 130/310 [00:14<00:20,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  31%|███▏      | 97/310 [00:14<00:33,  6.43it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 131/310 [00:15<00:20,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 98/310 [00:15<00:32,  6.43it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 132/310 [00:15<00:20,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 133/310 [00:15<00:20,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 99/310 [00:15<00:32,  6.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 134/310 [00:15<00:20,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  32%|███▏      | 100/310 [00:15<00:32,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  44%|████▎     | 135/310 [00:15<00:19,  8.80it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 101/310 [00:15<00:32,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  44%|████▍     | 136/310 [00:15<00:19,  8.83it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  44%|████▍     | 137/310 [00:15<00:19,  8.76it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 102/310 [00:15<00:31,  6.56it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  45%|████▍     | 138/310 [00:15<00:19,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  33%|███▎      | 103/310 [00:15<00:31,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  45%|████▍     | 139/310 [00:15<00:19,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▎      | 104/310 [00:16<00:31,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  45%|████▌     | 140/310 [00:16<00:19,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  45%|████▌     | 141/310 [00:16<00:19,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▍      | 105/310 [00:16<00:31,  6.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  46%|████▌     | 142/310 [00:16<00:19,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  34%|███▍      | 106/310 [00:16<00:31,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  46%|████▌     | 143/310 [00:16<00:19,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▍      | 107/310 [00:16<00:31,  6.53it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  46%|████▋     | 144/310 [00:16<00:19,  8.64it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  47%|████▋     | 145/310 [00:16<00:19,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▍      | 108/310 [00:16<00:31,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  47%|████▋     | 146/310 [00:16<00:18,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▌      | 109/310 [00:16<00:30,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  47%|████▋     | 147/310 [00:16<00:18,  8.62it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  35%|███▌      | 110/310 [00:16<00:30,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  48%|████▊     | 148/310 [00:17<00:18,  8.64it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  48%|████▊     | 149/310 [00:17<00:18,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▌      | 111/310 [00:17<00:30,  6.49it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  48%|████▊     | 150/310 [00:17<00:18,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▌      | 112/310 [00:17<00:30,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  49%|████▊     | 151/310 [00:17<00:18,  8.62it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  36%|███▋      | 113/310 [00:17<00:30,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  49%|████▉     | 152/310 [00:17<00:18,  8.62it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  49%|████▉     | 153/310 [00:17<00:18,  8.64it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 114/310 [00:17<00:30,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  50%|████▉     | 154/310 [00:17<00:17,  8.67it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 115/310 [00:17<00:29,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  50%|█████     | 155/310 [00:17<00:17,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  37%|███▋      | 116/310 [00:17<00:29,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  50%|█████     | 156/310 [00:17<00:17,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  51%|█████     | 157/310 [00:18<00:17,  8.66it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 117/310 [00:18<00:29,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  51%|█████     | 158/310 [00:18<00:17,  8.69it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 118/310 [00:18<00:29,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  51%|█████▏    | 159/310 [00:18<00:17,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  38%|███▊      | 119/310 [00:18<00:29,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  52%|█████▏    | 160/310 [00:18<00:17,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  52%|█████▏    | 161/310 [00:18<00:17,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▊      | 120/310 [00:18<00:29,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  52%|█████▏    | 162/310 [00:18<00:16,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▉      | 121/310 [00:18<00:29,  6.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  53%|█████▎    | 163/310 [00:18<00:16,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  39%|███▉      | 122/310 [00:18<00:28,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  53%|█████▎    | 164/310 [00:18<00:16,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  53%|█████▎    | 165/310 [00:18<00:16,  8.78it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|███▉      | 123/310 [00:18<00:28,  6.48it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  54%|█████▎    | 166/310 [00:19<00:16,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|████      | 124/310 [00:19<00:28,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  54%|█████▍    | 167/310 [00:19<00:16,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  40%|████      | 125/310 [00:19<00:28,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  54%|█████▍    | 168/310 [00:19<00:16,  8.73it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  55%|█████▍    | 169/310 [00:19<00:16,  8.75it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████      | 126/310 [00:19<00:28,  6.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  55%|█████▍    | 170/310 [00:19<00:16,  8.71it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████      | 127/310 [00:19<00:28,  6.51it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  55%|█████▌    | 171/310 [00:19<00:16,  8.68it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  41%|████▏     | 128/310 [00:19<00:27,  6.54it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  55%|█████▌    | 172/310 [00:19<00:15,  8.70it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  56%|█████▌    | 173/310 [00:19<00:15,  8.72it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 129/310 [00:19<00:27,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  56%|█████▌    | 174/310 [00:19<00:15,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 130/310 [00:20<00:27,  6.47it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  56%|█████▋    | 175/310 [00:20<00:15,  8.74it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  42%|████▏     | 131/310 [00:20<00:27,  6.41it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  57%|█████▋    | 176/310 [00:20<00:15,  8.44it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  57%|█████▋    | 177/310 [00:20<00:15,  8.46it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 132/310 [00:20<00:27,  6.38it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  57%|█████▋    | 178/310 [00:20<00:15,  8.52it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 133/310 [00:20<00:27,  6.40it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  58%|█████▊    | 179/310 [00:20<00:15,  8.57it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  43%|████▎     | 134/310 [00:20<00:27,  6.45it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  58%|█████▊    | 180/310 [00:20<00:15,  8.58it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  58%|█████▊    | 181/310 [00:20<00:14,  8.61it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  44%|████▎     | 135/310 [00:20<00:26,  6.50it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  59%|█████▊    | 182/310 [00:20<00:14,  8.65it/s]Computing boundary proximites for graph graph_0 prewalk_len 6:  44%|████▍     | 136/310 [00:20<00:26,  6.55it/s]Computing boundary proximites for g

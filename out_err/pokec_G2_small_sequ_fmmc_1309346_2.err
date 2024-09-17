@@ -1,0 +1,222 @@
+2024-09-12 01:36:38,819 - INFO - Logging is set up.
+2024-09-12 01:36:38,820 - INFO - Starting experiment with task_id: 2
+2024-09-12 01:36:38,820 - INFO - Running experiment: new_run_experiment_pokec_mixed('vsmall1')
+2024-09-12 01:36:38,821 - INFO - Seed set to 42
+2024-09-12 01:36:38,821 - INFO - Data already pre-formatted
+2024-09-12 01:36:38,822 - INFO - Formatting data for graph_dir_0
+2024-09-12 01:36:38,822 - INFO - Starting formatting
+2024-09-12 01:36:39,909 - INFO - Filtering by category
+2024-09-12 01:36:40,102 - INFO - Labeling values
+2024-09-12 01:36:40,107 - INFO - Filtering edgelist attributes
+2024-09-12 01:36:45,458 - INFO - Formatting done.
+2024-09-12 01:36:45,458 - INFO - Finished formatting data for graph_dir_0
+2024-09-12 01:36:45,459 - INFO - Loading edgelist from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall1/resources/graph_dir_0/filtered_edgelist.txt
+2024-09-12 01:36:45,459 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall1/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:45,461 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_mixed_graphsize_vsmall1/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:45,547 - INFO - Graph 0: <data_utils.graph.pokec_graph.PokecGraph object at 0x14c511da3850>
+2024-09-12 01:36:45,547 - INFO - Number of nodes in graph 0: 666
+2024-09-12 01:36:45,547 - INFO - Number of edges in graph 0: 1878
+2024-09-12 01:36:45,547 - INFO - Number of attributes in graph 0: 666
+2024-09-12 01:36:45,547 - INFO - Total number of baseline experiments: 1
+2024-09-12 01:36:45,547 - INFO - Total number of crosswalk experiments: 18
+2024-09-12 01:36:45,547 - INFO - Running FMMC experiments for graph 0 with selfloops True
+2024-09-12 01:36:45,549 - INFO - Using label_AGE as sensitive attribute
+2024-09-12 01:36:46,707 - INFO - md done
+2024-09-12 01:36:47,801 - INFO - mh done
+2024-09-12 01:39:40,014 - INFO - type of P.valaue <class 'numpy.ndarray'>
+2024-09-12 01:39:41,193 - INFO - fmmc_SCS done
+2024-09-12 01:39:41,838 - INFO - Starting subgradient computation for graph_0
+2024-09-12 01:39:42,596 - INFO - Starting subgradient computation step 1
+2024-09-12 01:39:44,976 - INFO - Finished subgradient computation step 1
+2024-09-12 01:39:44,976 - INFO - Starting subgradient computation step 2
+2024-09-12 01:39:46,789 - INFO - Finished subgradient computation step 2
+2024-09-12 01:39:46,789 - INFO - Starting subgradient computation step 3
+2024-09-12 01:39:48,593 - INFO - Finished subgradient computation step 3
+2024-09-12 01:39:48,593 - INFO - Starting subgradient computation step 4
+2024-09-12 01:39:50,526 - INFO - Finished subgradient computation step 4
+2024-09-12 01:39:50,526 - INFO - Starting subgradient computation step 5
+2024-09-12 01:39:52,385 - INFO - Finished subgradient computation step 5
+2024-09-12 01:39:52,385 - INFO - Starting subgradient computation step 6
+2024-09-12 01:39:54,518 - INFO - Finished subgradient computation step 6
+2024-09-12 01:39:54,518 - INFO - Starting subgradient computation step 7
+2024-09-12 01:39:56,197 - INFO - Finished subgradient computation step 7
+2024-09-12 01:39:56,198 - INFO - Starting subgradient computation step 8
+2024-09-12 01:39:57,867 - INFO - Finished subgradient computation step 8
+2024-09-12 01:39:57,868 - INFO - Starting subgradient computation step 9
+2024-09-12 01:39:59,609 - INFO - Finished subgradient computation step 9
+2024-09-12 01:39:59,609 - INFO - Starting subgradient computation step 10
+2024-09-12 01:40:00,941 - INFO - making p feasible (smaller or equal 1) on step 10 on rebuilding phase
+2024-09-12 01:40:01,236 - INFO - Finished subgradient computation step 10
+2024-09-12 01:40:01,236 - INFO - Starting subgradient computation step 11
+2024-09-12 01:40:02,951 - INFO - Finished subgradient computation step 11
+2024-09-12 01:40:02,952 - INFO - Starting subgradient computation step 12
+2024-09-12 01:40:04,619 - INFO - Finished subgradient computation step 12
+2024-09-12 01:40:04,619 - INFO - Starting subgradient computation step 13
+2024-09-12 01:40:06,425 - INFO - Finished subgradient computation step 13
+2024-09-12 01:40:06,425 - INFO - Starting subgradient computation step 14
+2024-09-12 01:40:08,149 - INFO - Finished subgradient computation step 14
+2024-09-12 01:40:08,150 - INFO - Starting subgradient computation step 15
+2024-09-12 01:40:09,869 - INFO - Finished subgradient computation step 15
+2024-09-12 01:40:09,869 - INFO - Starting subgradient computation step 16
+2024-09-12 01:40:11,585 - INFO - Finished subgradient computation step 16
+2024-09-12 01:40:11,586 - INFO - Starting subgradient computation step 17
+2024-09-12 01:40:12,271 - INFO - making p feasible (smaller or equal 1) on step 17
+2024-09-12 01:40:12,999 - INFO - making p feasible (smaller or equal 1) on step 17 on rebuilding phase
+2024-09-12 01:40:13,288 - INFO - Finished subgradient computation step 17
+2024-09-12 01:40:13,288 - INFO - Starting subgradient computation step 18
+2024-09-12 01:40:13,984 - INFO - making p feasible (smaller or equal 1) on step 18
+2024-09-12 01:40:14,712 - INFO - making p feasible (smaller or equal 1) on step 18 on rebuilding phase
+2024-09-12 01:40:14,998 - INFO - Finished subgradient computation step 18
+2024-09-12 01:40:14,998 - INFO - Starting subgradient computation step 19
+2024-09-12 01:40:16,782 - INFO - Finished subgradient computation step 19
+2024-09-12 01:40:16,783 - INFO - Starting subgradient computation step 20
+2024-09-12 01:40:18,497 - INFO - Finished subgradient computation step 20
+2024-09-12 01:40:18,497 - INFO - Starting subgradient computation step 21
+2024-09-12 01:40:19,920 - INFO - making p feasible (smaller or equal 1) on step 21 on rebuilding phase
+2024-09-12 01:40:20,340 - INFO - Finished subgradient computation step 21
+2024-09-12 01:40:20,340 - INFO - Starting subgradient computation step 22
+2024-09-12 01:40:22,036 - INFO - Finished subgradient computation step 22
+2024-09-12 01:40:22,036 - INFO - Starting subgradient computation step 23
+2024-09-12 01:40:22,718 - INFO - making p feasible (smaller or equal 1) on step 23
+2024-09-12 01:40:23,445 - INFO - making p feasible (smaller or equal 1) on step 23 on rebuilding phase
+2024-09-12 01:40:23,729 - INFO - Finished subgradient computation step 23
+2024-09-12 01:40:23,729 - INFO - Starting subgradient computation step 24
+2024-09-12 01:40:24,404 - INFO - making p feasible (smaller or equal 1) on step 24
+2024-09-12 01:40:25,132 - INFO - making p feasible (smaller or equal 1) on step 24 on rebuilding phase
+2024-09-12 01:40:25,428 - INFO - Finished subgradient computation step 24
+2024-09-12 01:40:25,428 - INFO - Starting subgradient computation step 25
+2024-09-12 01:40:27,134 - INFO - Finished subgradient computation step 25
+2024-09-12 01:40:27,134 - INFO - Starting subgradient computation step 26
+2024-09-12 01:40:28,826 - INFO - Finished subgradient computation step 26
+2024-09-12 01:40:28,826 - INFO - Starting subgradient computation step 27
+2024-09-12 01:40:29,526 - INFO - making p feasible (smaller or equal 1) on step 27
+2024-09-12 01:40:30,253 - INFO - making p feasible (smaller or equal 1) on step 27 on rebuilding phase
+2024-09-12 01:40:30,555 - INFO - Finished subgradient computation step 27
+2024-09-12 01:40:30,555 - INFO - Starting subgradient computation step 28
+2024-09-12 01:40:32,254 - INFO - Finished subgradient computation step 28
+2024-09-12 01:40:32,254 - INFO - Starting subgradient computation step 29
+2024-09-12 01:40:33,979 - INFO - Finished subgradient computation step 29
+2024-09-12 01:40:33,980 - INFO - Starting subgradient computation step 30
+2024-09-12 01:40:34,659 - INFO - making p feasible (smaller or equal 1) on step 30
+2024-09-12 01:40:35,386 - INFO - making p feasible (smaller or equal 1) on step 30 on rebuilding phase
+2024-09-12 01:40:35,670 - INFO - Finished subgradient computation step 30
+2024-09-12 01:40:35,670 - INFO - Starting subgradient computation step 31
+2024-09-12 01:40:37,366 - INFO - Finished subgradient computation step 31
+2024-09-12 01:40:37,366 - INFO - Starting subgradient computation step 32
+2024-09-12 01:40:39,049 - INFO - Finished subgradient computation step 32
+2024-09-12 01:40:39,050 - INFO - Starting subgradient computation step 33
+2024-09-12 01:40:40,742 - INFO - Finished subgradient computation step 33
+2024-09-12 01:40:40,743 - INFO - Starting subgradient computation step 34
+2024-09-12 01:40:42,441 - INFO - Finished subgradient computation step 34
+2024-09-12 01:40:42,441 - INFO - Starting subgradient computation step 35
+2024-09-12 01:40:44,245 - INFO - Finished subgradient computation step 35
+2024-09-12 01:40:44,246 - INFO - Starting subgradient computation step 36
+2024-09-12 01:40:46,043 - INFO - Finished subgradient computation step 36
+2024-09-12 01:40:46,043 - INFO - Starting subgradient computation step 37
+2024-09-12 01:40:46,716 - INFO - making p feasible (smaller or equal 1) on step 37
+2024-09-12 01:40:47,442 - INFO - making p feasible (smaller or equal 1) on step 37 on rebuilding phase
+2024-09-12 01:40:47,727 - INFO - Finished subgradient computation step 37
+2024-09-12 01:40:47,727 - INFO - Starting subgradient computation step 38
+2024-09-12 01:40:48,413 - INFO - making p feasible (smaller or equal 1) on step 38
+2024-09-12 01:40:49,139 - INFO - making p feasible (smaller or equal 1) on step 38 on rebuilding phase
+2024-09-12 01:40:49,422 - INFO - Finished subgradient computation step 38
+2024-09-12 01:40:49,422 - INFO - Starting subgradient computation step 39
+2024-09-12 01:40:51,132 - INFO - Finished subgradient computation step 39
+2024-09-12 01:40:51,132 - INFO - Starting subgradient computation step 40
+2024-09-12 01:40:52,820 - INFO - Finished subgradient computation step 40
+2024-09-12 01:40:52,820 - INFO - Starting subgradient computation step 41
+2024-09-12 01:40:54,514 - INFO - Finished subgradient computation step 41
+2024-09-12 01:40:54,515 - INFO - Starting subgradient computation step 42
+2024-09-12 01:40:56,214 - INFO - Finished subgradient computation step 42
+2024-09-12 01:40:56,214 - INFO - Starting subgradient computation step 43
+2024-09-12 01:40:57,921 - INFO - Finished subgradient computation step 43
+2024-09-12 01:40:57,922 - INFO - Starting subgradient computation step 44
+2024-09-12 01:40:58,590 - INFO - making p feasible (smaller or equal 1) on step 44
+2024-09-12 01:40:59,317 - INFO - making p feasible (smaller or equal 1) on step 44 on rebuilding phase
+2024-09-12 01:40:59,593 - INFO - Finished subgradient computation step 44
+2024-09-12 01:40:59,593 - INFO - Starting subgradient computation step 45
+2024-09-12 01:41:00,277 - INFO - making p feasible (smaller or equal 1) on step 45
+2024-09-12 01:41:01,004 - INFO - making p feasible (smaller or equal 1) on step 45 on rebuilding phase
+2024-09-12 01:41:01,275 - INFO - Finished subgradient computation step 45
+2024-09-12 01:41:01,275 - INFO - Starting subgradient computation step 46
+2024-09-12 01:41:02,974 - INFO - Finished subgradient computation step 46
+2024-09-12 01:41:02,975 - INFO - Starting subgradient computation step 47
+2024-09-12 01:41:04,659 - INFO - Finished subgradient computation step 47
+2024-09-12 01:41:04,660 - INFO - Starting subgradient computation step 48
+2024-09-12 01:41:06,432 - INFO - Finished subgradient computation step 48
+2024-09-12 01:41:06,432 - INFO - Starting subgradient computation step 49
+2024-09-12 01:41:08,048 - INFO - Finished subgradient computation step 49
+2024-09-12 01:41:08,048 - INFO - Starting subgradient computation step 50
+2024-09-12 01:41:09,772 - INFO - Finished subgradient computation step 50
+2024-09-12 01:41:09,772 - INFO - Starting subgradient computation step 51
+2024-09-12 01:41:11,487 - INFO - Finished subgradient computation step 51
+2024-09-12 01:41:11,487 - INFO - Starting subgradient computation step 52
+2024-09-12 01:41:13,524 - INFO - Finished subgradient computation step 52
+2024-09-12 01:41:13,525 - INFO - Starting subgradient computation step 53
+2024-09-12 01:41:15,215 - INFO - Finished subgradient computation step 53
+2024-09-12 01:41:15,215 - INFO - Starting subgradient computation step 54
+2024-09-12 01:41:16,938 - INFO - Finished subgradient computation step 54
+2024-09-12 01:41:16,938 - INFO - Starting subgradient computation step 55
+2024-09-12 01:41:18,646 - INFO - Finished subgradient computation step 55
+2024-09-12 01:41:18,646 - INFO - Starting subgradient computation step 56
+2024-09-12 01:41:20,368 - INFO - Finished subgradient computation step 56
+2024-09-12 01:41:20,368 - INFO - Starting subgradient computation step 57
+2024-09-12 01:41:22,050 - INFO - Finished subgradient computation step 57
+2024-09-12 01:41:22,050 - INFO - Starting subgradient computation step 58
+2024-09-12 01:41:23,771 - INFO - Finished subgradient computation step 58
+2024-09-12 01:41:23,771 - INFO - Starting subgradient computation step 59
+2024-09-12 01:41:25,193 - INFO - making p feasible (smaller or equal 1) on step 59 on rebuilding phase
+2024-09-12 01:41:25,466 - INFO - Finished subgradient computation step 59
+2024-09-12 01:41:25,466 - INFO - Starting subgradient computation step 60
+2024-09-12 01:41:27,203 - INFO - Finished subgradient computation step 60
+2024-09-12 01:41:27,203 - INFO - Starting subgradient computation step 61
+2024-09-12 01:41:27,868 - INFO - making p feasible (smaller or equal 1) on step 61
+2024-09-12 01:41:28,594 - INFO - making p feasible (smaller or equal 1) on step 61 on rebuilding phase
+2024-09-12 01:41:28,900 - INFO - Finished subgradient computation step 61
+2024-09-12 01:41:28,900 - INFO - Starting subgradient computation step 62
+2024-09-12 01:41:30,638 - INFO - Finished subgradient computation step 62
+2024-09-12 01:41:30,638 - INFO - Starting subgradient computation step 63
+2024-09-12 01:41:32,356 - INFO - Finished subgradient computation step 63
+2024-09-12 01:41:32,357 - INFO - Starting subgradient computation step 64
+2024-09-12 01:41:33,043 - INFO - making p feasible (smaller or equal 1) on step 64
+2024-09-12 01:41:33,769 - INFO - making p feasible (smaller or equal 1) on step 64 on rebuilding phase
+2024-09-12 01:41:34,076 - INFO - Finished subgradient computation step 64
+2024-09-12 01:41:34,076 - INFO - Starting subgradient computation step 65
+2024-09-12 01:41:35,794 - INFO - Finished subgradient computation step 65
+2024-09-12 01:41:35,794 - INFO - Starting subgradient computation step 66
+2024-09-12 01:41:37,480 - INFO - Finished subgradient computation step 66
+2024-09-12 01:41:37,480 - INFO - Starting subgradient computation step 67
+2024-09-12 01:41:39,172 - INFO - Finished subgradient computation step 67
+2024-09-12 01:41:39,172 - INFO - Starting subgradient computation step 68
+2024-09-12 01:41:39,842 - INFO - making p feasible (smaller or equal 1) on step 68
+2024-09-12 01:41:40,568 - INFO - making p feasible (smaller or equal 1) on step 68 on rebuilding phase
+2024-09-12 01:41:40,859 - INFO - Finished subgradient computation step 68
+2024-09-12 01:41:40,860 - INFO - Starting subgradient computation step 69
+2024-09-12 01:41:41,538 - INFO - making p feasible (smaller or equal 1) on step 69
+2024-09-12 01:41:42,264 - INFO - making p feasible (smaller or equal 1) on step 69 on rebuilding phase
+2024-09-12 01:41:42,590 - INFO - Finished subgradient computation step 69
+2024-09-12 01:41:42,590 - INFO - Starting subgradient computation step 70
+2024-09-12 01:41:43,276 - INFO - making p feasible (smaller or equal 1) on step 70
+2024-09-12 01:41:44,001 - INFO - making p feasible (smaller or equal 1) on step 70 on rebuilding phase
+2024-09-12 01:41:44,309 - INFO - Finished subgradient computation step 70
+2024-09-12 01:41:44,309 - INFO - Starting subgradient computation step 71
+2024-09-12 01:41:46,019 - INFO - Finished subgradient computation step 71
+2024-09-12 01:41:46,020 - INFO - Starting subgradient computation step 72
+2024-09-12 01:41:47,824 - INFO - Finished subgradient computation step 72
+2024-09-12 01:41:47,824 - INFO - Starting subgradient computation step 73
+2024-09-12 01:41:49,410 - INFO - Finished subgradient computation step 73
+2024-09-12 01:41:49,411 - INFO - Starting subgradient computation step 74
+2024-09-12 01:41:50,080 - INFO - making p feasible (smaller or equal 1) on step 74
+2024-09-12 01:41:50,808 - INFO - making p feasible (smaller or equal 1) on step 74 on rebuilding phase
+2024-09-12 01:41:51,117 - INFO - Finished subgradient computation step 74
+2024-09-12 01:41:51,117 - INFO - Starting subgradient computation step 75
+2024-09-12 01:41:52,897 - INFO - Finished subgradient computation step 75
+2024-09-12 01:41:52,897 - INFO - Starting subgradient computation step 76
+2024-09-12 01:41:54,684 - INFO - Finished subgradient computation step 76
+2024-09-12 01:41:54,684 - INFO - Starting subgradient computation step 77
+2024-09-12 01:41:56,344 - INFO - Finished subgradient computation step 77
+2024-09-12 01:41:56,345 - INFO - Starting subgradient computation step 78
+2024-09-12 01:41:57,019 - INFO - making p feasible (smaller or equal 1) on step 78
+2024-09-12 01:41:57,745 - INFO - making p feasible (smaller or equal 1) on step 78 on rebuilding phase
+2024-09-12 01:41:58,044 - INFO - Finished subgradient computation step 78
+2024-09-12 01:41:58,044 - INFO - Starting subgradient computation step 79

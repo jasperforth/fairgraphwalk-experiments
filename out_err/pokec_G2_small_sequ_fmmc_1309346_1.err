@@ -1,0 +1,35 @@
+2024-09-12 01:36:39,203 - INFO - Logging is set up.
+2024-09-12 01:36:39,204 - INFO - Starting experiment with task_id: 1
+2024-09-12 01:36:39,204 - INFO - Running experiment: new_run_experiment_pokec_semi('small')
+2024-09-12 01:36:39,204 - INFO - Seed set to 42
+2024-09-12 01:36:39,205 - INFO - Data already pre-formatted
+2024-09-12 01:36:39,205 - INFO - Formatting data for graph_dir_0
+2024-09-12 01:36:39,205 - INFO - Starting formatting
+2024-09-12 01:36:39,205 - INFO - Formatted files already exist at /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0. Skipping formatting.
+2024-09-12 01:36:39,222 - INFO - Finished formatting data for graph_dir_0
+2024-09-12 01:36:39,222 - INFO - Formatting data for graph_dir_1
+2024-09-12 01:36:39,222 - INFO - Starting formatting
+2024-09-12 01:36:39,222 - INFO - Formatted files already exist at /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_1. Skipping formatting.
+2024-09-12 01:36:39,240 - INFO - Finished formatting data for graph_dir_1
+2024-09-12 01:36:39,240 - INFO - Loading edgelist from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/filtered_edgelist.txt
+2024-09-12 01:36:39,240 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:39,244 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/filtered_attributes.csv
+2024-09-12 01:36:39,821 - INFO - Loading edgelist from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_1/filtered_edgelist.txt
+2024-09-12 01:36:39,821 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_1/filtered_attributes.csv
+2024-09-12 01:36:39,832 - INFO - Loading attributes from /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_1/filtered_attributes.csv
+2024-09-12 01:36:40,495 - INFO - Graph 0: <data_utils.graph.pokec_graph.PokecGraph object at 0x147a69ca2920>
+2024-09-12 01:36:40,495 - INFO - Number of nodes in graph 0: 3888
+2024-09-12 01:36:40,496 - INFO - Number of edges in graph 0: 13028
+2024-09-12 01:36:40,496 - INFO - Number of attributes in graph 0: 3888
+2024-09-12 01:36:40,496 - INFO - Graph 1: <data_utils.graph.pokec_graph.PokecGraph object at 0x147a6a229420>
+2024-09-12 01:36:40,496 - INFO - Number of nodes in graph 1: 5056
+2024-09-12 01:36:40,496 - INFO - Number of edges in graph 1: 13802
+2024-09-12 01:36:40,496 - INFO - Number of attributes in graph 1: 5056
+2024-09-12 01:36:40,496 - INFO - Total number of baseline experiments: 2
+2024-09-12 01:36:40,496 - INFO - Total number of crosswalk experiments: 36
+2024-09-12 01:36:40,496 - INFO - Running FMMC experiments for graph 0 with selfloops True
+2024-09-12 01:36:40,497 - INFO - Using label_AGE as sensitive attribute
+2024-09-12 01:36:45,653 - INFO - /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/selfloops/encoded_fmmc_edgelist_md.csv exists. Loading checkpoint.
+2024-09-12 01:36:45,715 - INFO - /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/selfloops/encoded_fmmc_edgelist_mh.csv exists. Loading checkpoint.
+2024-09-12 01:36:52,282 - INFO - /scratch/pyllm/forth/DATA/pokec_FMMC_the_final_experiment_002/new_pokec_semi_graphsize_small/resources/graph_dir_0/selfloops/encoded_fmmc_edgelist_fmmc_SCS.csv exists. Loading checkpoint.
+2024-09-12 01:37:16,523 - INFO - Starting subgradient computation for graph_0

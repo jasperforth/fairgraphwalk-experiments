@@ -7,11 +7,11 @@ from pathlib import Path
 _log_lock = threading.Lock()
 _shared_file_handler = None
 
-def setup_shared_file_handler(log_dir: Path, tag: str):
+def setup_shared_file_handler(log_dir: Path):
     global _shared_file_handler
     if _shared_file_handler is None:
         current_date = datetime.now().strftime("%Y%m%d_%H%M%S")
-        log_file = log_dir / f"logfiles/logs_{tag}_{current_date}/experiment_log.log"
+        log_file = log_dir / f"logfiles/logs_{current_date}/experiment_log.log"
         log_file.parent.mkdir(parents=True, exist_ok=True)
         _shared_file_handler = logging.FileHandler(log_file)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -19,8 +19,7 @@ def setup_shared_file_handler(log_dir: Path, tag: str):
     return _shared_file_handler
 
 def setup_main_logging(log_dir: Path):
-    tag = "main_process"
-    shared_file_handler = setup_shared_file_handler(log_dir, tag)
+    shared_file_handler = setup_shared_file_handler(log_dir)
 
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                         handlers=[shared_file_handler, logging.StreamHandler()])
@@ -43,8 +42,7 @@ def setup_worker_logging(name="worker", log_dir: Path = None):
         
         # Add the shared FileHandler
         if log_dir:
-            tag = "parallel_processes"
-            shared_file_handler = setup_shared_file_handler(log_dir, tag)
+            shared_file_handler = setup_shared_file_handler(log_dir)
             if not any(isinstance(h, logging.FileHandler) for h in logger.handlers):
                 logger.addHandler(shared_file_handler)
         

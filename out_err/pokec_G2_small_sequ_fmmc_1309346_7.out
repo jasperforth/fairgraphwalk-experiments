@@ -1,0 +1,9 @@
+2024-09-12 01:36:52,065 - INFO - Starting (re-)run of embeddings
+2024-09-12 01:36:52,081 - INFO - Embedding p_1_q_1_large2_selfloops_True for graph_dir_0 does not exist. Running experiment...
+2024-09-12 01:36:52,086 - INFO - Starting (re-)run of embeddings
+2024-09-12 01:36:52,093 - INFO - Embedding p_1_q_1_large2_selfloops_False for graph_dir_0 does not exist. Running experiment...
+[Parallel(n_jobs=40)]: Using backend LokyBackend with 40 concurrent workers.
+2024-09-12 01:37:01,993 - INFO - Starting (re-)run of embeddings
+2024-09-12 01:37:02,027 - INFO - Embedding p_1_q_1 for graph_dir_0 does not exist. Running experiment...
+2024-09-12 01:37:02,027 - INFO - Bias strategy applied
+2024-09-12 01:38:01,214 - INFO - Random walks generated
