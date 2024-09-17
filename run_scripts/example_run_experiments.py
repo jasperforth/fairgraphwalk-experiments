@@ -8,7 +8,9 @@ sys.path.append(str(root))
 
 from experiment_utils.config import DATA_DIR
 from experiment_utils.logging_utils import setup_main_logging
-from experiments.FMMC_pokec_mixed import new_run_experiment_pokec_mixed
+# from experiments.FMMC_pokec_mixed import new_run_experiment_pokec_mixed
+from experiments.FMMC_pokec_mixed_sequ_2 import new_run_experiment_pokec_mixed
+
 
 log_dir = DATA_DIR 
 logger = setup_main_logging(log_dir)
@@ -23,7 +25,8 @@ def main():
     # run_experiment_corr_pokec_allexp_graphs0()
 
     # new_run_experiment_pokec_distinct()
-    new_run_experiment_pokec_mixed("small")
+    new_run_experiment_pokec_mixed("small1")
+
     logger.info("Experiments completed")
 
 if __name__ == "__main__":

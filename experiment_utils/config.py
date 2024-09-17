@@ -6,12 +6,12 @@ from typing import Final
 
 # Experiment Date
 PROJECT_NAME = "pokec_FMMC_the_final_experiment_002"
-# PROJECT_NAME = "test_edgecount2"
 
 # Directories
-RAW_DIR = "/scratch/pyllm/forth/DATA/raw/_pokec_raw_snap"
+# RAW_DIR = "/scratch/pyllm/forth/DATA/raw/_pokec_raw_snap"
+RAW_DIR = "/Volumes/tcs_jf_fair_node_sampling/raw/_pokec_raw_snap"
 # DATA_DIR = Path(f"/scratch/pyllm/forth/DATA/{PROJECT_NAME}")
-DATA_DIR = Path(f"/mnt/c/Users/Erik/Desktop/BA_exp/{PROJECT_NAME}/data")
+DATA_DIR = Path(f"/Volumes/tcs_jf_fair_node_sampling/{PROJECT_NAME}/data")
 
 FORMATTED_DATA_DIR = DATA_DIR / "formatted"
 

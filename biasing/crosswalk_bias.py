@@ -65,8 +65,16 @@ class CrossWalkBias(BiasStrategy):
                     graph_name: str = None,
                     prewalk_length: int = 6, quiet: bool = False) -> None:
         """
-        Initialize the CrossWalkBias.
-        
+        CrossWalk biasing strategy for adapting graph edge weights based on node attributes.
+
+        This implementation is based on the CrossWalk algorithm described in:
+
+        Khajehnejad, A., Khajehnejad, M., Babaei, M., Gummadi, K. P., Weller, A., & Mirzasoleiman, B. (2022).
+        CrossWalk: Fairness-Enhanced Node Representation Learning. 
+        Proceedings of the AAAI Conference on Artificial Intelligence, 36(11), 11963–11970.
+        https://doi.org/10.1609/aaai.v36i11.21454
+        Original implementation available at: https://github.com/ahmadkhajehnejad/CrossWalk
+
         Args:
             graph (Graph): Input graph.
             experiment_graph_dir (Path): Directory for the experiment graph.
