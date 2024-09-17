@@ -25,9 +25,9 @@ scipy==1.9.3
 seaborn==0.12.1
 setuptools==57.4.0
 six==1.16.0
-sklearn==0.0.post1
 smart-open==6.2.0
 statsmodels==0.13.5
 texttable==1.6.5
 threadpoolctl==3.1.0
 tqdm==4.64.1
+cvxpy[CVXOPT,CLARABEL,SCS]==1.5.2
