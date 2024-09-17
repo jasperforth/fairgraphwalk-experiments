@@ -1,3 +1,10 @@
+# Fairness in Node Embeddings
+
+This branch contains the algorithm implementations and experiments of the bachelor's thesis "Fairness in Node Embeddings" by Erik Brandes.
+Most of the immplementation is in biasing/FMMC_bias.py with only minor changes in biasing/crosswalk_bias.py. The experiments are in the experiments directory with the one used in the thesis being FMMC_pokec_mixed_sequ_2.py. The experiments can be executed from the relevant run_scripts and/or bash jobscripts if on a server by calling the relevant functions from the experiments directory. The code to generate the plots used in the thesis is in report/fmmc_graphs.ipynb and requires the previous full execution of report/process_results.ipynb.
+
+Information on how to set up the environment and config files can be taken from the readme of the main branch (also copied below).
+
 # Fair Node Sampling Project
 
 ## Overview
