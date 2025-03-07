@@ -1,12 +1,10 @@
 fairgraphwalk-experiments/
-    folder_structure.ipynb
-    EXAMPLE/
-        DEMO_example_run_experiments.py
-        example_run_experiments.py
+    job_script.sh
     experiments/
         region_categories.json
         experiments_main.py
         config.yml
+        demo_run.sh
     data_utils/
         graph/
             graph.py
