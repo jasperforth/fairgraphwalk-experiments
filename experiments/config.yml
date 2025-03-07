@@ -1,0 +1,105 @@
+###########################
+# Environment parameters
+###########################
+# base_dir: "/scratch/pyllm/forth"              # Base directory for all data
+base_dir: "/Volumes/tcs_jf_fair_node_sampling/"
+project_name: "pokec_test_full"              # Change this to switch project names
+
+#################
+data_dir: "{base_dir}/2025/{project_name}"    # Main data directory (output will go here)
+raw_dir: "{base_dir}/raw/_pokec_raw_snap" # Directory with raw data files
+
+raw_attributes_file: "soc-pokec-profiles.txt"
+edgelist_file: "soc-pokec-relationships.txt"
+
+###########################
+# Experiment settings
+###########################
+# List of experiment modes to run in this execution.
+# Options: "distinct", "semi", "mixed", "full", etc.
+
+# experiments: [""distinct", "semi", "mixed"]
+experiments: ["distinct"]
+
+# Dataset info: indicates the data source type (e.g., "edgelist", "other")
+dataset:
+  name: "pokec"
+  type: "edgelist"
+
+###########################
+# Filter settings per experiment mode
+###########################
+# For each experiment mode, define the filtering strategy.
+# For region-based filtering, set type to "region" and supply a key
+# to look up the region sets in the JSON file.
+filter:
+  distinct:
+    type: "region"
+    region_categories_key: "distinct"
+  semi:
+    type: "region"
+    region_categories_key: "semi"
+  mixed:
+    type: "region"
+    region_categories_key: "mixed"
+  full:
+    type: "full"   # No filtering; process the full graph
+
+###########################
+# Formatter parameters
+###########################
+formatter_params:
+  column_names: ["user_id", "public", "gender", "region", "AGE", "body"] # The column selction is hardcoded in pokec_formatter
+  attributes: ["region", "AGE"]
+  filter_category_key: "region"    # Column used for filtering (if enabled)
+  age_range: [16, 99]
+  splitpoints_bins: [15, 18, 21, 100]
+  include_edgecounts: false
+
+###########################
+# Experiment parameters
+###########################
+experiment_params:
+  seed: 42        # Random seed for reproducibility
+  workers: 8      # Number of parallel workers
+
+###########################
+# Node2Vec parameters
+###########################
+node2vec:
+  p_values: [1]
+  q_values: [1]
+  walk_length: 80
+  num_walks: 10
+  dim: 128
+  window: 10
+  min_count: 1
+  batch_words: 4
+
+###########################
+# Crosswalk parameters
+###########################
+crosswalk:
+  prewalk_length: 6
+  alphas: [0.2, 0.5, 0.8]
+  exponents: [2, 8]
+
+###########################
+# Evaluation parameters
+###########################
+label_propagation:
+  n_splits: 25    # Cross-validation splits
+  train_size: 0.5 # Train-test split
+
+######################
+# Fairness attributes
+######################
+# (sensitive, control) can be changed inside the experiments
+sensitive_attribute: "label_AGE"
+control_attribute: "label_region"
+
+###########################
+# External files
+###########################
+# Path to the JSON file that holds the region filter sets.
+filter_categories_file: "region_categories.json"

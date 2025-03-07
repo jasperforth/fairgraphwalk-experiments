@@ -7,7 +7,7 @@ parent, root = file.parent, file.parents[1]
 sys.path.append(str(root))
 
 from experiment_utils.config import DATA_DIR
-from experiment_utils.logging_utils import setup_main_logging
+from experiment_utils.logging_setup import setup_main_logging
 from experiments._EXAMPLE_distinct import run_experiment_pokec_EXAMPLE_distinct
 from experiments._EXAMPLE_semi import run_experiment_pokec_EXAMPLE_semi
 from experiments._EXAMPLE_mixed import run_experiment_pokec_EXAMPLE_mixed

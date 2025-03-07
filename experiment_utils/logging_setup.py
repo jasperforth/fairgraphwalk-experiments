@@ -1,7 +1,9 @@
+# ./experiment_utils/logging_setup.py
+# Description: Manages logging setup for the experiment pipeline.
+
 import logging
 import sys
 import threading
-from datetime import datetime
 from pathlib import Path
 
 _log_lock = threading.Lock()
@@ -10,8 +12,7 @@ _shared_file_handler = None
 def setup_shared_file_handler(log_dir: Path, tag: str):
     global _shared_file_handler
     if _shared_file_handler is None:
-        current_date = datetime.now().strftime("%Y%m%d_%H%M%S")
-        log_file = log_dir / f"logfiles/logs_{tag}_{current_date}/experiment_log.log"
+        log_file = log_dir / "experiment_log.log"
         log_file.parent.mkdir(parents=True, exist_ok=True)
         _shared_file_handler = logging.FileHandler(log_file)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -19,6 +20,7 @@ def setup_shared_file_handler(log_dir: Path, tag: str):
     return _shared_file_handler
 
 def setup_main_logging(log_dir: Path):
+    log_dir.mkdir(parents=True, exist_ok=True)
     tag = "main_process"
     shared_file_handler = setup_shared_file_handler(log_dir, tag)
 
@@ -50,4 +52,3 @@ def setup_worker_logging(name="worker", log_dir: Path = None):
         
         logger.propagate = False
     return logger
-

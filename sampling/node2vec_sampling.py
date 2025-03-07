@@ -1,22 +1,18 @@
-from __future__ import annotations
-import logging
+'''
+./sampling/node2vec_sampling.py
+Description: Node2Vec sampling strategy for generating random walks on a graph.
+Called by: ./sampling/sampling_strat.py
+Calls: Graph, SamplingStrategy, setup_logger_for_process
+'''
 import os
-
+import logging
+import random
 from collections import defaultdict
-from typing import List
 from pathlib import Path
+from typing import List, Optional
 
-from tqdm.auto import tqdm
-from tqdm.contrib.logging import logging_redirect_tqdm
-
-from data_utils.graph.graph import Graph
-from .sampling_strat import SamplingStrategy
-from experiment_utils.logging_utils import setup_worker_logging
-from experiment_utils.config import DATA_DIR
-
-# Set the number of CPUs to run on and environment variables for parallel processing, to be set before importing numpy
-# https://rcpedia.stanford.edu/topicGuides/parallelProcessingPython.html
-# Note: parallelization is managed on experiment_run level, to avoid subparallelization set ncore to 1!
+# Set the number of CPUs to run on and environment variables for parallel processing
+# This must be done before importing NumPy or other numerical libraries
 ncore = "1"
 os.environ["OMP_NUM_THREADS"] = ncore
 os.environ["OPENBLAS_NUM_THREADS"] = ncore
@@ -25,12 +21,11 @@ os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
 os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import numpy as np
-import random
-
-# Configure logging
-log_dir = DATA_DIR
-setup_worker_logging("node2vec_sampling", log_dir)
-logger = logging.getLogger(__name__)
+from tqdm.auto import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
+from data_utils.graph.graph import Graph
+from sampling.sampling_strat import SamplingStrategy
+from experiment_utils.logging_setup import setup_worker_logging
 
 class Node2VecSampling(SamplingStrategy):
     """
@@ -52,11 +47,13 @@ class Node2VecSampling(SamplingStrategy):
         num_walks (int, optional): Number of walks per node. Defaults to 10.
         quiet (bool, optional): Flag to control verbosity. Defaults to False.
     """
-    def __init__(self, p: float, q: float, graph_name: str, walk_length: int = 80, 
+    def __init__(self, p: float, q: float, graph_name: str, log_dir: Path, walk_length: int = 80, 
                     num_walks: int = 10, quiet: bool = False) -> None:
         super().__init__(p, q, walk_length, num_walks, quiet)
         self.d_graph = defaultdict(dict)
         self.graph_name = graph_name
+        self.logger = setup_worker_logging("node2vec_sampling", log_dir)
+
 
     def generate_walks(self, graph: Graph) -> List[int]:
         """

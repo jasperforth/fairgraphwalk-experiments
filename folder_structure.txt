@@ -1,13 +1,11 @@
-fair_nodesampling/
+fairgraphwalk-experiments/
+    folder_structure.ipynb
     EXAMPLE/
+        DEMO_example_run_experiments.py
         example_run_experiments.py
-        sample_subgraph.py
     experiments/
-        _EXAMPLE_semi.py
-        pokec_distinct.py
-        pokec_semi.py
-        pokec_mixed.py
-        _EXAMPLE_distinct.py
+        NEW_pokec_distinct.py
+        experiments_main.py
     data_utils/
         graph/
             graph.py
@@ -21,6 +19,8 @@ fair_nodesampling/
     encoding/
         skipgram_encode.py
         encoding_strat.py
+    .github/
+        ISSUE_TEMPLATE/
     evaluation/
         labelpropagation_evaluation.py
         evaluation_strat.py
@@ -28,11 +28,15 @@ fair_nodesampling/
         process_results.ipynb
         plot_results.ipynb
         report_config.py
+        plot_multilabel_new.ipynb
+        graph_reporting.ipynb
+        plot_multilabel_new copy.ipynb
         report_utils/
             report_scripts.py
             pokec_confusion.py
             pokec_tsne.py
             pokec_combined_reports.py
+            pokec_confusion copy.py
     ICML_notebooks/
         _embedding analysis.ipynb
         results_workshop/
@@ -40,16 +44,14 @@ fair_nodesampling/
                 tables/
                 images/
             cw-f2/
-                tables/
                 images/
             crosswalk/
                 tables/
                 images/
-        data/
     experiment_utils/
+        experiment_controllers.py
         experiment_run.py
-        config.py
-        logging_utils.py
+        logging_setup.py
     biasing/
         crosswalk_bias.py
         bias_strat.py

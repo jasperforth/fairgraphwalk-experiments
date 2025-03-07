@@ -1,15 +1,12 @@
+from math import log
 import os
 import logging
-import pandas as pd
-
 from pathlib import Path
+from typing import Optional
 
-from tqdm.auto import tqdm
-from tqdm.contrib.logging import logging_redirect_tqdm
+import setup
 
-# Set the number of CPUs to run on and environment variables for parallel processing, to be set before importing numpy
-# https://rcpedia.stanford.edu/topicGuides/parallelProcessingPython.html
-# Note: parallelization is managed on experiment_run level, to avoid subparallelization set ncore to 1!
+# Limit parallelization within libraries to 1 thread per process before importing NumPy
 ncore = "1"
 os.environ["OMP_NUM_THREADS"] = ncore
 os.environ["OPENBLAS_NUM_THREADS"] = ncore
@@ -17,17 +14,15 @@ os.environ["MKL_NUM_THREADS"] = ncore
 os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
 os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
+import pandas as pd
 import numpy as np
+from tqdm.auto import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 
 from data_utils.graph.graph import Graph
 from biasing.bias_strat import BiasStrategy
-from experiment_utils.logging_utils import setup_worker_logging
-from experiment_utils.config import DATA_DIR
+from experiment_utils.logging_setup import setup_worker_logging
 
-# Configure logging
-log_dir = DATA_DIR
-setup_worker_logging("crosswalk bias", log_dir)
-logger = logging.getLogger(__name__)
 
 class CrossWalkBias(BiasStrategy):
     """
@@ -40,43 +35,29 @@ class CrossWalkBias(BiasStrategy):
     Proceedings of the AAAI Conference on Artificial Intelligence, 36(11), 11963–11970.
     https://doi.org/10.1609/aaai.v36i11.21454
     Original implementation available at: https://github.com/ahmadkhajehnejad/CrossWalk
-
-    Args:
-        graph (Graph): Input graph.
-        experiment_graph_dir (Path): Directory for the experiment graph.
-        sensitive_attribute_name (str, optional): Name of the sensitive attribute. Defaults to None.
-        alpha (float, optional): Alpha parameter for biasing. Defaults to None.
-        exponent (float, optional): Exponent parameter for biasing. Defaults to None.
-        graph_name (str, optional): Name of the graph. Defaults to None.
-        prewalk_length (int, optional): Length of the prewalk. Defaults to 6.
-        quiet (bool, optional): Flag to control verbosity. Defaults to False.
     """
-    def __init__(self, graph: Graph, experiment_graph_dir: Path,
-                    sensitive_attribute_name: str = None, 
-                    alpha: float=None, exponent: float = None, 
-                    graph_name: str = None,
-                    prewalk_length: int = 6, quiet: bool = False) -> None:
+    def __init__(self, graph: Graph, 
+                    experiment_graph_dir: Path,
+                    log_dir: Path, 
+                    sensitive_attribute_name: str=None, 
+                    alpha: float=None, 
+                    exponent: float=None, 
+                    graph_name: str=None,
+                    prewalk_length: int=6, 
+                    quiet: bool=False) -> None:
         """
         Initialize the CrossWalkBias.
-        
-        Args:
-            graph (Graph): Input graph.
-            experiment_graph_dir (Path): Directory for the experiment graph.
-            sensitive_attribute_name (str, optional): Name of the sensitive attribute. Defaults to None.
-            alpha (float, optional): Alpha parameter for biasing. Defaults to None.
-            exponent (float, optional): Exponent parameter for biasing. Defaults to None.
-            graph_name (str, optional): Name of the graph. Defaults to None.
-            prewalk_length (int, optional): Length of the prewalk. Defaults to 6.
-            quiet (bool, optional): Flag to control verbosity. Defaults to False.
         """
         super().__init__(graph, experiment_graph_dir, 
                          sensitive_attribute_name, 
                          alpha, exponent, prewalk_length, quiet)
+
+        self.logger = setup_worker_logging("crosswalk_bias", log_dir)
         self.g = graph.graph
         self.df_attributes = graph.attributes
         self.graph_name = graph_name
         if sensitive_attribute_name:
-            logger.info(f"Using {sensitive_attribute_name} as sensitive attribute")
+            self.logger.info(f"Using {sensitive_attribute_name} as sensitive attribute")
             self.df_sens = self.df_attributes.set_index('user_id')
             self.df_sens = self.df_sens[self.sensitive_attribute_name]
 
@@ -92,12 +73,12 @@ class CrossWalkBias(BiasStrategy):
         if not cfn_path.exists():
             self.pre_compute_biasing_params(self)
         else:
-            logger.info(f'Loading colorfulness from file for {self.sensitive_attribute_name} \
+            self.logger.info(f'Loading colorfulness from file for {self.sensitive_attribute_name} \
                         and {self.graph_name} with prewalk length: {self.prewalk_length}')
         df_cfn = pd.read_csv(cfn_path).set_index('user_id')['colorfulness']
 
         crosswalk_graph = self.compute_crosswalk_graph(self.g, self.alpha, self.exponent, self.graph_name,
-                                                          self.df_sens, df_cfn, self.quiet)
+                                                          self.df_sens, df_cfn, self.quiet, self.logger)
 
         self.graph = self.graph.graph_from_nxgraph(crosswalk_graph, self.df_attributes)
         #print("ADAPTWEIGHTSCROSSWALK", self.graph.graph, "ADAPTWEIHTSCROSSWALKAttributes", self.graph.attributes)
@@ -182,7 +163,7 @@ class CrossWalkBias(BiasStrategy):
 
 
     @staticmethod
-    def compute_crosswalk_graph(graph: Graph, alpha: float, exp: float, graph_name: str, df_sens: pd.DataFrame, df_cfn: pd.DataFrame, quiet: bool):
+    def compute_crosswalk_graph(graph: Graph, alpha: float, exp: float, graph_name: str, df_sens: pd.DataFrame, df_cfn: pd.DataFrame, quiet: bool, logger: logging.Logger) -> Graph:
         """
         Compute the crosswalk graph by adapting edge weights.
         

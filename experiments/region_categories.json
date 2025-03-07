@@ -1,0 +1,108 @@
+{
+    "distinct": {
+        "graph_dir_0": [
+            "trnavsky kraj, velky meder",
+            "banskobystricky kraj, zarnovica",
+            "presovsky kraj, spisska bela"
+        ],
+        "graph_dir_1": [
+            "banskobystricky kraj, brezno",
+            "bratislavsky kraj, bratislava - nove mesto"
+        ]
+    },
+    "distinct1": {
+        "graph_dir_0": [
+            "trnavsky kraj, velky meder",
+            "banskobystricky kraj, zarnovica",
+            "presovsky kraj, spisska bela"
+        ],
+        "graph_dir_1": [
+            "banskobystricky kraj, brezno",
+            "bratislavsky kraj, bratislava - nove mesto",
+            "zilinsky kraj, ruzomberok",
+            "kosicky kraj, kosice - ostatne"
+        ],
+        "graph_dir_2": [
+            "presovsky kraj, humenne",
+            "trnavsky kraj, velky meder",
+            "trenciansky kraj, handlova",
+            "presovsky kraj, spisska bela",
+            "nitriansky kraj, komarno",
+            "ceska republika, cz - liberecky kraj",
+            "bratislavsky kraj, bratislava - nove mesto",
+            "banskobystricky kraj, revuca"
+        ]
+    },
+    "semi": {
+        "graph_dir_0": [
+            "kosicky kraj, kosice - stare mesto",
+            "kosicky kraj, kosice - juh",
+            "trnavsky kraj, holic",
+            "trnavsky kraj, gbely"
+        ],
+        "graph_dir_1": [
+            "banskobystricky kraj, brezno",
+            "banskobystricky kraj, hrinova",
+            "banskobystricky kraj, krupina",
+            "bratislavsky kraj, bratislava - nove mesto",
+            "bratislavsky kraj, bratislava - vrakuna",
+            "bratislavsky kraj, bratislava - vajnory",
+            "zilinsky kraj, ruzomberok",
+            "zilinsky kraj, liptovsky hradok",
+            "zilinsky kraj, turcianske teplice",
+            "kosicky kraj, kosice - ostatne",
+            "kosicky kraj, kosice - krasna nad hornadom",
+            "kosicky kraj, kosice - barca"
+        ],
+        "graph_dir_2": [
+            "presovsky kraj, humenne",
+            "presovsky kraj, snina",
+            "trnavsky kraj, velky meder",
+            "trnavsky kraj, dunajska streda", 
+            "trnavsky kraj, holic",
+            "trnavsky kraj, gbely",
+            "trenciansky kraj, handlova",
+            "trenciansky kraj, dubnica nad vahom",
+            "trenciansky kraj, nova dubnica",
+            "presovsky kraj, spisska bela",
+            "presovsky kraj, spisske podhradie",
+            "presovsky kraj, podolinec",
+            "presovsky kraj, spisska stara ves",
+            "presovsky kraj, levoca"
+        ]
+    },
+    "mixed": {
+        "graph_dir_0": [
+            "bratislavsky kraj, bratislava - ruzinov",
+            "bratislavsky kraj, bratislava - stare mesto",
+            "bratislavsky kraj, bratislava - nove mesto",
+            "bratislavsky kraj, bratislava - vajnory",
+            "bratislavsky kraj, bratislava - vrakuna"
+        ],
+        "graph_dir_1": [
+            "kosicky kraj, kosice - zapad",
+            "kosicky kraj, kosice - stare mesto",
+            "kosicky kraj, kosice - sidlisko tahanovce",
+            "kosicky kraj, kosice - sever",
+            "kosicky kraj, kosice - krasna nad hornadom",
+            "kosicky kraj, kosice - juh",
+            "kosicky kraj, kosice - dargovskych hrdinov",
+            "kosicky kraj, kosice - barca"
+        ],
+        "graph_dir_2": [
+            "bratislavsky kraj, bratislava - ruzinov",
+            "bratislavsky kraj, bratislava - stare mesto",
+            "bratislavsky kraj, bratislava - nove mesto",
+            "bratislavsky kraj, bratislava - vajnory",
+            "bratislavsky kraj, bratislava - vrakuna",
+            "bratislavsky kraj, bratislava - petrzalka",
+            "bratislavsky kraj, bratislava - karlova ves",
+            "bratislavsky kraj, bratislava - lamac",
+            "bratislavsky kraj, bratislava - dubravka",
+            "bratislavsky kraj, bratislava - devinska nova ves",
+            "bratislavsky kraj, bratislava - podunaj. biskupice",
+            "bratislavsky kraj, bratislava - raca"
+        ]
+    }
+}
+  

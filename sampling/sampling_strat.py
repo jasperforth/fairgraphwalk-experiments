@@ -1,3 +1,8 @@
+'''
+./sampling/sampling_strat.py
+Description: Abstract base class for sampling strategies.
+'''
+
 from abc import ABC, abstractmethod
 from keyword import kwlist
 from data_utils.graph.graph import Graph

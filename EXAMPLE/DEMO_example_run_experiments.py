@@ -12,7 +12,7 @@ from experiments.pokec_distinct import run_experiment_pokec_distinct
 from experiments.pokec_semi import run_experiment_pokec_semi
 from experiments.pokec_mixed import run_experiment_pokec_mixed
 from experiment_utils.config import DATA_DIR
-from experiment_utils.logging_utils import setup_main_logging
+from experiment_utils.logging_setup import setup_main_logging
 
 log_dir = DATA_DIR 
 logger = setup_main_logging(log_dir)

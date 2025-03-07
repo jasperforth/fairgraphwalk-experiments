@@ -7,11 +7,11 @@ from pathlib import Path
 
 
 class EvaluationStrategy(ABC):
-    def __init__(self,  result_dir: Path, params_signature: str, sensitive_attribute_name: str, other_attribute_name: str, train_size: float ):
+    def __init__(self,  result_dir: Path, params_signature: str, sensitive_attribute_name: str, control_attribute_name: str, train_size: float ):
         self.result_dir = result_dir
         self.params_signature = params_signature
         self.sensitive_attribute_name = sensitive_attribute_name
-        self.other_attribute_name = other_attribute_name
+        self.control_attribute_name = control_attribute_name
         self.train_size = train_size
         
 

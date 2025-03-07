@@ -1,17 +1,10 @@
-from pathlib import Path
 import os
 import logging
-import pandas as pd
+from pathlib import Path
+from typing import Optional
 import gzip
 
-from sklearn.semi_supervised import LabelPropagation
-from sklearn.model_selection import StratifiedShuffleSplit
-from tqdm import tqdm
-from tqdm.contrib.logging import logging_redirect_tqdm
-
-# Set the number of CPUs to run on and environment variables for parallel processing, to be set before importing numpy
-# https://rcpedia.stanford.edu/topicGuides/parallelProcessingPython.html
-# Note: parallelization is managed on experiment_run level, to avoid subparallelization set ncore to 1!
+# Set the number of CPUs to run on and environment variables for parallel processing **before** importing NumPy
 ncore = "1"
 os.environ["OMP_NUM_THREADS"] = ncore
 os.environ["OPENBLAS_NUM_THREADS"] = ncore
@@ -20,63 +13,58 @@ os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
 os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import numpy as np
+import pandas as pd
+from sklearn.semi_supervised import LabelPropagation
+from sklearn.model_selection import StratifiedShuffleSplit
+from tqdm import tqdm
+from tqdm.contrib.logging import logging_redirect_tqdm
 
-from .evaluation_strat import EvaluationStrategy
 from data_utils.graph.graph import Graph
-from experiment_utils.logging_utils import setup_worker_logging
-from experiment_utils.config import DATA_DIR
+from .evaluation_strat import EvaluationStrategy
+from experiment_utils.logging_setup import setup_worker_logging
 
-# Configure logging
-log_dir = DATA_DIR
-setup_worker_logging("eval_label_propagation", log_dir)
-logger = logging.getLogger(__name__)
-
-# Ignore the RuntimeWarning: invalid value encountered in divide  probabilities /= normalizer
+# Ignore the RuntimeWarning: invalid value encountered in divide probabilities /= normalizer
 np.seterr(invalid='ignore')
 
 class LabelPropagationEvaluation(EvaluationStrategy):
+
     """
     Label propagation evaluation strategy for graph embeddings.
     """
-    def __init__(self, result_dir: Path, params_signature: str, 
-                 sensitive_attribute_name: str, other_attribute_name: str, 
-                 graph_name:str,  train_size: float = 0.5):
+    def __init__(self, 
+                 result_dir: Path, 
+                 params_signature: str, 
+                 sensitive_attribute_name: str, 
+                 control_attribute_name: str, 
+                 graph_name:str,  
+                 log_dir: Path,
+                 train_size: float = 0.5):
         """
         Initialize the LabelPropagationEvaluation.
-        
-        Args:
-            result_dir (Path): Directory to save the results.
-            params_signature (str): Signature of the parameter set.
-            sensitive_attribute_name (str): Name of the sensitive attribute.
-            other_attribute_name (str): Name of the other attribute.
-            graph_name (str): Name of the graph.
-            train_size (float, optional): Proportion of the dataset to include in the train split. Defaults to 0.5.
         """
         super().__init__(result_dir, params_signature, sensitive_attribute_name, 
-                         other_attribute_name, train_size)
+                         control_attribute_name, train_size)
         self.graph_name = graph_name
+        self.logger = setup_worker_logging("labelpropagation_evaluation", log_dir)
+
 
     # TODO check whats up with evaluate and re-evaluate
     def evaluate(self, graph: Graph, embedding_filepath: Path):
         """
         Evaluate the embeddings using label propagation.
-        
-        Args:
-            graph (Graph): Input graph.
-            embedding_filepath (Path): Path to the embedding file.
         """
-        logger.info(f"Evaluating embeddings for {self.graph_name} with parameters {self.params_signature}")
+        self.logger.info(f"Evaluating embeddings for {self.graph_name} with parameters {self.params_signature}")
 
         df_attributes = graph.attributes
         d_emb, dim =self.read_embeddings(embedding_filepath)
-        df_labels = self.read_labels(df_attributes, d_emb, self.sensitive_attribute_name, self.other_attribute_name)
+        df_labels = self.read_labels(df_attributes, d_emb, self.sensitive_attribute_name, self.control_attribute_name)
 
-        logger.info(f"Computing label propagation for {self.graph_name} {self.params_signature}")
+        self.logger.info(f"Computing label propagation for {self.graph_name} {self.params_signature}")
         self.label_propagation_clf(df_labels, d_emb, dim, 
                                     self.result_dir,
                                     self.params_signature,
                                     self.sensitive_attribute_name, 
-                                    self.other_attribute_name,
+                                    self.control_attribute_name,
                                     self.train_size)
         
     def re_evaluate(self, df_attributes: pd.DataFrame, embedding_filepath: Path, n_splits: int = 25):
@@ -88,24 +76,24 @@ class LabelPropagationEvaluation(EvaluationStrategy):
             embedding_filepath (Path): Path to the embedding file.
             n_splits (int, optional): Number of splits for cross-validation. Defaults to 25.
         """
-        logger.info(f"Re-evaluating embeddings for {self.graph_name} with parameters {self.params_signature}")
+        self.logger.info(f"Re-evaluating embeddings for {self.graph_name} with parameters {self.params_signature}")
 
         d_emb, dim =self.read_embeddings(embedding_filepath)
-        df_labels = self.read_labels(df_attributes, d_emb, self.sensitive_attribute_name, self.other_attribute_name)
+        df_labels = self.read_labels(df_attributes, d_emb, self.sensitive_attribute_name, self.control_attribute_name)
 
-        logger.info(f"Computing label propagation for {self.graph_name} {self.params_signature}")
+        self.logger.info(f"Computing label propagation for {self.graph_name} {self.params_signature}")
         self.label_propagation_clf(df_labels, d_emb, dim, 
                                     self.result_dir,
                                     self.params_signature,
                                     self.sensitive_attribute_name, 
-                                    self.other_attribute_name,
+                                    self.control_attribute_name,
                                     self.train_size,
                                     n_splits)
 
 
     @staticmethod
     def label_propagation_clf(df_labels: pd.DataFrame, d_emb: dict, dim: int, result_dir: Path, params_signature: str,
-                                sensitive_attribute_name: str, other_attribute_name: str, train_size: float, n_splits: int = 25) -> pd.DataFrame:
+                                sensitive_attribute_name: str, control_attribute_name: str, train_size: float, n_splits: int = 25) -> pd.DataFrame:
         """
         Perform label propagation classification.
         
@@ -116,7 +104,7 @@ class LabelPropagationEvaluation(EvaluationStrategy):
             result_dir (Path): Directory to save the results.
             params_signature (str): Signature of the parameter set.
             sensitive_attribute_name (str): Name of the sensitive attribute.
-            other_attribute_name (str): Name of the other attribute.
+            control_attribute_name (str): Name of the control attribute.
             train_size (float): Proportion of the dataset to include in the train split.
             n_splits (int, optional): Number of splits for cross-validation. Defaults to 25.
         
@@ -127,12 +115,12 @@ class LabelPropagationEvaluation(EvaluationStrategy):
 
         n = len(d_emb)
         X = np.zeros([n, dim])
-        other_label = np.zeros([n])
+        control_label = np.zeros([n])
         sens_label = np.zeros([n])
         for i, row in df_labels.iterrows():
             id = row['user_id']
             X[i, :] = d_emb[id]
-            other_label[i] = row[other_attribute_name]
+            control_label[i] = row[control_attribute_name]
             sens_label[i] = row[sensitive_attribute_name]
 
         #The default kernel ('rbf') is often causing no convergence on our dataset. 
@@ -142,7 +130,7 @@ class LabelPropagationEvaluation(EvaluationStrategy):
         shs_split = StratifiedShuffleSplit(n_splits=n_splits, train_size=train_size, random_state=42)
 
         with logging_redirect_tqdm():
-            for label, y in enumerate([other_label, sens_label]):
+            for label, y in enumerate([control_label, sens_label]):
                 for run, (train_idx, test_idx) in tqdm(enumerate(shs_split.split(X, y))):
                     X_train = X  # the whole embedding
                     X_test = X[test_idx]
@@ -161,7 +149,7 @@ class LabelPropagationEvaluation(EvaluationStrategy):
                         df_labels_y = df_labels.copy()
                         for index, id in enumerate(test_idx):
                             assert id == test_idx[index], f"ID mismatch: id={id}, test_idx[index]={test_idx[index]}"  # Check if the IDs match
-                            df_labels_y.loc[id, f'pred_{other_attribute_name}'] = y_pred[index]
+                            df_labels_y.loc[id, f'pred_{control_attribute_name}'] = y_pred[index]
                         df_labels_y.drop(columns=[sensitive_attribute_name], inplace=True)
                         df_labels_y.dropna(inplace=True)
                         df_labels_y.to_csv(experiment_run_result_dir / f"confusion_y.csv")
@@ -170,7 +158,7 @@ class LabelPropagationEvaluation(EvaluationStrategy):
                         for index, id in enumerate(test_idx):
                             assert id == test_idx[index], f"ID mismatch: id={id}, test_idx[index]={test_idx[index]}"  # Check if the IDs match
                             df_labels_z.loc[id, f'pred_{sensitive_attribute_name}'] = y_pred[index]
-                        df_labels_z.drop(columns=[other_attribute_name], inplace=True)
+                        df_labels_z.drop(columns=[control_attribute_name], inplace=True)
                         df_labels_z.dropna(inplace=True)
                         df_labels_z.to_csv(experiment_run_result_dir / f"confusion_z.csv")
 
@@ -203,7 +191,7 @@ class LabelPropagationEvaluation(EvaluationStrategy):
 
 
     @staticmethod
-    def read_labels(df_att: pd.DataFrame, d_emb: dict, sensitive_attribute_name: str, other_attribute_name: str) -> pd.DataFrame:
+    def read_labels(df_att: pd.DataFrame, d_emb: dict, sensitive_attribute_name: str, control_attribute_name: str) -> pd.DataFrame:
         """
         Read labels and match them with embeddings.
         
@@ -211,16 +199,16 @@ class LabelPropagationEvaluation(EvaluationStrategy):
             df_att (pd.DataFrame): DataFrame containing attributes.
             d_emb (dict): Dictionary containing embeddings.
             sensitive_attribute_name (str): Name of the sensitive attribute.
-            other_attribute_name (str): Name of the other attribute.
+            control_attribute_name (str): Name of the control attribute.
         
         Returns:
-            pd.DataFrame: DataFrame containing user_id, other_attribute_name, and sensitive_attribute_name.
+            pd.DataFrame: DataFrame containing user_id, control_attribute_name, and sensitive_attribute_name.
         """
         label_data = []
         for index, row in df_att.iterrows():
             user_id = row['user_id']
             if user_id in d_emb:
-                label_data.append([user_id,row[other_attribute_name],row[sensitive_attribute_name]])
-        return pd.DataFrame(label_data,columns=['user_id', other_attribute_name, sensitive_attribute_name]).reset_index(drop=True)
+                label_data.append([user_id,row[control_attribute_name],row[sensitive_attribute_name]])
+        return pd.DataFrame(label_data,columns=['user_id', control_attribute_name, sensitive_attribute_name]).reset_index(drop=True)
 
 
