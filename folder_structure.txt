@@ -4,8 +4,9 @@ fairgraphwalk-experiments/
         DEMO_example_run_experiments.py
         example_run_experiments.py
     experiments/
-        NEW_pokec_distinct.py
+        region_categories.json
         experiments_main.py
+        config.yml
     data_utils/
         graph/
             graph.py
@@ -50,7 +51,7 @@ fairgraphwalk-experiments/
                 images/
     experiment_utils/
         experiment_controllers.py
-        experiment_run.py
+        experiment_pipeline_runner.py
         logging_setup.py
     biasing/
         crosswalk_bias.py

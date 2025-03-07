@@ -18,8 +18,9 @@ edgelist_file: "soc-pokec-relationships.txt"
 # List of experiment modes to run in this execution.
 # Options: "distinct", "semi", "mixed", "full", etc.
 
-# experiments: [""distinct", "semi", "mixed"]
-experiments: ["distinct"]
+experiments: ["distinct", "semi", "mixed", "full"]
+# experiments: ["distinct"]
+# experiments: ["full"]
 
 # Dataset info: indicates the data source type (e.g., "edgelist", "other")
 dataset:
@@ -42,6 +43,12 @@ filter:
   mixed:
     type: "region"
     region_categories_key: "mixed"
+  demo_distinc:
+    type: "region"
+    region_categories_key: "demo_distinct"
+  demo_semi:
+    type: "region"
+    region_categories_key: "demo_semi"
   full:
     type: "full"   # No filtering; process the full graph
 

@@ -1,5 +1,5 @@
 {
-    "distinct": {
+    "demo_distinct": {
         "graph_dir_0": [
             "trnavsky kraj, velky meder",
             "banskobystricky kraj, zarnovica",
@@ -7,10 +7,18 @@
         ],
         "graph_dir_1": [
             "banskobystricky kraj, brezno",
-            "bratislavsky kraj, bratislava - nove mesto"
+            "kosicky kraj, kosice - ostatne"
         ]
     },
-    "distinct1": {
+    "demo_semi": {
+        "graph_dir_0": [
+            "kosicky kraj, kosice - stare mesto",
+            "kosicky kraj, kosice - juh",
+            "trnavsky kraj, holic",
+            "trnavsky kraj, gbely"
+        ]
+    },
+    "distinct": {
         "graph_dir_0": [
             "trnavsky kraj, velky meder",
             "banskobystricky kraj, zarnovica",

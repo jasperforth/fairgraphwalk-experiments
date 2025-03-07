@@ -9,7 +9,7 @@ from pathlib import Path
 from joblib import Parallel, delayed
 import logging
 
-from experiment_utils.experiment_run import ExperimentRun
+from experiment_utils.experiment_pipeline_runner import ExperimentRun
 from biasing.no_bias import NoBias
 from biasing.crosswalk_bias import CrossWalkBias
 from sampling.node2vec_sampling import Node2VecSampling

@@ -1,16 +1,11 @@
-"""
-experiment_main.py
-
-Unified experiment runner:
-  - Loads config.yaml and region_categories.json.
-  - Prepares output directories using environment parameters.
-  - Iterates over defined experiment modes (e.g. "distinct", "full").
-  - For each mode, formats the data into subgraphs, constructs graph objects,
-    and calls ExperimentControllers for baseline, CFN, and CrossWalk runs.
-
-Usage:
-    python experiment_main.py --config config.yaml [--experiment_to_run <mode_override>]
-"""
+#!/usr/bin/env python
+# File: experiments/experiment_main.py
+# Description: Unified experiment pipeline entry point (single source of truth).
+#   - Loads configuration (config.yml) and region categories (region_categories.json).
+#   - Prepares directories and formats data.
+#   - Constructs graph objects and invokes ExperimentControllers for baseline, CFN, and CrossWalk runs.
+# Usage:
+#   python experiment_main.py --config config.yml [--experiment_to_run <mode_override>]
 
 import argparse
 import json
@@ -22,6 +17,7 @@ from pathlib import Path
 import yaml
 import numpy as np
 
+print(f"Python executable: {sys.executable}")
 # Add parent directory for module imports.
 file = Path(__file__).resolve()
 parent, root = file.parent, file.parents[1]
@@ -50,9 +46,53 @@ def create_directory(path: Path) -> None:
         logger.error(f"Failed to create directory {path}: {e}")
         raise
 
+def main():
+    """
+    Main entry point for the unified experiment pipeline.
+    Parses command-line arguments, loads config, optionally overrides experiment lists
+    and base_dir, and runs the pipeline (baseline + crosswalk).
+    """
+    parser = argparse.ArgumentParser(description="Unified Experiment Pipeline")
+    parser.add_argument("--config", type=str, default="experiments/config.yml",
+                        help="Path to YAML configuration")
+    parser.add_argument("--experiment_to_run", type=str, default="both",
+                        help="Choose: 'baseline', 'crosswalk', or 'both'")
+    parser.add_argument("--experiment_id", type=int, default=None,
+                        help="If provided, override config['experiments'] with the single experiment at this index. "
+                             "Useful for Slurm array jobs.")
+    parser.add_argument("--demo_subset", action="store_true",
+                        help="If set, override config['experiments'] with a smaller subset (e.g., for quick demos).")
+    parser.add_argument("--base_dir", type=str, default=None,
+                        help="Override the base_dir in the config.")
+    args = parser.parse_args()
+
+    # Load the config
+    config = load_yaml_config(args.config)
+
+    # Optionally override experiment list by HPC Slurm array index
+    if args.experiment_id is not None:
+        all_exps = config.get("experiments", [])
+        if args.experiment_id < 0 or args.experiment_id >= len(all_exps):
+            raise ValueError(f"Invalid experiment_id {args.experiment_id}, must be in range [0, {len(all_exps)-1}].")
+        # Keep only the selected experiment
+        selected_experiment = all_exps[args.experiment_id]
+        config["experiments"] = [selected_experiment]
+        logger.info(f"Overriding experiments with single experiment at index {args.experiment_id}: {selected_experiment}")
+
+    # Optionally override to a "demo" subset if flagged
+    if args.demo_subset:
+        # For example, override with a smaller set of experiments
+        # e.g., only run ["distinct_demo", "semi_demo"] 
+        # or something minimal for a quick test
+        config["experiments"] = ["demo_distinct", "demo_semi"]
+        logger.info("Using a reduced demo subset of experiments: ['demo_distinct', 'demo_semi']")
+
+    # Call the main runner
+    run_experiment(config, exp_run_mode=args.experiment_to_run)
+
 
 def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
-    # Set up logging for the main process using queue-based logging
+    # The full pipeline logic: sets up logging, data directories, formatting, runs baseline & crosswalk, etc.
     log_dir = Path(config["data_dir"].format(
         base_dir=config["base_dir"], project_name=config["project_name"]
     )) / "logs"
@@ -194,13 +234,4 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
     logger.info("All experiments completed.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Unified Experiment Pipeline")
-    parser.add_argument("--config", type=str, default="config.yml", help="Path to YAML configuration")
-    parser.add_argument("--experiment_to_run", type=str, default="both",
-                        help="Choose: 'baseline', 'crosswalk', or 'both'")
-    args = parser.parse_args()
-
-    config = load_yaml_config(args.config)
-
-    run_experiment(config, exp_run_mode=args.experiment_to_run)
-
+    main()
