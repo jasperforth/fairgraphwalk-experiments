@@ -74,8 +74,8 @@ experiment_params:
 # Node2Vec parameters
 ###########################
 node2vec:
-  p_values: [1]
-  q_values: [1]
+  p_values: [0.1, 0.5, 1, 5, 10]
+  q_values: [0.1, 0.5, 1, 5, 10]
   walk_length: 80
   num_walks: 10
   dim: 128
@@ -88,8 +88,8 @@ node2vec:
 ###########################
 crosswalk:
   prewalk_length: 6
-  alphas: [0.2, 0.5, 0.8]
-  exponents: [2, 8]
+  alphas: [0.01, 0.25, 0.5, 0.75, 0.99]
+  exponents: [1, 2, 3, 5, 8, 11, 15]
 
 ###########################
 # Evaluation parameters
@@ -110,3 +110,8 @@ control_attribute: "label_region"
 ###########################
 # Path to the JSON file that holds the region filter sets.
 filter_categories_file: "region_categories.json"
+
+
+– p, q: 0.1, 0.5, 1, 5.0, 10.0
+– α: 0.01, 0.25, 0.5, 0.75, 0.99
+– β: 1, 2, 3, 5, 8, 11, 15
