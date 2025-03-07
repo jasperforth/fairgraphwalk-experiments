@@ -15,6 +15,7 @@ Usage:
 import argparse
 import json
 import logging
+from math import log
 import random
 import sys
 from pathlib import Path
@@ -188,6 +189,9 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
             ExperimentControllers.run_crosswalk_experiments(
                 config, generated_graphs, resources_dir, result_dir, log_dir
             )
+
+        logger.info(f"Finished experiment mode: {exp_mode}")
+    logger.info("All experiments completed.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Unified Experiment Pipeline")

@@ -55,7 +55,7 @@ class SkipGramEncoder(EncodingStrategy):
         Returns:
             Word2Vec: Trained Word2Vec model.
         """
-        self.logger.info('Starting skip-gram model training...')
+        logger.info('Starting skip-gram model training...')
 
         skip_gram_params = self.embedding_params
         gensim_version = pkg_resources.get_distribution("gensim").version
@@ -67,7 +67,7 @@ class SkipGramEncoder(EncodingStrategy):
             skip_gram_params['sg'] = 1
 
         
-        self.logger.info('Skip-gram model training complete.')
+        logger.info('Skip-gram model training complete.')
 
         # wokrs=1 to avoid subparallelization
         return Word2Vec(walks, workers=1, **skip_gram_params)
@@ -85,7 +85,7 @@ class SkipGramEncoder(EncodingStrategy):
         """
         embedding_filepath = (embedding_dir / f"{self.params_signature}.emb").absolute().as_posix()
 
-        self.logger.info(f'Saving embeddings to {embedding_filepath}')
+        logger.info(f'Saving embeddings to {embedding_filepath}')
         model.wv.save_word2vec_format(embedding_filepath)
 
         compressed_filepath = embedding_filepath + '.gz'
@@ -96,7 +96,7 @@ class SkipGramEncoder(EncodingStrategy):
                         
         # Remove the original (uncompressed) embedding file.
         os.remove(embedding_filepath)
-        self.logger.info(f'Embeddings saved and compressed to {compressed_filepath}')
+        logger.info(f'Embeddings saved and compressed to {compressed_filepath}')
         
         return Path(embedding_filepath + '.gz')
  
