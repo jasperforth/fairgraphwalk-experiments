@@ -49,12 +49,12 @@ class PokecGraph(Graph):
             PokecGraph: A new PokecGraph object.
         """
         logger.info(f"Loading edgelist from {edgelist_path}")
-        logger.info(f"Loading attributes from {attributes_path}")
-        
         df_edgelist = pd.read_csv(edgelist_path, sep=" ", header=None)
 
         logger.info(f"Loading attributes from {attributes_path}")
         df_attributes = pd.read_csv(attributes_path)
+        
+        logger.info(f"Creating NetworkX graph from edgelist")
         g = nx.Graph()
         for _, row in df_edgelist.iterrows():
             g.add_edge(row.iloc[0], row.iloc[1])

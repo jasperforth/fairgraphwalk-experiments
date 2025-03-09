@@ -43,7 +43,7 @@ filter:
   mixed:
     type: "region"
     region_categories_key: "mixed"
-  demo_distinc:
+  demo_distinct:
     type: "region"
     region_categories_key: "demo_distinct"
   demo_semi:

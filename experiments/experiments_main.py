@@ -230,11 +230,22 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
         # for full graph mode, we don't need to sort the data tuples
         # TODO test this for filtered graph modes
         sorted_data_tuples = sorted(data_tuples, key=lambda x: x[0].parent.name)
-        generated_graphs = [
-            (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), t[0].parent)
-            for t in sorted_data_tuples
-]
 
+        # Decide on the experiment graph directory based on the filter type.
+        if filter_type == "full":
+            # In full mode, the filtered files were written to a folder (e.g., "full")
+            # so we use that folder directly.
+            generated_graphs = [
+                (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), t[0].parent)
+                for t in sorted_data_tuples
+            ]
+        else:
+            # In region-filtered modes, you might want to assign new folder names
+            # (e.g. "graph_dir_0", "graph_dir_1", ...) so that each region is handled separately.
+            generated_graphs = [
+                (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), resources_dir / f"graph_dir_{i}")
+                for i, t in enumerate(sorted_data_tuples)
+            ]
 
         for i, (graph_obj, _) in enumerate(generated_graphs):
             logger.info(f"Graph {i}: nodes={len(graph_obj.graph)}, edges={len(graph_obj.graph.edges())}, attributes={len(graph_obj.attributes)}")
