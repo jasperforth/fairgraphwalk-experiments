@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=80
 #SBATCH --mem=772G
 #SBATCH --array=3            # Array job: 1 experiment ['full']
-#SBATCH --time=144:00:00         # Maximum walltime
+#SBATCH --time=240:00:00         # Maximum walltime
 
 # Load necessary modules (if required)
 module load intel/oneapi/2023.2.0
@@ -27,9 +27,9 @@ fi
 #   - Your unified pipeline is at experiments/experiment_main.py
 srun --time=240:00:00 \
   /scratch/pyllm/forth/bin/micromamba run -p /scratch/pyllm/forth/envs/fair_graph310 \
-  python /scratch/pyllm/forth/fair_nodesampling/experiments/experiment_main.py \
+  python /scratch/pyllm/forth/fairgraphwalk-experiments/experiments/experiment_main.py \
   --config experiments/config.yml \
   --experiment_to_run both \
   --experiment_id "$TASK_ID" \
-  --base_dir /scratch/pyllm/$USER
+  --base_dir /scratch/pyllm/$USER/DATA
 
