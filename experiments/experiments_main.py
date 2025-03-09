@@ -68,6 +68,8 @@ def main():
 
     # Load the config
     config = load_yaml_config(args.config)
+    # Save the config file's directory to resolve relative paths later.
+    config["_config_dir"] = Path(args.config).parent
 
     # Optionally override the base_dir if provided as an argument
     if args.base_dir is not None:
@@ -110,11 +112,21 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
     project_name = config["project_name"]
     data_dir = Path(config["data_dir"].format(base_dir=base_dir, project_name=project_name))
     raw_dir = Path(config["raw_dir"].format(base_dir=base_dir))
-    
+
+    # --- Resolve the region_categories.json path relative to the config file ---
+    config_dir = config.get("_config_dir", Path("."))
+    filter_categories_file = config["filter_categories_file"]
+    filter_categories_path = Path(filter_categories_file)
+    if not filter_categories_path.is_absolute():
+        filter_categories_path = config_dir / filter_categories_file
+    region_categories_all = load_region_categories(str(filter_categories_path))
+    logger.info(f"Loaded region categories from: {filter_categories_path}")
+
     # Get experiment modes 
     experiments_to_run = config.get("experiments", [])
     exp_params = config["experiment_params"]
     fmt_params = config["formatter_params"]
+    logger.info(f"Experiments to run: {experiments_to_run}")
 
     # Raw data paths
     raw_attributes_file = raw_dir / config["raw_attributes_file"]
@@ -150,9 +162,6 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
         )
     else:
         logger.info("Data already pre-formatted.")
-
-    # Load region categories from the JSON
-    region_categories_all = load_region_categories(config["filter_categories_file"])
 
     # Process each experiment mode
     for exp_mode in experiments_to_run:
