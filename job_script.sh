@@ -6,7 +6,7 @@
 #SBATCH --nodes=1                # One node per task
 #SBATCH --ntasks=1               # One task per node
 #SBATCH --cpus-per-task=80
-#SBATCH --mem=772G
+#SBATCH --mem=192G
 #SBATCH --array=3            # Array job: 1 experiment ['full']
 #SBATCH --time=240:00:00         # Maximum walltime
 
@@ -27,7 +27,7 @@ fi
 #   - Your unified pipeline is at experiments/experiment_main.py
 srun --time=240:00:00 \
   /scratch/pyllm/forth/bin/micromamba run -p /scratch/pyllm/forth/envs/fair_graph310 \
-  python /scratch/pyllm/forth/fairgraphwalk-experiments/experiments/experiment_main.py \
+  python /scratch/pyllm/forth/fairgraphwalk-experiments/experiments/experiments_main.py \
   --config experiments/config.yml \
   --experiment_to_run both \
   --experiment_id "$TASK_ID" \
