@@ -221,11 +221,20 @@ def run_experiment(config: dict, exp_run_mode: str = "both") -> None:
                     logger.error(f"Missing formatted files in {subfolder}")
                     continue
 
+        # sorted_data_tuples = sorted(data_tuples, key=lambda x: x[0].parent.name)
+        # generated_graphs = [
+        #     (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), resources_dir / f"graph_dir_{i}")
+        #     for i, t in enumerate(sorted_data_tuples)
+        # ]
+
+        # for full graph mode, we don't need to sort the data tuples
+        # TODO test this for filtered graph modes
         sorted_data_tuples = sorted(data_tuples, key=lambda x: x[0].parent.name)
         generated_graphs = [
-            (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), resources_dir / f"graph_dir_{i}")
-            for i, t in enumerate(sorted_data_tuples)
-        ]
+            (PokecGraph.graph_from_edgelist(str(t[0]), str(t[1])), t[0].parent)
+            for t in sorted_data_tuples
+]
+
 
         for i, (graph_obj, _) in enumerate(generated_graphs):
             logger.info(f"Graph {i}: nodes={len(graph_obj.graph)}, edges={len(graph_obj.graph.edges())}, attributes={len(graph_obj.attributes)}")
