@@ -45,7 +45,6 @@ def create_directory(path: Path) -> None:
     except Exception as e:
         logger.error(f"Failed to create directory {path}: {e}")
         raise
-    /Users/jf/_lokal/fair_graph_1/fairgraphwalk-experiments/experiments/experiments_main.py
 
 def main():
     """
