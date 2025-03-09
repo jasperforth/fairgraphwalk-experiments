@@ -4,8 +4,6 @@ import logging
 from pathlib import Path
 from typing import Optional
 
-import setup
-
 # Limit parallelization within libraries to 1 thread per process before importing NumPy
 ncore = "1"
 os.environ["OMP_NUM_THREADS"] = ncore
