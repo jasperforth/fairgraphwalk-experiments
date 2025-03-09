@@ -45,6 +45,7 @@ def create_directory(path: Path) -> None:
     except Exception as e:
         logger.error(f"Failed to create directory {path}: {e}")
         raise
+    /Users/jf/_lokal/fair_graph_1/fairgraphwalk-experiments/experiments/experiments_main.py
 
 def main():
     """
@@ -68,6 +69,12 @@ def main():
 
     # Load the config
     config = load_yaml_config(args.config)
+
+    # Optionally override the base_dir if provided as an argument
+    if args.base_dir is not None:
+        old_base = config.get("base_dir", None)
+        config["base_dir"] = args.base_dir
+        logger.info(f"Overriding base_dir: '{old_base}' -> '{args.base_dir}'")
 
     # Optionally override experiment list by HPC Slurm array index
     if args.experiment_id is not None:
