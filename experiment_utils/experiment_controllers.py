@@ -42,9 +42,11 @@ class ExperimentControllers:
         try:
             Parallel(n_jobs=exp_params["workers"], verbose=100)(
                 delayed(ExperimentControllers._run_baseline_for_one)(
-                    config, i, graph_obj, exp_graph_dir, result_dir, log_dir
+                    config, i, graph_obj, exp_graph_dir, p, q, result_dir, log_dir
                 )
                 for i, (graph_obj, exp_graph_dir) in enumerate(generated_graphs)
+                for p in config["node2vec"]["p_values"]
+                for q in config["node2vec"]["q_values"]
             )
             logger.info("Finished baseline experiments for all graphs")
         except Exception as e:
@@ -54,65 +56,58 @@ class ExperimentControllers:
     def _run_baseline_for_one(config: dict,
                               index: int,
                               graph_obj,
-                              exp_graph_dir: Path,
+                              exp_graph_dir: Path, 
+                              p: float, 
+                              q: float,
                               result_dir: Path, 
                               log_dir: Path):
         logger = setup_worker_logging(name=f"worker_baseline_{index}", log_dir=log_dir)
         logger.info(f"Worker initialized for baseline graph {index}")
-
-        p_values = config["node2vec"]["p_values"]
-        q_values = config["node2vec"]["q_values"]
-        walk_length = config["node2vec"]["walk_length"]
-        num_walks = config["node2vec"]["num_walks"]
-        window = config["node2vec"]["window"]
-        min_count = config["node2vec"]["min_count"]
-        batch_words = config["node2vec"]["batch_words"]
-
         graph_name = f"graph_{index}"
+        params_signature = f"p_{p}_q_{q}"
         n_splits = config["label_propagation"]["n_splits"]
 
-        for p in p_values:
-            for q in q_values:
-                params_signature = f"p_{p}_q_{q}"
-                run_dir = result_dir / f"graph_{index}" / "baseline"
-                # Create and run the pipeline
-                exp = ExperimentRun(
-                    graph=graph_obj,
-                    bias_strategy=NoBias(graph=graph_obj),
-                    sampling_strategy=Node2VecSampling(
-                        p=p, q=q,
-                        graph_name=graph_name,
-                        walk_length=walk_length,
-                        num_walks=num_walks,
-                        quiet=False,
-                        log_dir=log_dir
-                    ),
-                    encoding_strategy=SkipGramEncoder(
-                        params_signature=params_signature,
-                        experiment_graph_dir=exp_graph_dir,
-                        window=window,
-                        min_count=min_count,
-                        batch_words=batch_words, 
-                        log_dir=log_dir
-                    ),
-                    evaluation_strategy=LabelPropagationEvaluation(
-                        result_dir=run_dir,
-                        params_signature=params_signature,
-                        sensitive_attribute_name=config["sensitive_attribute"],
-                        control_attribute_name=config["control_attribute"],
-                        graph_name=graph_name,
-                        train_size=config.get("label_propagation", {}).get("train_size", 0.5), 
-                        log_dir=log_dir
-                    ),
-                    results_dir=run_dir,
-                )
-                exp.run_pipeline(
-                    experiment_graph_dir=exp_graph_dir,
-                    result_dir=run_dir,
-                    params_signature=params_signature,
-                    n_splits=n_splits
-                )
-                logger.info(f"Completed baseline run for graph {index} (p={p}, q={q})")
+        run_dir = result_dir / f"graph_{index}" / "baseline"
+        run_dir.mkdir(parents=True, exist_ok=True)
+
+        # Create and run the pipeline
+        exp = ExperimentRun(
+            graph=graph_obj,
+            bias_strategy=NoBias(graph=graph_obj),
+            sampling_strategy=Node2VecSampling(
+                p=p, q=q,
+                graph_name=graph_name,
+                walk_length=config["node2vec"]["walk_length"],
+                num_walks=config["node2vec"]["num_walks"],
+                quiet=False,
+                log_dir=log_dir
+            ),
+            encoding_strategy=SkipGramEncoder(
+                params_signature=params_signature,
+                experiment_graph_dir=exp_graph_dir,
+                window=config["node2vec"]["window"],
+                min_count=config["node2vec"]["min_count"],
+                batch_words=config["node2vec"]["batch_words"], 
+                log_dir=log_dir
+            ),
+            evaluation_strategy=LabelPropagationEvaluation(
+                result_dir=run_dir,
+                params_signature=params_signature,
+                sensitive_attribute_name=config["sensitive_attribute"],
+                control_attribute_name=config["control_attribute"],
+                graph_name=graph_name,
+                train_size=config.get("label_propagation", {}).get("train_size", 0.5), 
+                log_dir=log_dir
+            ),
+            results_dir=run_dir,
+        )
+        exp.run_pipeline(
+            experiment_graph_dir=exp_graph_dir,
+            result_dir=run_dir,
+            params_signature=params_signature,
+            n_splits=n_splits
+        )
+        logger.info(f"Completed baseline run for graph {index} (p={p}, q={q})")
 
     @staticmethod
     def run_cfn_proxy(config: dict,
