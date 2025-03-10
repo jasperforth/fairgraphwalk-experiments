@@ -6,7 +6,7 @@
 #SBATCH --nodes=1                # One node per task
 #SBATCH --ntasks=1               # One task per node
 #SBATCH --cpus-per-task=80
-#SBATCH --mem=192G
+#SBATCH --mem=750G
 #SBATCH --array=3            # Array job: 1 experiment ['full']
 #SBATCH --time=240:00:00         # Maximum walltime
 
