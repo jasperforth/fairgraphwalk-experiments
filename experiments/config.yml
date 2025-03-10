@@ -68,7 +68,7 @@ formatter_params:
 ###########################
 experiment_params:
   seed: 42        # Random seed for reproducibility
-  workers: -1      # Number of parallel workers
+  workers: 8      # Number of parallel workers
 
 ###########################
 # Node2Vec parameters
