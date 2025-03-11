@@ -13,7 +13,6 @@ from .encoding_strat import EncodingStrategy
 
 logger = logging.getLogger(__name__)
 
-# TODO eventually limit ram in Word2Vec params
 class SkipGramEncoder(EncodingStrategy):
     """
     Skip-gram encoder using gensim's Word2Vec for generating node embeddings.

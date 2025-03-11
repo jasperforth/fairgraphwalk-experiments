@@ -5,12 +5,12 @@ from typing import Optional
 import gzip
 
 # Set the number of CPUs to run on and environment variables for parallel processing **before** importing NumPy
-ncore = "1"
-os.environ["OMP_NUM_THREADS"] = ncore
-os.environ["OPENBLAS_NUM_THREADS"] = ncore
-os.environ["MKL_NUM_THREADS"] = ncore
-os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
-os.environ["NUMEXPR_NUM_THREADS"] = ncore
+# ncore = "1"
+# os.environ["OMP_NUM_THREADS"] = ncore
+# os.environ["OPENBLAS_NUM_THREADS"] = ncore
+# os.environ["MKL_NUM_THREADS"] = ncore
+# os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
+# os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import numpy as np
 import pandas as pd

@@ -5,12 +5,12 @@ from pathlib import Path
 from typing import Optional
 
 # Limit parallelization within libraries to 1 thread per process before importing NumPy
-ncore = "1"
-os.environ["OMP_NUM_THREADS"] = ncore
-os.environ["OPENBLAS_NUM_THREADS"] = ncore
-os.environ["MKL_NUM_THREADS"] = ncore
-os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
-os.environ["NUMEXPR_NUM_THREADS"] = ncore
+# ncore = "1"
+# os.environ["OMP_NUM_THREADS"] = ncore
+# os.environ["OPENBLAS_NUM_THREADS"] = ncore
+# os.environ["MKL_NUM_THREADS"] = ncore
+# os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
+# os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import pandas as pd
 import numpy as np

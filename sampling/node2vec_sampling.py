@@ -12,13 +12,12 @@ from pathlib import Path
 from typing import List, Optional
 
 # Set the number of CPUs to run on and environment variables for parallel processing
-# This must be done before importing NumPy or other numerical libraries
-ncore = "1"
-os.environ["OMP_NUM_THREADS"] = ncore
-os.environ["OPENBLAS_NUM_THREADS"] = ncore
-os.environ["MKL_NUM_THREADS"] = ncore
-os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
-os.environ["NUMEXPR_NUM_THREADS"] = ncore
+# ncore = "1"
+# os.environ["OMP_NUM_THREADS"] = ncore
+# os.environ["OPENBLAS_NUM_THREADS"] = ncore
+# os.environ["MKL_NUM_THREADS"] = ncore
+# os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
+# os.environ["NUMEXPR_NUM_THREADS"] = ncore
 
 import numpy as np
 from tqdm.auto import tqdm
