@@ -249,8 +249,8 @@ class ExperimentControllers:
             evaluation_strategy=LabelPropagationEvaluation(
                 result_dir=run_dir,
                 params_signature=params_signature,
-                sensitive_attribute_name=config["sensitive_attribute"],
-                control_attribute_name=config["control_attribute"],
+                sensitive_attribute_name=sens,
+                control_attribute_name=control,
                 graph_name=graph_name,
                 train_size=config.get("label_propagation", {}).get("train_size", 0.5),
                 log_dir=log_dir
