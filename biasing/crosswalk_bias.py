@@ -69,7 +69,7 @@ class CrossWalkBias(BiasStrategy):
         cfn_path = self.experiment_graph_dir / f'colorfulness_sens_{self.sensitive_attribute_name}_prewalklength_{self.prewalk_length}.csv'
 
         if not cfn_path.exists():
-            self.pre_compute_biasing_params(self)
+            self.pre_compute_biasing_params()
         else:
             self.logger.info(f'Loading colorfulness from file for {self.sensitive_attribute_name} \
                         and {self.graph_name} with prewalk length: {self.prewalk_length}')
